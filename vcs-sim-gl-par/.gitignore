@@ -1,0 +1,12 @@
+csrc
+simv
+simv.daidir
+timestamp
+ucli.key
+vc_hdrs.h
+*.vpd
+*.vcd
+*.saif
+sdfAnnotateInfo
+DVEfiles
+force_regs*
