@@ -3,10 +3,10 @@
 
 module datapath(
     input           clk, reset, stall,
-    input   [:0]  dpath_controls_i,
-    input   [:0]  exec_controls_x,
-    input   [:0]   hazard_controls,
-    output  [:0] datapath_contents,
+    input   [0:0]  dpath_controls_i,
+    input   [0:0]  exec_controls_x,
+    input   [0:0]   hazard_controls,
+    output  [0:0] datapath_contents,
 
     // Memory system connections
     output [31:0]   dcache_addr,

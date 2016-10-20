@@ -17,7 +17,7 @@ output_dir = output
 CONFIG = vlsi
 timeout_cycles = 10000
 disasm := 2>
-which_disasm := $(shell which riscv-dis)
+#which_disasm := $(shell which riscv-dis)
 ifneq ($(which_disasm),)
 	disasm := 3>&1 1>&2 2>&3 | $(which_disasm) $(DISASM_EXTENSION) >
 endif
@@ -36,9 +36,12 @@ sim_vsrcs = \
 	$(UCB_VLSI_HOME)/stdcells/synopsys-32nm/multi_vt/verilog/SRAM1RW256x128_new.v \
 	$(UCB_VLSI_HOME)/stdcells/synopsys-32nm/multi_vt/verilog/SRAM1RW64x32_new.v \
 
+alu_tb = ALUTestbench
+
 alu_tb_vsrcs = \
 	$(srcdir)/ALU.v \
-	$(srcdir)/ALUTestbench.v
+	$(srcdir)/$(alu_tb).v
+
 
 #--------------------------------------------------------------------
 # Build rules
@@ -67,25 +70,28 @@ VCS_OPTS = -notice -line +lint=all,noVCDE,noONGS,noUI +warn=noTMR -error=PCWM-L 
 simv = $(sim_dir)/simv-$(CONFIG)
 $(simv) : $(sim_vsrcs)
 	cd $(sim_dir) && \
-	$(VCS) $(VCS_OPTS) -o $(simv) \
+	$(VCS) $(VCS_OPTS) -o $(simv) -top rocketTestHarness \
 
 simv_debug = $(sim_dir)/simv-$(CONFIG)-debug
 $(simv_debug) : $(sim_vsrcs)
 	cd $(sim_dir) && \
-	$(VCS) $(VCS_OPTS) -o $(simv_debug) \
+	$(VCS) $(VCS_OPTS) -o $(simv_debug) -top rocketTestHarness \
 	+define+DEBUG -debug_pp \
-
 
 simv_alu = $(sim_dir)/simv-alu-$(CONFIG)
 $(simv_alu) : $(alu_tb_vsrcs)
 	cd $(sim_dir) && \
-	$(VCS) $(VCS_OPTS) -o $(simv) \
+	$(VCS) $(VCS_OPTS) -o $(simv_alu) -top $(alu_tb) \
 
 simv_debug = $(sim_dir)/simv-alu-$(CONFIG)-debug
 $(simv_alu_debug) : $(alu_tb_vsrcs)
 	cd $(sim_dir) && \
-	$(VCS) $(VCS_OPTS) -o $(simv_alu_debug) \
+	$(VCS) $(VCS_OPTS) -o $(simv_alu_debug) -top $(alu_tb) \
 	+define+DEBUG -debug_pp \
+
+.PHONY: run-alu
+run-alu: $(simv_alu)
+	$(simv_alu)
 
 tests_isa_dir = $(base_dir)/tests/isa
 
