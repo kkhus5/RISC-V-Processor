@@ -36,6 +36,10 @@ sim_vsrcs = \
 	$(UCB_VLSI_HOME)/stdcells/synopsys-32nm/multi_vt/verilog/SRAM1RW256x128_new.v \
 	$(UCB_VLSI_HOME)/stdcells/synopsys-32nm/multi_vt/verilog/SRAM1RW64x32_new.v \
 
+alu_tb_vsrcs = \
+	$(srcdir)/ALU.v \
+	$(srcdir)/ALUTestbench.v
+
 #--------------------------------------------------------------------
 # Build rules
 #--------------------------------------------------------------------
@@ -71,6 +75,17 @@ $(simv_debug) : $(sim_vsrcs)
 	$(VCS) $(VCS_OPTS) -o $(simv_debug) \
 	+define+DEBUG -debug_pp \
 
+
+simv_alu = $(sim_dir)/simv-alu-$(CONFIG)
+$(simv_alu) : $(alu_tb_vsrcs)
+	cd $(sim_dir) && \
+	$(VCS) $(VCS_OPTS) -o $(simv) \
+
+simv_debug = $(sim_dir)/simv-alu-$(CONFIG)-debug
+$(simv_alu_debug) : $(alu_tb_vsrcs)
+	cd $(sim_dir) && \
+	$(VCS) $(VCS_OPTS) -o $(simv_alu_debug) \
+	+define+DEBUG -debug_pp \
 
 tests_isa_dir = $(base_dir)/tests/isa
 
