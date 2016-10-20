@@ -38,11 +38,6 @@ sim_vsrcs = \
 
 alu_tb = ALUTestbench
 
-alu_tb_vsrcs = \
-	$(srcdir)/ALU.v \
-	$(srcdir)/$(alu_tb).v
-
-
 #--------------------------------------------------------------------
 # Build rules
 #--------------------------------------------------------------------
@@ -70,23 +65,23 @@ VCS_OPTS = -notice -line +lint=all,noVCDE,noONGS,noUI +warn=noTMR -error=PCWM-L 
 simv = $(sim_dir)/simv-$(CONFIG)
 $(simv) : $(sim_vsrcs)
 	cd $(sim_dir) && \
-	$(VCS) $(VCS_OPTS) -o $(simv) -top rocketTestHarness \
+	$(VCS) $(VCS_OPTS) -o $@ -top rocketTestHarness \
 
 simv_debug = $(sim_dir)/simv-$(CONFIG)-debug
 $(simv_debug) : $(sim_vsrcs)
 	cd $(sim_dir) && \
-	$(VCS) $(VCS_OPTS) -o $(simv_debug) -top rocketTestHarness \
+	$(VCS) $(VCS_OPTS) -o $@ -top rocketTestHarness \
 	+define+DEBUG -debug_pp \
 
 simv_alu = $(sim_dir)/simv-alu-$(CONFIG)
-$(simv_alu) : $(alu_tb_vsrcs)
+$(simv_alu) : $(sim_vsrcs)
 	cd $(sim_dir) && \
-	$(VCS) $(VCS_OPTS) -o $(simv_alu) -top $(alu_tb) \
+	$(VCS) $(VCS_OPTS) -o $@ -top $(alu_tb) \
 
 simv_debug = $(sim_dir)/simv-alu-$(CONFIG)-debug
-$(simv_alu_debug) : $(alu_tb_vsrcs)
+$(simv_alu_debug) : $(sim_vsrcs)
 	cd $(sim_dir) && \
-	$(VCS) $(VCS_OPTS) -o $(simv_alu_debug) -top $(alu_tb) \
+	$(VCS) $(VCS_OPTS) -o $@ -top $(alu_tb) \
 	+define+DEBUG -debug_pp \
 
 .PHONY: run-alu
