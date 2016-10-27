@@ -57,6 +57,7 @@ VCS_OPTS = -notice -line +lint=all,noVCDE,noONGS,noUI +warn=noTMR -error=PCWM-L 
 	+v2k +vcs+lic+wait \
 	+vcs+initreg+0 \
 	+vcs+initmem+0 \
+	+define+no_cache_mem \
 	+rad \
 	-top rocketTestHarness \
 	-debug_pp \

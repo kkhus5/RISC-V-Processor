@@ -68,6 +68,5 @@ module cache #
   input [`MEM_DATA_BITS-1:0]  mem_resp_data
 );
 
-// To be released later
 
 endmodule

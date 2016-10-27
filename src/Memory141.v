@@ -50,6 +50,33 @@ wire dc_mem_resp_valid;
 
 wire [(`MEM_DATA_BITS/8)-1:0]  dc_mem_req_mask;
 
+`ifdef no_cache_mem
+no_cache_mem icache (
+  .clk(clk),
+  .reset(reset),
+  .cpu_req_val(icache_re),
+  .cpu_req_rdy(i_stall_n),
+  .cpu_req_addr(icache_addr[31:2]),
+  .cpu_req_data(), // core does not write to icache
+  .cpu_req_write(4'b0), // never write
+  .cpu_resp_val(),
+  .cpu_resp_data(icache_dout)
+);
+
+no_cache_mem dcache (
+  .clk(clk),
+  .reset(reset),
+  .cpu_req_val((| dcache_we) || dcache_re),
+  .cpu_req_rdy(d_stall_n),
+  .cpu_req_addr(dcache_addr[31:2]),
+  .cpu_req_data(dcache_din),
+  .cpu_req_write(dcache_we),
+  .cpu_resp_val(),
+  .cpu_resp_data(dcache_dout)
+);
+assign stall =  ~i_stall_n || ~d_stall_n;
+
+`else
 cache icache (
   .clk(clk),
   .reset(reset),
@@ -131,5 +158,6 @@ riscv_arbiter arbiter (
   .mem_resp_valid(mem_resp_valid),
   .mem_resp_tag(mem_resp_tag)
 );
+`endif
 
 endmodule
