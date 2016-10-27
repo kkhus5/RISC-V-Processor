@@ -147,7 +147,12 @@ module rocketTestHarness;
     $value$plusargs("max-cycles=%d", max_cycles);
     $value$plusargs("loadmem=%s", loadmem);
     if (loadmem)
-      #0.1 $readmemh(loadmem, mem.ram);
+      `ifdef no_cache_mem
+        #0.1 $readmemh(loadmem, dut.mem.icache.ram);
+        #0.1 $readmemh(loadmem, dut.mem.dcache.ram);
+      `else
+        #0.1 $readmemh(loadmem, mem.ram);
+       `endif
     verbose = $test$plusargs("verbose");
 `ifdef DEBUG
     stats_active = $test$plusargs("stats");
