@@ -36,7 +36,7 @@ module no_cache_mem #(
   assign wmask = {{8{cpu_req_write[3]}},{8{cpu_req_write[2]}},{8{cpu_req_write[1]}},{8{cpu_req_write[0]}}};
 
   wire [`MEM_DATA_BITS-1:0] write_data;
-  assign write_data = (ram[upper_addr] & ~({{`MEM_DATA_BITS-CPU_WIDTH{1'b0}},~wmask} << CPU_WIDTH*lower_addr)) | ((cpu_req_data << CPU_WIDTH*lower_addr) & wmask);
+  assign write_data = (ram[upper_addr] & ~({{`MEM_DATA_BITS-CPU_WIDTH{1'b0}},wmask} << CPU_WIDTH*lower_addr)) | ((cpu_req_data & wmask) << CPU_WIDTH*lower_addr);
 
   always @(posedge clk) begin
     if (reset)
