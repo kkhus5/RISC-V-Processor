@@ -79,7 +79,7 @@ $(simv_alu) : $(sim_vsrcs)
 	cd $(sim_dir) && \
 	$(VCS) $(VCS_OPTS) -o $@ -top $(alu_tb) \
 
-simv_debug = $(sim_dir)/simv-alu-$(CONFIG)-debug
+simv_alu_debug = $(sim_dir)/simv-alu-$(CONFIG)-debug
 $(simv_alu_debug) : $(alu_tb_vsrcs)
 	cd $(sim_dir) && \
 	$(VCS) $(VCS_OPTS) -o $@ -top $(alu_tb) \
