@@ -80,7 +80,7 @@ $(simv_alu) : $(sim_vsrcs)
 	$(VCS) $(VCS_OPTS) -o $@ -top $(alu_tb) \
 
 simv_debug = $(sim_dir)/simv-alu-$(CONFIG)-debug
-$(simv_alu_debug) : $(sim_vsrcs)
+$(simv_alu_debug) : $(alu_tb_vsrcs)
 	cd $(sim_dir) && \
 	$(VCS) $(VCS_OPTS) -o $@ -top $(alu_tb) \
 	+define+DEBUG -debug_pp \
@@ -197,8 +197,12 @@ run-asm-tests: $(asm_tests_out)
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
 	       $(asm_tests_out); echo;
 
-run: run-asm-tests 
-run-debug: run-asm-tests-debug 
+run-asm-tests-debug: $(asm_tests_vpd)
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
+	       $(asm_tests_out); echo;
+
+run: run-asm-tests
+run-debug: run-asm-tests-debug
 
 .PHONY: run-asm-tests run-bmarks-test run-mt-tests
 .PHONY: run-asm-tests-debug run-bmarks-test-debug run-mt-tests-debug
