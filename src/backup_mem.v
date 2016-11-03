@@ -48,7 +48,6 @@ module BackupMemory
   output                      mem_req_data_ready,
   input [`MEM_DATA_BITS-1:0]  mem_req_data_bits,
   input [(`MEM_DATA_BITS/8)-1:0] mem_req_data_mask,
-  input  [1:0]                mem_req_data_offset,
 
   output reg                  mem_resp_valid,
   output reg [`MEM_DATA_BITS-1:0] mem_resp_data,

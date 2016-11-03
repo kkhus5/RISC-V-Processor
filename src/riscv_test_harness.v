@@ -27,7 +27,6 @@ module rocketTestHarness;
   wire [`MEM_DATA_BITS-1:0] mem_resp_data;
   wire [`MEM_DATA_BITS-1:0] #`INPUT_DELAY mem_resp_data_delay = mem_resp_data;
   wire [(`MEM_DATA_BITS/8)-1:0] mem_req_data_mask;
-  wire [1:0] mem_req_data_offset;
   wire [31:0] exit;
 
   //-----------------------------------------------
@@ -48,7 +47,6 @@ module rocketTestHarness;
       .mem_req_data_ready(mem_req_data_ready),
       .mem_req_data_bits(mem_req_data_bits),
       .mem_req_data_mask(mem_req_data_mask),
-      .mem_req_data_offset(mem_req_data_offset),
 
       .mem_resp_valid(mem_resp_valid_delay),
       .mem_resp_tag(mem_resp_tag_delay),
@@ -81,7 +79,6 @@ module rocketTestHarness;
     .mem_req_data_ready(mem_req_data_ready),
     .mem_req_data_bits(mem_req_data_bits),
     .mem_req_data_mask(mem_req_data_mask),
-    .mem_req_data_offset(mem_req_data_offset),
 
     .mem_resp_valid(mem_resp_valid),
     .mem_resp_data(mem_resp_data),

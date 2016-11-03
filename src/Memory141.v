@@ -26,7 +26,6 @@ module Memory141(
   input                        mem_req_data_ready,
   output [`MEM_DATA_BITS-1:0]  mem_req_data_bits,
   output [(`MEM_DATA_BITS/8)-1:0]  mem_req_data_mask,
-  output  [1:0]                    mem_req_data_offset,
 
   input                        mem_resp_valid,
   input [`MEM_DATA_BITS-1:0]   mem_resp_data,
@@ -94,10 +93,8 @@ cache icache (
   .mem_req_data_bits(),
   .mem_req_data_mask(),
   .mem_req_data_ready(),
-  .mem_req_data_offset(),
   .mem_req_rw(),
   .mem_resp_val(ic_mem_resp_valid),
-  .mem_resp_nack(1'b0),
   .mem_resp_data(mem_resp_data)
 );
 
@@ -125,9 +122,7 @@ cache dcache (
   .mem_req_data_bits(mem_req_data_bits),
   .mem_req_data_mask(mem_req_data_mask),
   .mem_req_data_ready(mem_req_data_ready),
-  .mem_req_data_offset(mem_req_data_offset),
   .mem_resp_val(dc_mem_resp_valid),
-  .mem_resp_nack(1'b0),
   .mem_resp_data(mem_resp_data)
 );
 assign stall =  ~i_stall_n || ~d_stall_n;

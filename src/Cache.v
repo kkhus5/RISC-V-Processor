@@ -61,10 +61,8 @@ module cache #
   output [`MEM_DATA_BITS-1:0]      mem_req_data_bits,
   // byte level masking
   output [(`MEM_DATA_BITS/8)-1:0]  mem_req_data_mask,
-  output  [1:0]                    mem_req_data_offset,
 
   input                       mem_resp_val,
-  input                       mem_resp_nack,
   input [`MEM_DATA_BITS-1:0]  mem_resp_data
 );
 
