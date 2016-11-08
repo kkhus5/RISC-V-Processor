@@ -27,7 +27,7 @@ module no_cache_mem #(
   wire [`ceilLog2(WORDS)-1:0] lower_addr;
   assign lower_addr = cpu_req_addr[`ceilLog2(WORDS)-1:0];
 
-  wire [CPU_WIDTH-1:0] read_data;
+  wire [`MEM_DATA_BITS-1:0] read_data;
   assign read_data = (ram[upper_addr] >> CPU_WIDTH*lower_addr);
 
   assign cpu_req_rdy = 1'b1;
