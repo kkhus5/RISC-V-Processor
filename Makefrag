@@ -36,8 +36,7 @@ mw_ref_libs = \
   cells_rvt.mw \
   io_wb.mw \
   io_pll.mw \
-  SRAM1RW256x128_new.mw \
-  SRAM1RW64x32_new.mw \
+  sram.mw \
 
 
 #saed32sram_tt1p05v25c.mw
@@ -46,8 +45,6 @@ target_library_files = \
   saed32rvt_$(tt_corner_stdcells).db \
   saed32io_wb_tt1p05v25c_2p5v.db \
   saed32pll_tt1p05v25c_2p5v.db \
-  SRAM1RW256x128_new.db \
-  SRAM1RW64x32_new.db \
   saed32sram_tt1p05v25c.db \
 
 
