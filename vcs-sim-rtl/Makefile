@@ -14,8 +14,10 @@ default : all
 base_dir  = ..
 sim_dir = .
 output_dir = output
+bmark_output_dir = bmark_output
 CONFIG = vlsi
 timeout_cycles = 10000
+bmark_timeout_cycles = 50000000
 disasm := 2>
 #which_disasm := $(shell which riscv-dis)
 ifneq ($(which_disasm),)
@@ -90,6 +92,7 @@ run-alu: $(simv_alu)
 	$(simv_alu)
 
 tests_isa_dir = $(base_dir)/tests/isa
+tests_bmark_dir = $(base_dir)/tests/final
 
 	#asmtest \
 
@@ -145,9 +148,14 @@ asm_p_tests = \
 	#dhrystone.riscv \
 	#spmv.riscv \
 
-tests_bmark_dir = $(base_dir)/riscv-tools/riscv-tests/benchmarks
+#tests_bmark_dir = $(base_dir)/riscv-tools/riscv-tests/benchmarks
 bmarks = \
-	multiply.riscv \
+	cachetest \
+	final \
+	fib \
+	sum \
+	replace \
+
 
 #--------------------------------------------------------------------
 # Run
@@ -161,19 +169,19 @@ exec_simv_debug = $(simv_debug) -q +ntb_random_seed_automatic
 # Run
 #--------------------------------------------------------------------
 asm_tests_out = $(foreach test, $(asm_p_tests), $(output_dir)/$(test).out)
-bmarks_out = $(foreach test, $(bmarks), $(output_dir)/$(test).out)
+bmarks_out = $(foreach test, $(bmarks), $(bmark_output_dir)/$(test).out)
 mt_bmarks_out = $(foreach test, $(mt_bmarks), $(output_dir)/$(test).out)
 
 asm_tests_vcd = $(foreach test, $(asm_p_tests), $(output_dir)/$(test).vcd)
-bmarks_vcd = $(foreach test, $(bmarks), $(output_dir)/$(test).vcd)
+bmarks_vcd = $(foreach test, $(bmarks), $(bmark_output_dir)/$(test).vcd)
 mt_bmarks_vcd = $(foreach test, $(mt_bmarks), $(output_dir)/$(test).vcd)
 
 asm_tests_vpd = $(foreach test, $(asm_p_tests), $(output_dir)/$(test).vpd)
-bmarks_vpd = $(foreach test, $(bmarks), $(output_dir)/$(test).vpd)
+bmarks_vpd = $(foreach test, $(bmarks), $(bmark_output_dir)/$(test).vpd)
 mt_bmarks_vpd = $(foreach test, $(mt_bmarks), $(output_dir)/$(test).vpd)
 
 asm_tests_saif = $(foreach test, $(asm_p_tests), $(output_dir)/$(test).saif)
-bmarks_saif = $(foreach test, $(bmarks), $(output_dir)/$(test).saif)
+bmarks_saif = $(foreach test, $(bmarks), $(bmark_output_dir)/$(test).saif)
 mt_bmarks_saif = $(foreach test, $(mt_bmarks), $(output_dir)/$(test).saif)
 
 $(output_dir)/%.out: $(tests_isa_dir)/%.hex  $(simv)
@@ -193,6 +201,24 @@ $(output_dir)/%.saif: $(output_dir)/%.hex  $(simv_debug)
 	cd $(sim_dir) && rm -f $(output_dir)/output_dirpipe-$*.vcd && vcd2saif -input $(output_dir)/pipe-$*.vcd -pipe "$(exec_simv_debug)  +verbose +vcdfile=$(output_dir)/pipe-$*.vcd +max-cycles=$(bmark_timeout_cycles) +loadmem=$<" -output $@ > $(patsubst %.saif,%.out,$@) 2>&1
 
 
+
+$(bmark_output_dir)/%.out: $(tests_bmark_dir)/%.hex  $(simv)
+	mkdir -p $(bmark_output_dir)
+	cd $(sim_dir) && $(exec_simv)  +verbose +max-cycles=$(bmark_timeout_cycles) +loadmem=$< $(disasm) $@ && [ $$PIPESTATUS -eq 0 ]
+
+$(bmark_output_dir)/%.vcd: $(tests_bmark_dir)/%.hex  $(simv_debug)
+	mkdir -p $(bmark_output_dir)
+	cd $(sim_dir) && $(exec_simv_debug)  +verbose +vcdfile=$@ +max-cycles=$(bmark_timeout_cycles) +loadmem=$< $(disasm) $(patsubst %.vcd,%.out,$@) && [ $$PIPESTATUS -eq 0 ]
+
+$(bmark_output_dir)/%.vpd: $(tests_bmark_dir)/%.hex  $(simv_debug)
+	mkdir -p $(bmark_output_dir)
+	cd $(sim_dir) && $(exec_simv_debug)  +verbose +vcdplusfile=$@ +max-cycles=$(bmark_timeout_cycles) +loadmem=$< $(disasm) $(patsubst %.vpd,%.out,$@) && [ $$PIPESTATUS -eq 0 ]
+
+$(bmark_output_dir)/%.saif: $(bmark_output_dir)/%.hex  $(simv_debug)
+	mkdir -p $(bmark_output_dir)
+	cd $(sim_dir) && rm -f $(bmark_output_dir)/output_dirpipe-$*.vcd && vcd2saif -input $(bmark_output_dir)/pipe-$*.vcd -pipe "$(exec_simv_debug)  +verbose +vcdfile=$(bmark_output_dir)/pipe-$*.vcd +max-cycles=$(bmark_timeout_cycles) +loadmem=$<" -output $@ > $(patsubst %.saif,%.out,$@) 2>&1
+
+
 run-asm-tests: $(asm_tests_out)
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
 	       $(asm_tests_out); echo;
@@ -201,14 +227,25 @@ run-asm-tests-debug: $(asm_tests_vpd)
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
 	       $(asm_tests_out); echo;
 
+
+run-bmark-test: $(bmarks_out)
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
+	       $(bmarks_out); echo;
+
+run-bmark-test-debug: $(bmarks_vpd)
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
+	       $(bmarks_out); echo;
+
 run: run-asm-tests
 run-debug: run-asm-tests-debug
+run-bmarks: run-bmark-test
+run-bmarks-debug: run-bmark-test-debug
 
-.PHONY: run-asm-tests run-bmarks-test run-mt-tests
-.PHONY: run-asm-tests-debug run-bmarks-test-debug run-mt-tests-debug
+.PHONY: run-asm-tests run-bmark-test
+.PHONY: run-asm-tests-debug run-bmark-test-debug
 .PHONY: run run-debug
 
-junk += $(output_dir)
+junk += $(output_dir) $(bmark_output_dir)
 
 #--------------------------------------------------------------------
 # Default make target
