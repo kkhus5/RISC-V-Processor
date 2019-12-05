@@ -1,0 +1,93 @@
+# Specify Global Variables
+technology.asap7.extracted_tarballs_dir: "/home/cc/eecs151/fa19/staff/eecs151-tab/Scratch/project_cp4_soln/phys-impl/tech-asap7-cache/extracted/"
+gcd.clockPeriod: &CLK_PERIOD "100ns"
+gcd.simClockPeriod : &SIM_CLK_PERIOD "CLOCK_PERIOD=100"
+gcd.simInputDelay : &SIM_INPUT_DELAY "INPUT_DELAY=25"
+gcd.simOptions: &SIM_OPTIONS
+  - "-notice"
+  - "-PP"
+  - "-line"
+  - "+lint=all,noVCDE,noTFIPC,noIWU,noOUDPE"
+  - "+v2k"
+  - "-debug"
+  - "+vcs+initreg+0"
+  - "+vcs+initmem+0"
+  - "+vcs+lic+wait"
+  - "+udpsched"
+  - "+evalorder"
+  - "+neg_tchk"
+  - "+sdfverbose"
+  - "-negdelay"
+gcd.verilogSrc: &VERILOG_SRC
+  - "src/ALUdec.v"
+  - "src/ALU.v"
+  - "src/backup_mem.v"
+  - "src/cache_FSM_two_way.v"
+  - "src/cache_FSM.v"
+  - "src/Cache_two_way.v"
+  - "src/Cache.v"
+  - "src/controller.v"
+  - "src/datapath.v"
+  - "src/library.v"
+  - "src/Memory141.v"
+  - "src/Riscv141.v"
+  - "src/riscv_arbiter.v"
+  - "src/riscv_top.v"
+gcd.simVerilogSrc: &SIM_VERILOG_SRC
+  - "/home/cc/eecs151/fa19/staff/eecs151-tab/Scratch/prj_cp4_lab_base/src/riscv_test_harness.v"
+  - "/home/cc/eecs151/fa19/staff/eecs151-tab/Scratch/prj_cp4_lab_base/src/backup_mem.v"
+  - "/home/cc/eecs151/fa19/staff/eecs151-tab/Scratch/prj_cp4_lab_base/src/sram.v"
+
+# Specify clock signals
+vlsi.inputs.clocks: [
+  {name: "clk", period: *CLK_PERIOD, uncertainty: "0.1ns"}
+]
+
+# Synthesis Constraints
+synthesis.inputs:
+  top_module: "gcd_coprocessor"
+  input_files: *VERILOG_SRC
+
+# Placement Constraints
+vlsi.inputs.placement_constraints:
+  - path: "gcd_coprocessor"
+    type: "toplevel"
+    x: 0
+    y: 0
+    width: 150
+    height: 150
+    margins:
+      left: 10
+      right: 10
+      top: 10
+      bottom: 10
+
+# Pin placement constraints
+vlsi.inputs.pin_mode: generated
+vlsi.inputs.pin.generate_mode: semi_auto
+vlsi.inputs.pin.assignments: [
+  {pins: "*", layers: ["M5", "M7"], side: "bottom"}
+]
+
+par.innovus.use_cco: true
+
+sim.inputs.timing_annotated: false
+
+sim.inputs.level: "gl"
+
+sim.inputs.input_files: *SIM_VERILOG_SRC
+
+sim.inputs.input_files_meta: "append"
+
+sim.inputs:
+  timescale: "1ns/10ps"
+  options: *SIM_OPTIONS
+  top_module: "riscv_top"
+  tb_name: "rocketTestHarness"
+  tb_dut: "dut"
+  execute_sim: false
+  defines: 
+    - *SIM_CLK_PERIOD
+    - *SIM_INPUT_DELAY
+    - "DEBUG"
+

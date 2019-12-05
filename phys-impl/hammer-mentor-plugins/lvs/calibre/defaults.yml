@@ -1,0 +1,67 @@
+# Default settings for Calibre LVS, for project/technology configuration and overriding.
+lvs.calibre:
+    # Location of the binary
+    calibre_lvs_bin: "${mentor.mentor_home}/calibre/aoi_cal_${lvs.calibre.version}/bin/calibre"
+    calibre_lvs_bin_meta: lazysubst
+
+    calibredrv_bin: "${mentor.mentor_home}/calibre/aoi_cal_${lvs.calibre.version}/bin/calibredrv"
+    calibredrv_bin_meta: lazysubst
+
+    MGC_HOME: "${mentor.mentor_home}/calibre/aoi_cal_${lvs.calibre.version}"
+    MGC_HOME_meta: lazysubst
+
+    v2lvs_bin: "${mentor.mentor_home}/calibre/aoi_cal_${lvs.calibre.version}/bin/v2lvs"
+    v2lvs_bin_meta: lazysubst
+
+    version: "2016.4_15.11"
+
+    # Hierarchical mode is always recommended if you have the licenses
+    hierarchical_mode: true
+
+    # Turbo cores settings.
+    turbo_cores: vlsi.core.max_threads
+    turbo_cores_meta: lazycrossref
+
+    # Report stamping conflicts/softchk issues in detail.
+    # type: bool
+    report_stamping_conflicts: false
+
+    # Specifies whether internally connected pins of LVS boxed cells appear in the extracted netlist.
+    # Set to false if you do not have standard cell views.
+    # type: bool
+    netlist_unnamed_box_pins: true
+
+    # Virtually connect any pins with these net names.
+    # type: List[str]
+    # WARNING: make sure you understand what this option does and how to use it properly.
+    # It should only be used for non-top-level LVS runs where the pins with multiple shapes will be
+    # connected.
+    # This includes analog blocks or sub-macros with multiple shapes for the same pin where all the
+    # pins will be connected together higher up in the hierarchy.
+    # Do NOT use this option as a hack to fix real LVS errors at the top-level if a place-and-route
+    # run goes badly.
+    virtual_connect_nets: []
+
+    # Use colon operator to virtually connect nets.
+    # type: bool
+    virtual_connect_colon: false
+
+    # Isolate shorts by finding the shortest path between two or more conflicting text objects.
+    # type: bool
+    run_short_isolation: true
+
+    # Abort run if any supply nets have issues (e.g. missing, extra connections, stamping). Useful for reducing runtime when there are supply shorts, etc.
+    # type: bool
+    abort_on_supply_error: false
+
+    # Maximum number of ERC results to report.
+    # type: int
+    max_erc_results: 1000
+
+    # Maximum number of LVS results to report.
+    # type: int
+    max_lvs_results: 100
+
+    # Whether to use hyperthreading or not.
+    # type: bool
+    hyperthreaded: true
