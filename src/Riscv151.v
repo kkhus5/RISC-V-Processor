@@ -18,6 +18,10 @@ module Riscv151(
 
 );
 
-    //TODO: Your code
+    // TODO: Your code
+    // Please use REGFILE_1W2R for your register file
+    // (two async read ports, 1 sync write port)
+    // Please use REGISTER* modules for all sequential logic
+
 
 endmodule
