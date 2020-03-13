@@ -1,5 +1,5 @@
 //  Module: ALUTestbench
-//  Desc:   32-bit ALU testbench for the MIPS150 Processor
+//  Desc:   32-bit ALU testbench for the RISC-V Processor
 //  Feel free to edit this testbench to add additional functionality
 //  
 //  Note that this testbench only tests correct operation of the ALU,

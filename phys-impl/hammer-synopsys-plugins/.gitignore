@@ -1,8 +1,0 @@
-# Text editors / IDEs
-*.swp
-.idea
-
-# Python junk
-__pycache__
-*.pyc
-.mypy_cache

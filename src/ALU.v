@@ -1,5 +1,3 @@
-// UC Berkeley CS150
-// Lab 3, Fall 2014
 // Module: ALU.v
 // Desc:   32-bit ALU for the MIPS150 Processor
 // Inputs: 

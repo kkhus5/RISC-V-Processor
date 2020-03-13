@@ -1,0 +1,45 @@
+# Specify Global Variables
+simClockPeriod : &SIM_CLK_PERIOD "CLOCK_PERIOD=2.00"
+simInputDelay : &SIM_INPUT_DELAY "INPUT_DELAY=0.4"
+simOptions: &SIM_OPTIONS
+  - "-notice"
+  - "-PP"
+  - "-line"
+  - "+lint=all,noVCDE"
+  - "+v2k"
+  - "+vcs+lic+wait"
+  - "+vcs+initreg+0"
+  - "+vcs+initmem+0"
+  - "+udpsched"
+  - "+neg_tchk"
+  - "+sdfverbose"
+  - "-negdelay"
+  - "+evalorder"
+  - "+delay_mode_zero"
+#  - "+define+no_cache_mem"
+  - "+define+DEBUG"
+  - "-debug"
+  - "-debug_pp"
+  - "+incdir+<YOUR_LAB_ROOT_DIR>/src"
+
+simVerilogSrc: &SIM_VERILOG_SRC
+  - "<YOUR_LAB_ROOT_DIR>/build/syn-rundir/riscv_top.mapped.v"
+  - "<YOUR_LAB_ROOT_DIR>/src/riscv_test_harness.v"
+  - "<YOUR_LAB_ROOT_DIR>/src/ExtMemModel.v"
+  - "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+
+tb_name: &TB_NAME "rocketTestHarness"
+
+sim.inputs:
+  input_files: *SIM_VERILOG_SRC
+  timing_annotated: false
+  level: "gl"
+  timescale:   "1ns/1ps"
+  options:     *SIM_OPTIONS
+  top_module:  *TB_NAME
+  tb_name:     *TB_NAME
+  defines: 
+    - *SIM_CLK_PERIOD
+    - *SIM_INPUT_DELAY
+  execute_sim: false
+

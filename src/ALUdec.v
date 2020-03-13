@@ -1,5 +1,3 @@
-// UC Berkeley CS150
-// Lab 3, Fall 2014
 // Module: ALUdecoder
 // Desc:   Sets the ALU operation
 // Inputs: opcode: the top 6 bits of the instruction

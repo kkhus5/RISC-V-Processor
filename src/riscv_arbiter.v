@@ -28,14 +28,11 @@ module riscv_arbiter
 
   assign mem_req_valid = ic_mem_req_valid | dc_mem_req_valid;
   assign mem_req_rw
-    = ic_mem_req_valid ? 1'b0
-    : dc_mem_req_rw;
+    = ic_mem_req_valid ? 1'b0 : dc_mem_req_rw;
   assign mem_req_addr
-    = ic_mem_req_valid ? ic_mem_req_addr
-    : dc_mem_req_addr;
+    = ic_mem_req_valid ? ic_mem_req_addr : dc_mem_req_addr;
   assign mem_req_tag
-    = ic_mem_req_valid ? 4'd0
-    : 4'd1;
+    = ic_mem_req_valid ? 4'd0 : 4'd1;
 
   assign ic_mem_resp_valid = mem_resp_valid & (mem_resp_tag == 4'd0);
   assign dc_mem_resp_valid = mem_resp_valid & (mem_resp_tag == 4'd1);

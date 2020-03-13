@@ -1,4 +1,0 @@
-par.mockpar:
-  # A folder where mockpar can create files.
-  temp_folder: null
-

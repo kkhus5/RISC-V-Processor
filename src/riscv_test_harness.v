@@ -1,4 +1,5 @@
-// Test harness for EE141 RISC-V Processor
+// Test harness for EECS151 RISC-V Processor
+`include "const.vh"
 
 module rocketTestHarness;
 
@@ -64,7 +65,8 @@ module rocketTestHarness;
   end
 
 
-  BackupMemory mem
+  ExtMemModel mem
+//  BackupMemory mem
   (
     .clk(clk),
     .reset(r_reset),
@@ -84,7 +86,6 @@ module rocketTestHarness;
     .mem_resp_data(mem_resp_data),
     .mem_resp_tag(mem_resp_tag)
   );
-
 
   // TODO: tohost/fromhost -> exit code (no longer through HTIF)
 
@@ -145,10 +146,11 @@ module rocketTestHarness;
     $value$plusargs("loadmem=%s", loadmem);
     if (loadmem)
       `ifdef no_cache_mem
-        #0.1 $readmemh(loadmem, dut.mem.icache.ram);
-        #0.1 $readmemh(loadmem, dut.mem.dcache.ram);
+        #0.1 $readmemh(loadmem, dut.mem.icache.mem.mem);
+        #0.1 $readmemh(loadmem, dut.mem.dcache.mem.mem);
       `else
-        #0.1 $readmemh(loadmem, mem.ram);
+//        #0.1 $readmemh(loadmem, mem.ram);
+        #0.1 $readmemh(loadmem, mem.storage.mem);
        `endif
     verbose = $test$plusargs("verbose");
 `ifdef DEBUG
