@@ -76,7 +76,7 @@ module ALUTestVectorTestbench();
     initial 
     begin
         $vcdpluson;
-        $readmemb("testvectors.input", testvector);
+        $readmemb("../../tests/testvectors.input", testvector);
         for (i = 0; i < testcases; i = i + 1) begin
             opcode = testvector[i][106:100];
             funct = testvector[i][99:97];
