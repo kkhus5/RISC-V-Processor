@@ -1,48 +1,25 @@
-#=======================================================================
-# Makefile for EECS151/251A final test
-#-----------------------------------------------------------------------
+TESTS := $(notdir $(shell find . -type f -name "*.c"))
+TESTS_HEX := $(subst .c,.hex,$(TESTS))
 
-default: all
+GCC_OPTS := -march=rv32i -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -Wl,--build-id=none
 
-#--------------------------------------------------------------------
-# Build rules
-#--------------------------------------------------------------------
+RISCV_PACKAGE := riscv64-linux-gnu
+RISCV_DEFAULT := riscv64-unknown-elf
+RISCV_DEFAULT_PRESENT := $(shell command -v $(RISCV_DEFAULT)-gcc 2> /dev/null)
 
-RISCV_GCC = riscv64-unknown-elf-gcc
-RISCV_GCC_OPTS = -fpic -nostdlib -nostartfiles -Wa,-march=RVI -m32
-#RISCV_GCC_OPTS = -fpic -nostdlib -nostartfiles -Wa,-march=RVI -m32 -Wl,-Ttext=0x2000
-RISCV_OBJDUMP = riscv64-unknown-elf-objdump --disassemble-all --section=.text --section=.data --section=.bss
-RISCV_ELF2HEX = elf2hex
+ifdef RISCV_DEFAULT_PRESENT
+    RISCV := $(RISCV_DEFAULT)
+else
+    RISCV := $(RISCV_PACKAGE)
+endif
 
-tests = final
+all: $(TESTS_HEX)
 
-#------------------------------------------------------------
-# Build assembly tests
-
-%.hex: %.rv
-	($(RISCV_ELF2HEX) 16 8192 $< 2> /dev/null || $(RISCV_ELF2HEX) 16 16384 $<) > $@
-
-%.dump: %.rv
-	$(RISCV_OBJDUMP) $< > $@
-
-%.rv: %.c start.s %.ld
-	$(RISCV_GCC) $(RISCV_GCC_OPTS) -T $*.ld $^ -o $@
-
-tests_rv = $(addsuffix .rv, $(tests))
-tests_dump = $(addsuffix .dump, $(tests))
-tests_hex = $(addsuffix .hex, $(tests))
-
-.PRECIOUS: $(tests_rv)
-
-junk += $(tests_rv) $(tests_dump) $(tests_hex)
-
-#------------------------------------------------------------
-# Default
-
-all: $(tests_dump) $(tests_hex)
-
-#------------------------------------------------------------
-# Clean up
+%.hex: %.c
+	$(RISCV)-gcc $(GCC_OPTS) -T $(basename $(notdir $^)).ld $^ -o $(basename $(notdir $^)).elf
+	$(RISCV)-objdump -D -Mnumeric $(basename $(notdir $^)).elf > $(basename $@).dump
+	$(RISCV)-objcopy $(basename $@).elf -O binary $(basename $@).bin
+	$(RISCV)-bin2hex -w 128 $(basename $@).bin $(basename $@).hex
 
 clean:
-	rm -rf $(junk)
+	rm -f *.elf *.bin *.hex *.dump
