@@ -20,6 +20,9 @@ all: $(TESTS_HEX)
 	$(RISCV)-objdump -D -Mnumeric $(basename $(notdir $^)).elf > $(basename $@).dump
 	$(RISCV)-objcopy $(basename $@).elf -O binary $(basename $@).bin
 	$(RISCV)-bin2hex -w 128 $(basename $@).bin $(basename $@).hex
+	mv $(basename $@).hex $(basename $@).txt
+	cat ../init.txt $(basename $@).txt > $(basename $@).hex
+	rm -f $(basename @).txt
 
 clean:
 	rm -f *.elf *.bin *.hex *.dump

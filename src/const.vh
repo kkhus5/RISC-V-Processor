@@ -14,7 +14,7 @@
 `define CPU_TAG_BITS 15
 
 // PC address on reset
-`define PC_RESET 32'h10000000
+`define PC_RESET 32'h00002000
 
 // The NOP instruction
 `define INSTR_NOP {12'd0, 5'd0, `FNC_ADD_SUB, 5'd0, `OPC_ARI_ITYPE}
