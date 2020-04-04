@@ -147,7 +147,7 @@ module Riscv151_testbench();
             current_test_id   = current_test_id + 1;
             current_test_type = test_type;
             current_result    = result;
-            while (CPU.rf.mem[rf_wa] != result) begin
+            while (CPU.rf.mem[rf_wa] !== result) begin
                 current_output = CPU.rf.mem[rf_wa];
                 @(posedge clk);
             end
@@ -168,7 +168,7 @@ module Riscv151_testbench();
             current_test_id   = current_test_id + 1;
             current_test_type = test_type;
             current_result    = result;
-            while (dmem.mem[addr] != result) begin
+            while (dmem.mem[addr] !== result) begin
                 current_output = dmem.mem[addr];
                 @(posedge clk);
             end
@@ -186,11 +186,11 @@ module Riscv151_testbench();
     reg [31:0] RD1, RD2;
     reg [4:0]  SHAMT;
     reg [31:0] IMM, IMM0, IMM1, IMM2, IMM3;
-    reg [31:0] INST_ADDR;
-    reg [31:0] DATA_ADDR;
-    reg [31:0] DATA_ADDR0, DATA_ADDR1, DATA_ADDR2, DATA_ADDR3;
-    reg [31:0] DATA_ADDR4, DATA_ADDR5, DATA_ADDR6, DATA_ADDR7;
-    reg [31:0] DATA_ADDR8, DATA_ADDR9;
+    reg [31-2:0] INST_ADDR;
+    reg [31-2:0] DATA_ADDR;
+    reg [31-2:0] DATA_ADDR0, DATA_ADDR1, DATA_ADDR2, DATA_ADDR3;
+    reg [31-2:0] DATA_ADDR4, DATA_ADDR5, DATA_ADDR6, DATA_ADDR7;
+    reg [31-2:0] DATA_ADDR8, DATA_ADDR9;
 
     reg [31:0] JUMP_ADDR;
 
@@ -342,17 +342,17 @@ module Riscv151_testbench();
 
         CPU.rf.mem[1]  = 32'h12345678;
 
-        CPU.rf.mem[2]  = 32'h3000_0010;
+        CPU.rf.mem[2]  = 32'h0000_1010;
 
-        CPU.rf.mem[3]  = 32'h3000_0020;
-        CPU.rf.mem[4]  = 32'h3000_0030;
-        CPU.rf.mem[5]  = 32'h3000_0040;
-        CPU.rf.mem[6]  = 32'h3000_0050;
+        CPU.rf.mem[3]  = 32'h0000_1020;
+        CPU.rf.mem[4]  = 32'h0000_1030;
+        CPU.rf.mem[5]  = 32'h0000_1040;
+        CPU.rf.mem[6]  = 32'h0000_1050;
 
-        CPU.rf.mem[7]  = 32'h3000_0060;
-        CPU.rf.mem[8]  = 32'h3000_0070;
-        CPU.rf.mem[9]  = 32'h3000_0080;
-        CPU.rf.mem[10] = 32'h3000_0090;
+        CPU.rf.mem[7]  = 32'h0000_1060;
+        CPU.rf.mem[8]  = 32'h0000_1070;
+        CPU.rf.mem[9]  = 32'h0000_1080;
+        CPU.rf.mem[10] = 32'h0000_1090;
 
         IMM0            = 32'h0000_0100;
         IMM1            = 32'h0000_0101;
