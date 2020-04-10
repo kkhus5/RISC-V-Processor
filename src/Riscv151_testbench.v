@@ -123,6 +123,7 @@ module Riscv151_testbench();
             if (cycle == timeout_cycle) begin
                 $display("[Failed] Timeout at [%d] test %s, expected_result = %h, got = %h",
                          current_test_id, current_test_type, current_result, current_output);
+                $dumpoff;
                 $finish();
             end
         end
@@ -204,6 +205,10 @@ module Riscv151_testbench();
     reg [255:0] BR_NAME_NTK   [5:0];
 
     initial begin
+        $dumpfile("Riscv151.vcd");
+        $dumpvars(0, CPU);
+        $dumpon;
+
         rst = 0;
         stall = 1'b0;
 
@@ -711,6 +716,8 @@ module Riscv151_testbench();
 
         all_tests_passed = 1'b1;
         #100;
+
+        $dumpoff;
         $finish();
 
     end
