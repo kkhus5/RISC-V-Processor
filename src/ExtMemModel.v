@@ -107,7 +107,7 @@ module ExtMemModel
   assign buf_we0            = (state_val == STATE_WRITE) & mem_req_data_fire;
   assign buf_d0             = masked_din;
   // Ignore lower 2 bits and count ourselves if read
-  assign buf_addr1          = {addr_reg_val[`ceilLog2(DEPTH)-1:2], cnt_val};
+  assign buf_addr1          = (state_val==STATE_READ) ? {addr_reg_val[`ceilLog2(DEPTH)-1:2], cnt_val} : addr_reg_val[`ceilLog2(DEPTH)-1:0];
   assign mem_resp_data      = buf_q1;
   assign mem_resp_tag       = tag_reg_val;
 
