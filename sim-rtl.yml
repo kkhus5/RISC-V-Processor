@@ -1,7 +1,5 @@
 # Specify Global Variables
 simClockPeriod : &SIM_CLK_PERIOD "CLOCK_PERIOD=2.00"
-simInputDelay : &SIM_INPUT_DELAY "INPUT_DELAY=0.4"
-
 simOptions: &SIM_OPTIONS
   - "-notice"
   - "-PP"
@@ -48,6 +46,5 @@ sim.inputs:
   tb_name:     *TB_NAME
   defines: 
     - *SIM_CLK_PERIOD
-    - *SIM_INPUT_DELAY
   execute_sim: false
 

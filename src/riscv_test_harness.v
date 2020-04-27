@@ -1,5 +1,6 @@
 // Test harness for EECS151 RISC-V Processor
 `include "const.vh"
+`define INPUT_DELAY (`CLOCK_PERIOD / 5)
 
 module rocketTestHarness;
 
