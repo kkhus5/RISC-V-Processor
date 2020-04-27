@@ -31,7 +31,8 @@ OBJ_DIR             ?= $(vlsi_dir)/build
 ENV_YML             ?= $(vlsi_dir)/inst-env.yml
 TECH_CONF           ?= $(vlsi_dir)/asap7.yml
 
-DESIGN_SYNPAR_CONF     ?= $(vlsi_dir)/synpar.yml
+DESIGN_SYN_CONF        ?= $(vlsi_dir)/syn.yml
+DESIGN_PAR_CONF        ?= $(vlsi_dir)/par.yml
 DESIGN_SIM_RTL_CONF    ?= $(vlsi_dir)/sim-rtl.yml
 DESIGN_SIM_GL_SYN_CONF ?= $(vlsi_dir)/sim-gl-syn.yml
 DESIGN_SIM_GL_PAR_CONF ?= $(vlsi_dir)/sim-gl-par.yml
@@ -52,8 +53,10 @@ HAMMER_EXEC         ?= hammer-vlsi
 sim_dir          = $(vlsi_dir)/build/sim-rundir
 asm_output_dir   = $(vlsi_dir)/asm_output
 bmark_output_dir = $(vlsi_dir)/bmark_output
+bmark_short_output_dir = $(vlsi_dir)/bmark_short_output
 asm_timeout_cycles   = 10000
 bmark_timeout_cycles = 50000000
+bmark_short_timeout_cycles = 5000000
 simv             = $(vlsi_dir)/build/sim-rundir/simv
 
 #alu_tb = ALUTestbench
@@ -131,6 +134,7 @@ exec_simv = $(simv) -q +ntb_random_seed_automatic
 #--------------------------------------------------------------------
 asm_tests_out   = $(foreach test, $(asm_tests),   $(asm_output_dir)/$(test).out)
 bmark_tests_out = $(foreach test, $(bmark_tests), $(bmark_output_dir)/$(test).out)
+bmark_short_tests_out = $(foreach test, $(bmark_tests), $(bmark_short_output_dir)/$(test).out)
 
 $(asm_output_dir)/%.out: $(tests_asm_dir)/%.hex $(simv)
 	mkdir -p $(asm_output_dir)
@@ -156,9 +160,23 @@ $(bmark_output_dir)/%.vpd: $(tests_bmark_dir)/%.hex  $(simv)
 	mkdir -p $(bmark_output_dir)
 	cd $(sim_dir) && $(exec_simv)  +verbose +vcdplusfile=$@ +max-cycles=$(bmark_timeout_cycles) +loadmem=$< 2> $(patsubst %.vpd,%.out,$@) && [ $$PIPESTATUS -eq 0 ]
 
+$(bmark_short_output_dir)/%.out: $(tests_bmark_dir)/%.hex $(simv)
+	mkdir -p $(bmark_short_output_dir)
+	cd $(sim_dir) && $(exec_simv)  +verbose +max-cycles=$(bmark_short_timeout_cycles) +loadmem=$< 2> $@ && [ $$PIPESTATUS -eq 0 ]
+
+$(bmark_short_output_dir)/%.vcd: $(tests_bmark_dir)/%.hex  $(simv)
+	mkdir -p $(bmark_short_output_dir)
+	cd $(sim_dir) && $(exec_simv)  +verbose +vcdfile=$@ +max-cycles=$(bmark_short_timeout_cycles) +loadmem=$< 2> $(patsubst %.vcd,%.out,$@) && [ $$PIPESTATUS -eq 0 ]
+
+$(bmark_short_output_dir)/%.vpd: $(tests_bmark_dir)/%.hex  $(simv)
+	mkdir -p $(bmark_short_output_dir)
+	cd $(sim_dir) && $(exec_simv)  +verbose +vcdplusfile=$@ +max-cycles=$(bmark_short_timeout_cycles) +loadmem=$< 2> $(patsubst %.vpd,%.out,$@) && [ $$PIPESTATUS -eq 0 ]
+
+
 # Very crude code to select which tests to run
 TEST_ASM=$(test_asm)
 TEST_BMARK=$(test_bmark)
+TEST_BMARK_SHORT=$(test_bmark_short)
 
 ifeq ($(TEST_ASM), all)
 runtest: $(asm_tests_out)
@@ -171,19 +189,38 @@ runtest: $(asm_output_dir)/$(TEST_ASM)
 endif
 
 ifeq ($(TEST_BMARK), all)
-runtest: $(bmark_tests_out)
+TEST_SIZE := LONG
+runtest: bmark_compile $(bmark_tests_out)
 	@echo; perl -ne 'print "  [$$1] $$ARGV\t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
 	       $(bmark_tests_out); echo;
 else ifneq ($(TEST_BMARK), )
-runtest: $(bmark_output_dir)/$(TEST_BMARK)
+TEST_SIZE := LONG
+runtest: bmark_compile $(bmark_output_dir)/$(TEST_BMARK)
 	@echo; perl -ne 'print "  [$$1] $$ARGV\t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
 	       $(bmark_output_dir)/$(basename $(TEST_BMARK)).out; echo;
 endif
 
+ifeq ($(TEST_BMARK_SHORT), all)
+TEST_SIZE := SHORT
+runtest: bmark_compile $(bmark_short_tests_out)
+	@echo; perl -ne 'print "  [$$1] $$ARGV\t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
+	       $(bmark_short_tests_out); echo;
+else ifneq ($(TEST_BMARK_SHORT), )
+TEST_SIZE := SHORT
+runtest: bmark_compile $(bmark_short_output_dir)/$(TEST_BMARK_SHORT)
+	@echo; perl -ne 'print "  [$$1] $$ARGV\t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
+	       $(bmark_short_output_dir)/$(basename $(TEST_BMARK_SHORT)).out; echo;
+endif
+
+bmark_compile:
+	cd $(tests_bmark_dir) && make -f $(tests_bmark_dir)/Makefile clean && make -f $(tests_bmark_dir)/Makefile TEST_SIZE=$(TEST_SIZE) > /dev/null
+
 ifeq ($(TEST_ASM), )
 ifeq ($(TEST_BMARK), )
+ifeq ($(TEST_BMARK_SHORT), )
 runtest:
 	cd $(sim_dir) && $(exec_simv) +max-cycles=1000
+endif
 endif
 endif
 
@@ -207,7 +244,7 @@ HAMMER_D_MK = $(OBJ_DIR)/hammer.d
 buildfile: $(HAMMER_D_MK)
 
 $(HAMMER_D_MK): $(SRAM_CONF)
-	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SRAM_CONF) -p $(DESIGN_SYNPAR_CONF) -p $(DESIGN_SIM_RTL_CONF) -p $(DESIGN_SIM_GL_SYN_CONF) -p $(DESIGN_SIM_GL_PAR_CONF) --obj_dir $(OBJ_DIR) build
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SRAM_CONF) -p $(DESIGN_SYN_CONF) -p $(DESIGN_PAR_CONF) -p $(DESIGN_SIM_RTL_CONF) -p $(DESIGN_SIM_GL_SYN_CONF) -p $(DESIGN_SIM_GL_PAR_CONF) --obj_dir $(OBJ_DIR) build
 
 MAKE = make
 
@@ -233,7 +270,8 @@ sim-gl-syn: $(HAMMER_D_MK) $(INPUT_SIM_GL_SYN_DB)
 #########################################################################################
 
 .PHONY: sim-gl-par
-sim-gl-par: $(HAMMER_D_MK) $(INPUT_SIM_GL_PAR_DB)
+#sim-gl-par: $(HAMMER_D_MK) $(INPUT_SIM_GL_PAR_DB)
+sim-gl-par:
 	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(DESIGN_SIM_GL_PAR_CONF) -p $(INPUT_SIM_GL_PAR_DB) --obj_dir $(OBJ_DIR) sim
 	make runtest
 
@@ -242,16 +280,16 @@ sim-gl-par: $(HAMMER_D_MK) $(INPUT_SIM_GL_PAR_DB)
 #########################################################################################
 
 .PHONY: syn
-$(OUTPUT_SYN_DB) syn: $(HAMMER_D_MK)
-	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SRAM_CONF) -p $(DESIGN_SYNPAR_CONF) -o $(OUTPUT_SYN_DB) --obj_dir $(OBJ_DIR) syn
+$(OUTPUT_SYN_DB) syn: $(HAMMER_D_MK) $(DESIGN_SYN_CONF)
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SRAM_CONF) -p $(DESIGN_SYN_CONF) -o $(OUTPUT_SYN_DB) --obj_dir $(OBJ_DIR) syn
 
 #########################################################################################
 # Synthesis to PAR
 #########################################################################################
 
 .PHONY: syn-to-par
-$(INPUT_PAR_DB) syn-to-par: $(HAMMER_D_MK) $(OUTPUT_SYN_DB)
-	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(OUTPUT_SYN_DB) -p $(DESIGN_SYNPAR_CONF) -o $(INPUT_PAR_DB) --obj_dir $(OBJ_DIR) syn_to_par
+$(INPUT_PAR_DB) syn-to-par: $(HAMMER_D_MK) $(OUTPUT_SYN_DB) $(DESIGN_PAR_CONF)
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(OUTPUT_SYN_DB) -p $(DESIGN_PAR_CONF) -o $(INPUT_PAR_DB) --obj_dir $(OBJ_DIR) syn_to_par
 
 #########################################################################################
 # Synthesis to Sim
@@ -331,13 +369,13 @@ redo-par: $(HAMMER_D_MK)
 
 .PHONY: srams
 $(SRAM_CONF) srams:
-	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(DESIGN_SYNPAR_CONF) --obj_dir $(OBJ_DIR) sram_generator
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(DESIGN_SYN_CONF) -p $(DESIGN_PAR_CONF) --obj_dir $(OBJ_DIR) sram_generator
 	cp output.json $(SRAM_CONF)
 
 #########################################################################################
 # general cleanup rule
 #########################################################################################
-# Don't remove the extracted PDK dir, otherwise we have to rebuild it again
+# Don't remove the extracted PDK dir, otherwise we have to build it again
 .PHONY: clean
 clean:
 	rm -rf $(HAMMER_D_MK) $(OBJ_DIR)/*rundir $(OBJ_DIR)/*.json hammer-vlsi*.log __pycache__ output.json *_output
