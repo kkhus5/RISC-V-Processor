@@ -7,7 +7,14 @@
     asm volatile ("csrw 0x51e,%[v]" :: [v]"r"(csr_val)); \
 }
 
-#define PRBS 15
+#ifdef SHORT
+#define PRBS  10
+#define CONST 1011556
+#else
+#define PRBS  15
+#define CONST 1073709056
+#endif
+
 #define NUMELTS (1<<PRBS)-1
 #define MASK (1<<(PRBS-1))-1
 
@@ -27,7 +34,7 @@ void main() {
         y += x[i] + x[NUMELTS-1-i];
     }
 
-    if(assert_equals(y,1073709056)) {
+    if(assert_equals(y, CONST)) {
         csr_tohost(1);
     } else {
         csr_tohost(2);

@@ -1,7 +1,11 @@
 TESTS := $(notdir $(shell find . -type f -name "*.c"))
 TESTS_HEX := $(subst .c,.hex,$(TESTS))
 
-GCC_OPTS := -march=rv32i -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -Wl,--build-id=none
+ifeq ($(TEST_SIZE), SHORT)
+GCC_OPTS  := -march=rv32i -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -Wl,--build-id=none -DSHORT
+else
+GCC_OPTS  := -march=rv32i -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -Wl,--build-id=none
+endif
 
 RISCV_PACKAGE := riscv64-linux-gnu
 RISCV_DEFAULT := riscv64-unknown-elf

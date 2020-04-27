@@ -5,7 +5,14 @@
     asm volatile ("csrw 0x51e,%[v]" :: [v]"r"(csr_val)); \
 }
 
+#ifdef SHORT
+#define NUMELTS 64
+#define CONST   2080
+#else
 #define NUMELTS 1024
+#define CONST   524800
+#endif
+
 #define MASK (1<<31)-1
 
 unsigned int assert_equals(unsigned int a, unsigned int b);
@@ -44,7 +51,8 @@ void main() {
             y[i] = y[i] + x[j];
         }
     }
-    if(assert_equals(y[NUMELTS-1],524800)) {
+
+    if(assert_equals(y[NUMELTS-1], CONST)) {
         csr_tohost(1);
     } else {
         csr_tohost(2);
