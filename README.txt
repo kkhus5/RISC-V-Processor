@@ -96,12 +96,9 @@ if your design only have hold time violation, run this instead
 
 + opt_design -post_route -hold
 
+if you are so lucky that all the violations are fixed, the next step is to generate new
+SDF file for gate-level simulation
 
-if you are so lucky that all the violations are fixed, the next step is to generate new Verilog netlist
-file and SDF file for gate-level simulation
-
-+ write_netlist riscv_top.sim.v ...    # to generate new Verilog netlist for gate-level simulation
-                                       # copy the full command from build/par-rundir/par.tcl
 + write_sdf riscv_top.par.sdf          # to generate new timing-annotated SDF file for gate-level simulation
 
 (you can also run all the commands after "opt_design -post_route -setup -hold"
