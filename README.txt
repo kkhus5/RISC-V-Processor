@@ -31,7 +31,7 @@ make sim-rtl test_bmark=all
 + If you want to run a single benchmark test,
 make sim-rtl test_bmark=cachetest.out
 
-+ If you wantto run a shorter version of bmark test
++ If you want to run a shorter version of bmark test
 make sim-rtl test_bmark_short=all
 
 + Or
@@ -63,6 +63,8 @@ the placement constraints (par.yml), "make par" will only run P&R.
 open build/par-rundir/innovus.log, search for "opt_design Final SI Timing Summary", if the
 summary table indicates no setup/hold time violation and no DRV, your design is good to go!
 
+- Also search for the last "DRC violations" in the log file. Make sure you have no DRC violation.
+
 - If you want to see the floorplan of your chip, do
 cd build/par-rundir/generated_scripts
 ./generated_scripts/open_chip
@@ -88,8 +90,10 @@ in a very small margin, you can ask the tool to do more optimization (instead of
 or placement constraints)
 
 + cd build/par-rundir
-+ innovus -common_ui                   # to launch Innovus in command line -mode
-+ read_db post_scale_final_gds         # load the final checkpoint of the previous run
++ innovus -common_ui                   # to launch Innovus shell
+
+Type the following commands in your terminal (under Innovus shell)
++ read_db latest                       # load the final checkpoint of the previous run
 + opt_design -post_route -setup -hold  # invoke GigaOpt engine to optimize your design
 
 if your design only have hold time violation, run this instead
@@ -99,6 +103,7 @@ if your design only have hold time violation, run this instead
 if you are so lucky that all the violations are fixed, the next step is to generate new
 SDF file for gate-level simulation
 
++ write_netlist riscv_top.sim.v        # to generate new Verilog netlist file for gate-level simulation
 + write_sdf riscv_top.par.sdf          # to generate new timing-annotated SDF file for gate-level simulation
 
 (you can also run all the commands after "opt_design -post_route -setup -hold"
