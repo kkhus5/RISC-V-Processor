@@ -288,7 +288,7 @@ $(OUTPUT_SYN_DB) syn: $(HAMMER_D_MK) $(DESIGN_SYN_CONF)
 
 .PHONY: syn-to-par
 $(INPUT_PAR_DB) syn-to-par: $(HAMMER_D_MK) $(OUTPUT_SYN_DB) $(DESIGN_PAR_CONF)
-	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(OUTPUT_SYN_DB) -p $(DESIGN_PAR_CONF) -o $(INPUT_PAR_DB) --obj_dir $(OBJ_DIR) syn_to_par
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(OUTPUT_SYN_DB) -p $(DESIGN_SYN_CONF) -p $(DESIGN_PAR_CONF) -o $(INPUT_PAR_DB) --obj_dir $(OBJ_DIR) syn_to_par
 
 #########################################################################################
 # Synthesis to Sim
