@@ -1,3 +1,4 @@
+`include "util.vh"
 `include "const.vh"
 
 module cache #
@@ -33,5 +34,6 @@ module cache #
   input [`MEM_DATA_BITS-1:0]  mem_resp_data
 );
 
+  // Implement your cache here, then delete this comment
 
 endmodule

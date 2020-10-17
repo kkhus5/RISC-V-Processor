@@ -1,5 +1,5 @@
 // Module: ALU.v
-// Desc:   32-bit ALU for the MIPS150 Processor
+// Desc:   32-bit ALU for the RISC-V Processor
 // Inputs: 
 //    A: 32-bit value
 //    B: 32-bit value

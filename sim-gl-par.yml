@@ -2,13 +2,11 @@
 simClockPeriod : &SIM_CLK_PERIOD "CLOCK_PERIOD=2.00"
 simOptions: &SIM_OPTIONS
   - "-notice"
-  - "-PP"
   - "-line"
   - "+lint=all,noVCDE"
   - "+v2k"
+  - "-debug"
   - "+vcs+lic+wait"
-  - "+vcs+initreg+0"
-  - "+vcs+initmem+0"
   - "+udpsched"
   - "+neg_tchk"
   - "+sdfverbose"
@@ -16,23 +14,21 @@ simOptions: &SIM_OPTIONS
   - "+evalorder"
 #  - "+define+no_cache_mem"
   - "+define+DEBUG"
-  - "-debug"
-  - "-debug_pp"
-  - "+incdir+<YOUR_LAB_ROOT_DIR>/src"
+  - "+incdir+../../src"
 
 simVerilogSrc: &SIM_VERILOG_SRC
-  - "<YOUR_LAB_ROOT_DIR>/build/par-rundir/riscv_top.sim.v"
-  - "<YOUR_LAB_ROOT_DIR>/src/riscv_test_harness.v"
-  - "<YOUR_LAB_ROOT_DIR>/src/ExtMemModel.v"
-  - "/home/ff/eecs151/verilog_lib/EECS151.v"
-  - "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+  - "src/riscv_test_harness.v"
 
 tb_name: &TB_NAME "rocketTestHarness"
 
+# Post-PAR Gate-Level Simulation Variables
 sim.inputs:
   input_files: *SIM_VERILOG_SRC
+  input_files_meta: append
   timing_annotated: true
   level: "gl"
+  saif:
+    mode: "full"
   timescale:   "1ns/1ps"
   options:     *SIM_OPTIONS
   top_module:  *TB_NAME
@@ -41,3 +37,6 @@ sim.inputs:
     - *SIM_CLK_PERIOD
   execute_sim: false
 
+power.inputs:
+  database: "build/par-rundir/riscv_top_FINAL"
+  tb_name: *TB_NAME

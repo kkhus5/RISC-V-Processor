@@ -45,6 +45,9 @@ INPUT_DRC_DB        ?= $(OBJ_DIR)/drc-input.json
 INPUT_LVS_DB        ?= $(OBJ_DIR)/lvs-input.json
 INPUT_SIM_GL_SYN_DB ?= $(OBJ_DIR)/syn-to-sim_input.json
 INPUT_SIM_GL_PAR_DB ?= $(OBJ_DIR)/par-to-sim_input.json
+OUTPUT_SIM_DB		?= $(OBJ_DIR)/sim-rundir/sim-output-full.json
+INPUT_PWR_SIM_GL_DB ?= $(OBJ_DIR)/sim-to-power_input.json
+INPUT_PWR_PAR_DB    ?= $(OBJ_DIR)/par-to-power_input.json
 HAMMER_EXEC         ?= hammer-vlsi
 
 #########################################################################################
@@ -58,13 +61,6 @@ asm_timeout_cycles   = 10000
 bmark_timeout_cycles = 50000000
 bmark_short_timeout_cycles = 5000000
 simv             = $(vlsi_dir)/build/sim-rundir/simv
-
-#alu_tb = ALUTestbench
-#alu_tb = ALUTestVectorTestbench
-
-#.PHONY: run-alu
-#run-alu: $(simv_alu)
-#	$(simv_alu)
 
 tests_asm_dir   = $(vlsi_dir)/tests/asm
 tests_bmark_dir = $(vlsi_dir)/tests/bmark
@@ -254,7 +250,7 @@ MAKE = make
 
 .PHONY: sim-rtl
 sim-rtl: $(HAMMER_D_MK)
-	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(DESIGN_SIM_RTL_CONF) --obj_dir $(OBJ_DIR) sim
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SRAM_CONF) -p $(DESIGN_SIM_RTL_CONF) --obj_dir $(OBJ_DIR) sim
 	make runtest
 
 #########################################################################################
@@ -275,12 +271,28 @@ sim-gl-par: $(HAMMER_D_MK) $(INPUT_SIM_GL_PAR_DB)
 	make runtest
 
 #########################################################################################
+# Standalone Power Estimation
+#########################################################################################
+
+.PHONY: power
+power: $(HAMMER_D_MK)
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(DESIGN_SIM_GL_PAR_CONF) --obj_dir $(OBJ_DIR) power
+
+#########################################################################################
+# Post-PAR Power Estimation
+#########################################################################################
+
+.PHONY: power-par
+power-par: $(HAMMER_D_MK) $(INPUT_PWR_SIM_GL_DB) $(INPUT_PWR_PAR_DB)
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(INPUT_PWR_SIM_GL_DB) -p $(INPUT_PWR_PAR_DB) --obj_dir $(OBJ_DIR) power
+
+#########################################################################################
 # Synthesis
 #########################################################################################
 
 .PHONY: syn
 $(OUTPUT_SYN_DB) syn: $(HAMMER_D_MK) $(DESIGN_SYN_CONF)
-	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SRAM_CONF) -p $(DESIGN_SYN_CONF) -o $(OUTPUT_SYN_DB) --obj_dir $(OBJ_DIR) syn
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SRAM_CONF) -p $(DESIGN_SYN_CONF) --obj_dir $(OBJ_DIR) syn
 
 #########################################################################################
 # Synthesis to PAR
@@ -304,7 +316,7 @@ $(INPUT_SIM_GL_SYN_DB) syn-to-sim: $(HAMMER_D_MK) $(OUTPUT_SYN_DB)
 
 .PHONY: par
 $(OUTPUT_PAR_DB) par: $(HAMMER_D_MK) $(INPUT_PAR_DB)
-	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SRAM_CONF) -p $(INPUT_PAR_DB) -o $(OUTPUT_PAR_DB) --obj_dir $(OBJ_DIR) par
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SRAM_CONF) -p $(INPUT_PAR_DB) --obj_dir $(OBJ_DIR) par
 
 #########################################################################################
 # PAR to DRC
@@ -329,6 +341,22 @@ par-to-lvs: $(HAMMER_D_MK) $(OUTPUT_PAR_DB)
 .PHONY: par-to-sim
 $(INPUT_SIM_GL_PAR_DB) par-to-sim: $(HAMMER_D_MK) $(OUTPUT_PAR_DB)
 	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(OUTPUT_PAR_DB) -o $(INPUT_SIM_GL_PAR_DB) --obj_dir $(OBJ_DIR) par_to_sim
+
+#########################################################################################
+# Sim to Power
+#########################################################################################
+
+.PHONY: sim-to-power
+$(INPUT_PWR_SIM_GL_DB) sim-to-power: $(HAMMER_D_MK)
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(OUTPUT_SIM_DB) -o $(INPUT_PWR_SIM_GL_DB) --obj_dir $(OBJ_DIR) sim_to_power
+
+#########################################################################################
+# PAR to Power
+#########################################################################################
+
+.PHONY: par-to-power
+$(INPUT_PWR_PAR_DB) par-to-power: $(HAMMER_D_MK) $(OUTPUT_PAR_DB)
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(OUTPUT_PAR_DB) -o $(INPUT_PWR_PAR_DB) --obj_dir $(OBJ_DIR) par_to_power
 
 #########################################################################################
 # DRC

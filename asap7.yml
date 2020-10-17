@@ -49,19 +49,25 @@ vlsi.core.drc_tool: "calibre"
 vlsi.core.drc_tool_path: ["/home/ff/eecs151/hammer-mentor-plugins/drc"]
 vlsi.core.lvs_tool: "calibre"
 vlsi.core.lvs_tool_path: ["/home/ff/eecs151/hammer-mentor-plugins/lvs"]
-drc.calibre.calibre_drc_bin: "/share/instsww/mgc/CALIBRE/bin/calibre"
-drc.calibre.calibredrv_bin: "/share/instsww/mgc/CALIBRE/bin/calibredrv"
+drc.calibre.calibre_drc_bin: "/share/instsww/mgc/calibre2017/aoi_cal_2017.4_35.25/bin/calibre"
+drc.calibre.calibredrv_bin: "/share/instsww/mgc/calibre2017/aoi_cal_2017.4_35.25/bin/calibredrv"
 drc.calibre.MGC_HOME: "/shared/instsww/mgc"
-lvs.calibre.calibre_lvs_bin: "/share/instsww/mgc/CALIBRE/bin/calibre"
-lvs.calibre.calibredrv_bin: "/share/instsww/mgc/CALIBRE/bin/calibredrv"
-lvs.calibre.v2lvs_bin: "/share/instsww/mgc/CALIBRE/bin/v2lvs"
+lvs.calibre.calibre_lvs_bin: "/share/instsww/mgc/calibre2017/aoi_cal_2017.4_35.25/bin/calibre"
+lvs.calibre.calibredrv_bin: "/share/instsww/mgc/calibre2017/aoi_cal_2017.4_35.25/bin/calibredrv"
+lvs.calibre.v2lvs_bin: "/share/instsww/mgc/calibre2017/aoi_cal_2017.4_35.25/bin/v2lvs"
 lvs.calibre.MGC_HOME: "/shared/instsww/mgc"
 
 # VCS options
 vlsi.core.sim_tool: "vcs"
 vlsi.core.sim_tool_path: ["/home/ff/eecs151/hammer-synopsys-plugins/sim"]
 vlsi.core.sim_tool_path_meta: "append"
-sim.vcs.version: "G-2012.09"
+sim.vcs.version: "P-2019.06"
+
+# Voltus options
+vlsi.core.power_tool: "voltus"
+vlsi.core.power_tool_path: ["/home/ff/eecs151/hammer-cadence-plugins/power"]
+vlsi.core.power_tool_path_meta: "append"
+power.voltus.version: "181"
 
 # Generate Make include to aid in flow 
 vlsi.core.build_system: make

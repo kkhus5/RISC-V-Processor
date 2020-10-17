@@ -1,6 +1,4 @@
 /**
- * UC Berkeley CS150
- * Fall 2014
  * List of RISC-V opcodes.
  * This file was completely rewritten from the file version that was used for MIPS. 
  * RISC-V uses far fewer opcodes than MIPS, but many more function codes.
@@ -10,6 +8,9 @@
 `define OPCODE
 
 // ***** Opcodes *****
+
+// No operation (kill)
+`define OPC_NOOP        7'b0000000
 
 // Special immediate instructions
 `define OPC_LUI         7'b0110111
@@ -29,6 +30,9 @@
 // Arithmetic instructions
 `define OPC_ARI_RTYPE   7'b0110011
 `define OPC_ARI_ITYPE   7'b0010011
+
+// Control status register
+`define OPC_CSR         7'b1110011
 
 
 // ***** Function codes *****
@@ -61,6 +65,10 @@
 `define FNC_AND         3'b111
 `define FNC_SRL_SRA     3'b101
 
+// Control status function codes
+`define FNC_RW          3'b001
+`define FNC_RWI         3'b101
+
 // ADD and SUB use the same opcode + function code
 // SRA and SRL also use the same opcode + function code
 // For these operations, we also need to look at bit 30 of the instruction
@@ -68,5 +76,7 @@
 `define FNC2_SUB        1'b1
 `define FNC2_SRL        1'b0
 `define FNC2_SRA        1'b1
+
+
 
 `endif //OPCODE

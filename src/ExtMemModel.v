@@ -19,96 +19,79 @@ module ExtMemModel
   input [(`MEM_DATA_BITS/8)-1:0] mem_req_data_mask,
 
   // Read data response to CPU
-  output                      mem_resp_valid,
-  output [`MEM_DATA_BITS-1:0] mem_resp_data,
-  output [`MEM_TAG_BITS-1:0]  mem_resp_tag
+  output reg                      mem_resp_valid,
+  output reg [`MEM_DATA_BITS-1:0] mem_resp_data,
+  output reg [`MEM_TAG_BITS-1:0]  mem_resp_tag
 );
 
   // Memory read takes 4 consecutive cycles of 128-bit each
   localparam DATA_CYCLES = 4;
   localparam DEPTH = 2*1024*1024; // 2*1024*1024 entries of 128-bit (2M x 16B)
 
-  wire [`ceilLog2(DEPTH)-1:0] buf_addr0, buf_addr1;
-  wire                        buf_we0;
-  wire [`MEM_DATA_BITS-1:0]   buf_d0, buf_q1;
+  reg [`ceilLog2(DATA_CYCLES)-1:0] cnt;
+  reg [`MEM_TAG_BITS-1:0] tag;
+  reg state_busy, state_rw;
+  reg [`MEM_ADDR_BITS-1:0] addr;
 
-  REGFILE_1W1R #(
-    .AWIDTH(`ceilLog2(DEPTH)),
-    .DWIDTH(`MEM_DATA_BITS),
-    .DEPTH(DEPTH)
-  ) storage (
-    .d0(buf_d0), .addr0(buf_addr0), .we0(buf_we0), // Write port
-    .q1(buf_q1), .addr1(buf_addr1),                // Read port
-    .clk(clk));
+  reg [`MEM_DATA_BITS-1:0] ram [DEPTH-1:0];
+  // Ignore lower 2 bits and count ourselves if read, otherwise if write use the 
+  wire do_write = mem_req_data_valid && mem_req_data_ready;
+  // exact address delivered
+  wire [`ceilLog2(DEPTH)-1:0] ram_addr = state_busy  ? ( do_write ? addr[`ceilLog2(DEPTH)-1:0] :  {addr[`ceilLog2(DEPTH/DATA_CYCLES)-1:2], cnt} )
+                                                     : {mem_req_addr[`ceilLog2(DEPTH/DATA_CYCLES)-1:2], cnt};
+  wire do_read = mem_req_valid && mem_req_ready && !mem_req_rw || state_busy && !state_rw;
+
+  initial
+  begin : zero
+    integer i;
+    for (i = 0; i < DEPTH; i = i+1)
+      ram[i] = 1'b0;
+  end
 
   wire [`MEM_DATA_BITS-1:0] masked_din;
+
   generate
     genvar i;
     for (i = 0; i < `MEM_DATA_BITS; i=i+1) begin: MASKED_DIN
-      assign masked_din[i] = mem_req_data_mask[i/8] ? mem_req_data_bits[i] : buf_q1[i];
+      assign masked_din[i] = mem_req_data_mask[i/8] ? mem_req_data_bits[i] : ram[ram_addr][i];
     end
   endgenerate
 
-  wire [`ceilLog2(DATA_CYCLES)-1:0] cnt_val, cnt_next;
-  wire cnt_ce;
-  REGISTER_R_CE #(.N(`ceilLog2(DATA_CYCLES)), .INIT(0)) cnt_reg (
-    .q(cnt_val), .d(cnt_next), .ce(cnt_ce), .rst(reset), .clk(clk));
+  always @(posedge clk)
+  begin
+    if (reset)
+      state_busy <= 1'b0;
+    else if ((do_read && cnt == DATA_CYCLES-1 || do_write))
+      state_busy <= 1'b0;
+    else if (mem_req_valid && mem_req_ready)
+      state_busy <= 1'b1;
 
-  wire mem_req_fire      = mem_req_valid & mem_req_ready;
-  wire mem_req_data_fire = mem_req_data_valid & mem_req_data_ready;
+    if (!state_busy && mem_req_valid)
+    begin
+      state_rw <= mem_req_rw;
+      tag <= mem_req_tag;
+      addr <= mem_req_addr;
+    end
 
-  localparam STATE_IDLE  = 2'b00;
-  localparam STATE_READ  = 2'b01;
-  localparam STATE_WRITE = 2'b10;
+    if (reset)
+      cnt <= 1'b0;
+    else if(do_read)
+      cnt <= cnt + 1'b1;
 
-  wire [1:0] state_val;
-  reg [1:0]  next_state;
+    if (do_write)
+      ram[ram_addr] <= masked_din;
+    else
+      mem_resp_data <= ram[ram_addr];
 
-  REGISTER_R #(.N(2), .INIT(STATE_IDLE)) state_reg (
-    .q(state_val), .d(next_state), .rst(reset), .clk(clk));
+    if (reset)
+      mem_resp_valid <= 1'b0;
+    else
+      mem_resp_valid <= do_read;
 
-  always @(*) begin
-    next_state = state_val;
-    case (state_val)
-      STATE_IDLE: begin
-        if (mem_req_fire &  mem_req_rw)
-          next_state = STATE_WRITE;
-        if (mem_req_fire & ~mem_req_rw)
-          next_state = STATE_READ;
-      end
-      STATE_READ: begin
-        if (cnt_val == DATA_CYCLES - 1)
-          next_state = STATE_IDLE;
-      end
-      STATE_WRITE: begin
-        if (mem_req_data_fire)
-          next_state = STATE_IDLE;
-      end
-    endcase
+    mem_resp_tag <= state_busy ? tag : mem_req_tag;
   end
 
-  wire [`MEM_TAG_BITS-1:0] tag_reg_val;
-  REGISTER_R_CE #(.N(`MEM_TAG_BITS), .INIT(0)) tag_reg (
-    .q(tag_reg_val), .d(mem_req_tag), .ce(mem_req_fire), .rst(reset), .clk(clk));
-
-  wire [`MEM_ADDR_BITS-1:0] addr_reg_val;
-  REGISTER_R_CE #(.N(`MEM_ADDR_BITS), .INIT(0)) addr_reg (
-    .q(addr_reg_val), .d(mem_req_addr), .ce(mem_req_fire), .rst(reset), .clk(clk));
-
-  assign cnt_next = cnt_val + 1;
-  assign cnt_ce   = (state_val == STATE_READ);
-
-  assign mem_req_ready      = (state_val == STATE_IDLE);
-  assign mem_req_data_ready = (state_val == STATE_WRITE);
-  assign mem_resp_valid     = (state_val == STATE_READ);
-
-  // Use the exact address delivered if write
-  assign buf_addr0          = addr_reg_val[`ceilLog2(DEPTH)-1:0];
-  assign buf_we0            = (state_val == STATE_WRITE) & mem_req_data_fire;
-  assign buf_d0             = masked_din;
-  // Ignore lower 2 bits and count ourselves if read
-  assign buf_addr1          = (state_val==STATE_READ) ? {addr_reg_val[`ceilLog2(DEPTH)-1:2], cnt_val} : addr_reg_val[`ceilLog2(DEPTH)-1:0];
-  assign mem_resp_data      = buf_q1;
-  assign mem_resp_tag       = tag_reg_val;
+  assign mem_req_ready = !state_busy;
+  assign mem_req_data_ready = state_busy && state_rw;
 
 endmodule

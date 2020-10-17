@@ -1,3 +1,6 @@
+/**
+ * List of ALU operations.
+*/
 `ifndef ALUOP
 `define ALUOP
 

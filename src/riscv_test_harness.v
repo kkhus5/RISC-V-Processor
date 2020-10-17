@@ -67,7 +67,6 @@ module rocketTestHarness;
 
 
   ExtMemModel mem
-//  BackupMemory mem
   (
     .clk(clk),
     .reset(r_reset),
@@ -87,6 +86,7 @@ module rocketTestHarness;
     .mem_resp_data(mem_resp_data),
     .mem_resp_tag(mem_resp_tag)
   );
+
 
   // TODO: tohost/fromhost -> exit code (no longer through HTIF)
 
@@ -147,11 +147,10 @@ module rocketTestHarness;
     $value$plusargs("loadmem=%s", loadmem);
     if (loadmem)
       `ifdef no_cache_mem
-        #0.1 $readmemh(loadmem, dut.mem.icache.mem.mem);
-        #0.1 $readmemh(loadmem, dut.mem.dcache.mem.mem);
+        #0.1 $readmemh(loadmem, dut.mem.icache.ram);
+        #0.1 $readmemh(loadmem, dut.mem.dcache.ram);
       `else
-//        #0.1 $readmemh(loadmem, mem.ram);
-        #0.1 $readmemh(loadmem, mem.storage.mem);
+        #0.1 $readmemh(loadmem, mem.ram);
        `endif
     verbose = $test$plusargs("verbose");
 `ifdef DEBUG
