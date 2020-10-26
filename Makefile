@@ -175,11 +175,11 @@ TEST_BMARK=$(test_bmark)
 TEST_BMARK_SHORT=$(test_bmark_short)
 
 ifeq ($(TEST_ASM), all)
-runtest: $(asm_tests_out)
+runtest: asm_compile $(asm_tests_out)
 	@echo; perl -ne 'print "  [$$1] $$ARGV\t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
 	       $(asm_tests_out); echo;
 else ifneq ($(TEST_ASM), )
-runtest: $(asm_output_dir)/$(TEST_ASM)
+runtest: asm_compile $(asm_output_dir)/$(TEST_ASM)
 	@echo; perl -ne 'print "  [$$1] $$ARGV\t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
 	       $(asm_output_dir)/$(basename $(TEST_ASM)).out; echo;
 endif
@@ -207,6 +207,9 @@ runtest: bmark_compile $(bmark_short_output_dir)/$(TEST_BMARK_SHORT)
 	@echo; perl -ne 'print "  [$$1] $$ARGV\t$$2\n" if /\*{3}(.{8})\*{3}(.*)/' \
 	       $(bmark_short_output_dir)/$(basename $(TEST_BMARK_SHORT)).out; echo;
 endif
+
+asm_compile:
+	cd $(tests_asm_dir) && make -f $(tests_asm_dir)/Makefile
 
 bmark_compile:
 	cd $(tests_bmark_dir) && make -f $(tests_bmark_dir)/Makefile clean && make -f $(tests_bmark_dir)/Makefile TEST_SIZE=$(TEST_SIZE) > /dev/null
