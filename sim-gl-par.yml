@@ -17,6 +17,7 @@ simOptions: &SIM_OPTIONS
   - "+incdir+../../src"
 
 simVerilogSrc: &SIM_VERILOG_SRC
+  - "src/ExtMemModel.v"
   - "src/riscv_test_harness.v"
 
 tb_name: &TB_NAME "rocketTestHarness"

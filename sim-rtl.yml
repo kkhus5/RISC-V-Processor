@@ -20,6 +20,7 @@ simVerilogSrc: &SIM_VERILOG_SRC
   - "src/ALUdec.v"
   - "src/Riscv151.v"
   - "src/Memory151.v"
+  - "src/ExtMemModel.v"
   - "src/no_cache_mem.v"
   - "src/riscv_top.v"
   - "src/riscv_arbiter.v"
