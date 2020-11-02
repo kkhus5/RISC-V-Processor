@@ -154,7 +154,7 @@ module ALUTestbench();
             opcode = `OPC_ARI_RTYPE;
 	    funct = 3'b001;
 	    add_rshift_type = $random & 1'b1;
-	    REFout = A << B;
+	    REFout = A << B[4:0];
 	    #1;
 	    checkOutput(opcode, funct, add_rshift_type);
 
@@ -186,7 +186,7 @@ module ALUTestbench();
 	    opcode = `OPC_ARI_RTYPE;
 	    funct = 3'b101;
 	    add_rshift_type = 1'b0;
-	    REFout = A >> B;
+	    REFout = A >> B[4:0];
 	    #1;
 	    checkOutput(opcode, funct, add_rshift_type);
 
@@ -194,7 +194,7 @@ module ALUTestbench();
             opcode = `OPC_ARI_RTYPE;
             funct = 3'b101;
             add_rshift_type = 1'b1;
-            REFout = A >>> B;
+            REFout = A >>> B[4:0];
             #1;
             checkOutput(opcode, funct, add_rshift_type);
         
@@ -206,13 +206,128 @@ module ALUTestbench();
             #1;
             checkOutput(opcode, funct, add_rshift_type);
 
-	   // and
+	    // and
             opcode = `OPC_ARI_RTYPE;
             funct = 3'b111;
             add_rshift_type = $random & 1'b1;
             REFout = A & B;
             #1;
             checkOutput(opcode, funct, add_rshift_type);
+
+            // I-type Arithmetic
+            // addi
+	    opcode = `OPC_ARI_ITYPE;
+	    funct = 3'b000;
+	    add_rshift_type = $random & 1'b1;
+	    REFout = A + B;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // slti
+	    opcode = `OPC_ARI_ITYPE;
+	    funct = 3'b010;
+	    add_rshift_type = $random & 1'b1;
+	    REFout = ($signed(A) < $signed(B))? 32'd1 : 32'd0;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // sltiu
+            opcode = `OPC_ARI_ITYPE;
+	    funct = 3'b011;
+	    add_rshift_type = $random & 1'b1;
+	    REFout = (A < B)? 32'd1 : 32'd0;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // xori
+	    opcode = `OPC_ARI_ITYPE;
+	    funct = 3'b100;
+	    add_rshift_type = $random & 1'b1;
+	    REFout = A ^ B;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // ori
+	    opcode = `OPC_ARI_ITYPE;
+	    funct = 3'b110;
+	    add_rshift_type = $random & 1'b1;
+	    REFout = A ||;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // xor
+	    opcode = `OPC_ARI_RTYPE;
+	    funct = 3'b100;
+	    add_rshift_type = $random & 1'b1;
+	    REFout = A ^ B;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // srl
+	    opcode = `OPC_ARI_RTYPE;
+	    funct = 3'b101;
+	    add_rshift_type = 1'b0;
+	    REFout = A >> B[4:0];
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // sra
+            opcode = `OPC_ARI_RTYPE;
+            funct = 3'b101;
+            add_rshift_type = 1'b1;
+            REFout = A >>> B[4:0];
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+        
+	    // or
+	    opcode = `OPC_ARI_RTYPE;
+            funct = 3'b110;
+            add_rshift_type = $random & 1'b1;
+            REFout = A | B;
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+	    // and
+            opcode = `OPC_ARI_RTYPE;
+            funct = 3'b111;
+            add_rshift_type = $random & 1'b1;
+            REFout = A & B;
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+            // I-Type
+            // addi
+            opcode = `OPC_ARI_ITYPE;
+            funct = 3'b000;
+            add_rshift_type = $random & 1'b1;
+            REFout = A + B;
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+            // slti
+            opcode = `OPC_ARI_ITYPE;
+            funct = 3'b010;
+            add_rshift_type = $random & 1'b1;
+            REFout = ($signed(A) < $signed(B))? 32'd1 : 32'd0;
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+            // sltiu
+            opcode = `OPC_ARI_ITYPE;
+            funct = 3'b011;
+            add_rshift_type = $random & 1'b1;
+            REFout = (A < B)? 32'd1 : 32'd0;
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+            // xori
+            opcode = `OPC_ARI_ITYPE;
+            funct = 3'b100;
+            add_rshift_type = $random & 1'b1;
+            REFout = A ^ B;
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+
 
 	end
         ///////////////////////////////
