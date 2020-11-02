@@ -134,7 +134,87 @@ module ALUTestbench();
             #1;
             checkOutput(opcode, funct, add_rshift_type);
 
-        end
+	    // add
+	    opcode = `OPC_ARI_RTYPE;
+	    funct = 3'b000;
+	    add_rshift_type = 1'b0;
+	    REFout = A + B;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // sub
+	    opcode = `OPC_ARI_RTYPE;
+	    funct = 3'b000;
+	    add_rshift_type = 1'b1;
+	    REFout = A - B;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // sll
+            opcode = `OPC_ARI_RTYPE;
+	    funct = 3'b001;
+	    add_rshift_type = $random & 1'b1;
+	    REFout = A << B;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // slt
+	    opcode = `OPC_ARI_RTYPE;
+	    funct = 3'b010;
+	    add_rshift_type = $random & 1'b1;
+	    REFout = ($signed(A) < $signed(B))? 32'd1 : 32'd0;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // sltu
+	    opcode = `OPC_ARI_RTYPE;
+	    funct = 3'b011;
+	    add_rshift_type = $random & 1'b1;
+	    REFout = (A < B)? 32'd1 : 32'd0;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // xor
+	    opcode = `OPC_ARI_RTYPE;
+	    funct = 3'b100;
+	    add_rshift_type = $random & 1'b1;
+	    REFout = A ^ B;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // srl
+	    opcode = `OPC_ARI_RTYPE;
+	    funct = 3'b101;
+	    add_rshift_type = 1'b0;
+	    REFout = A >> B;
+	    #1;
+	    checkOutput(opcode, funct, add_rshift_type);
+
+	    // sra
+            opcode = `OPC_ARI_RTYPE;
+            funct = 3'b101;
+            add_rshift_type = 1'b1;
+            REFout = A >>> B;
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+        
+	    // or
+	    opcode = `OPC_ARI_RTYPE;
+            funct = 3'b110;
+            add_rshift_type = $random & 1'b1;
+            REFout = A | B;
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+	   // and
+            opcode = `OPC_ARI_RTYPE;
+            funct = 3'b111;
+            add_rshift_type = $random & 1'b1;
+            REFout = A & B;
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+	end
         ///////////////////////////////
         // Hard coded tests go here
         ///////////////////////////////
