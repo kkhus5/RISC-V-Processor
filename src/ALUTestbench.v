@@ -194,7 +194,7 @@ module ALUTestbench();
             opcode = `OPC_ARI_RTYPE;
             funct = 3'b101;
             add_rshift_type = 1'b1;
-            REFout = A >>> B[4:0];
+            REFout = $signed(A) >>> B[4:0];
             #1;
             checkOutput(opcode, funct, add_rshift_type);
         
@@ -283,7 +283,7 @@ module ALUTestbench();
 	    opcode = `OPC_ARI_ITYPE;
             funct = 3'b101;
             add_rshift_type = 1'b1;
-            REFout = A >>> B[4:0];
+            REFout = $signed(A) >>> B[4:0];
             #1;
             checkOutput(opcode, funct, add_rshift_type);
 
