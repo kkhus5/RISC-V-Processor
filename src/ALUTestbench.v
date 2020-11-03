@@ -309,7 +309,7 @@ module ALUTestbench();
 	   opcode = `OPC_CSR;
 	   funct = 3'b001;
 	   add_rshift_type = $random & 1'b1;
-	   REFout = B;
+	   REFout = A;
 	   #1;
 	   checkOutput(opcode, funct, add_rshift_type);
 
@@ -317,7 +317,7 @@ module ALUTestbench();
            opcode = `OPC_CSR;
            funct = 3'b101;
            add_rshift_type = $random & 1'b1;
-           REFout = B;
+           REFout = A;
            #1;
            checkOutput(opcode, funct, add_rshift_type);
 	   
