@@ -282,12 +282,52 @@ module ALUTestbench();
 	    // srai
 	    opcode = `OPC_ARI_ITYPE;
             funct = 3'b101;
-            add_rshift_type = $random & 1'b1;
+            add_rshift_type = 1'b1;
             REFout = A >>> B[4:0];
             #1;
             checkOutput(opcode, funct, add_rshift_type);
 
+	   // jalr
+	   opcode = `OPC_JALR;
+	   funct = 3'b000;
+	   add_rshift_type = $random & 1'b1;
+	   REFout = A + B;
+	   #1;
+	   checkOutput(opcode, funct, add_rshift_type);
 
+	   // J-Type
+           opcode = `OPC_JAL;
+           funct = $random & 3'b111;
+           add_rshift_type = $random & 1'b1;
+           REFout = A + B;
+           #1;
+           checkOutput(opcode, funct, add_rshift_type);
+
+	   // CSR
+	   
+	   // csrrw
+	   opcode = `OPC_CSR;
+	   funct = 3'b001;
+	   add_rshift_type = $random & 1'b1;
+	   REFout = B;
+	   #1;
+	   checkOutput(opcode, funct, add_rshift_type);
+
+	   // csrrwi
+           opcode = `OPC_CSR;
+           funct = 3'b101;
+           add_rshift_type = $random & 1'b1;
+           REFout = B;
+           #1;
+           checkOutput(opcode, funct, add_rshift_type);
+	   
+	   // NOP
+	   opcode = `OPC_NOOP;
+	   funct = 3'dx;
+	   add_rshift_type = $random & 1'b1;
+	   REFout = 32'd0;
+	   #1;
+	   checkOutput(opcode, funct, add_rshift_type);
 	end
         ///////////////////////////////
         // Hard coded tests go here
