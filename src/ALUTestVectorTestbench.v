@@ -65,7 +65,7 @@ module ALUTestVectorTestbench();
     // testvector input file, which you can find with the command:
     // % wc -l ../sim/tests/testvectors.input
     // //////////////////////////////////////////////////////////////
-    localparam testcases = 26;
+    localparam testcases = 30;
 
     reg [106:0] testvector [0:testcases-1]; // Each testcase has 108 bits:
     // 64 for A and B, 32 for REFout, 6 for
