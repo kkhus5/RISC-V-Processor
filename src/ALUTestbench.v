@@ -332,6 +332,54 @@ module ALUTestbench();
         ///////////////////////////////
         // Hard coded tests go here
         ///////////////////////////////
+	
+	// shifting by zero
+	A = 32'd5;
+	B = 32'd0;
+        opcode = `OPC_ARI_RTYPE;
+        funct = 3'b001;
+        add_rshift_type = $random & 1'b1;
+        REFout = A;
+        #1;
+        checkOutput(opcode, funct, add_rshift_type);
+
+	// shifting by a negative shamt
+        A = 32'd5;
+	B = -32'd5;
+        opcode = `OPC_ARI_RTYPE;
+        funct = 3'b001;
+        add_rshift_type = $random & 1'b1;
+        REFout = 32'h28000000;
+        #1;
+        checkOutput(opcode, funct, add_rshift_type);
+
+        A = 32'd5;
+        B = 32'd27;
+        opcode = `OPC_ARI_RTYPE;
+        funct = 3'b001;
+        add_rshift_type = $random & 1'b1;
+        REFout = 32'h28000000;
+        #1;
+        checkOutput(opcode, funct, add_rshift_type);
+
+	A = 32'd5;
+	B = -32'd5;
+        opcode = `OPC_ARI_RTYPE;
+        funct = 3'b101;
+        add_rshift_type = 1'b1;
+        REFout = 32'd0;
+        #1;
+        checkOutput(opcode, funct, add_rshift_type);
+
+	// adding a negative number to a positive number
+        A = 32'd5;
+	B = -32'd5;
+        opcode = `OPC_ARI_RTYPE;
+        funct = 3'b000;
+        add_rshift_type = 1'b0;
+        REFout = 32'd0;
+        #1;
+        checkOutput(opcode, funct, add_rshift_type);
 
         $display("\n\nALL TESTS PASSED!");
         $vcdplusoff;
