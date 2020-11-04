@@ -31,8 +31,8 @@ simVerilogSrc: &SIM_VERILOG_SRC
   - "/home/ff/eecs151/verilog_lib/EECS151.v"
   # Add more files here if you need
 
-#tb_name: &TB_NAME "ALUTestbench"
-tb_name: &TB_NAME "ALUTestVectorTestbench"
+tb_name: &TB_NAME "ALUTestbench"
+#tb_name: &TB_NAME "ALUTestVectorTestbench"
 #tb_name: &TB_NAME "Riscv151_testbench.v"
 #tb_name: &TB_NAME "rocketTestHarness"
 

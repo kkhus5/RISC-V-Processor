@@ -381,6 +381,26 @@ module ALUTestbench();
         #1;
         checkOutput(opcode, funct, add_rshift_type);
 
+	// sltu using a signed number
+	A = -32'd3;
+	B = 32'd3;
+        opcode = `OPC_ARI_RTYPE;
+        funct = 3'b011;
+        add_rshift_type = $random & 1'b1;
+        REFout = 32'd0;
+        #1;
+        checkOutput(opcode, funct, add_rshift_type);
+
+	// sra if not unsigned
+	A = -32'd3;
+	B = 32'd3;
+	opcode = `OPC_ARI_RTYPE;
+	funct = 3'b101;
+	add_rshift_type = 1'b1;
+	REFout = -32'd1;
+        #1;
+        checkOutput(opcode, funct, add_rshift_type);
+
         $display("\n\nALL TESTS PASSED!");
         $vcdplusoff;
         $finish();
