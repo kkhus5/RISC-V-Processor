@@ -312,14 +312,6 @@ module ALUTestbench();
 	   REFout = A;
 	   #1;
 	   checkOutput(opcode, funct, add_rshift_type);
-
-	   // csrrwi
-           opcode = `OPC_CSR;
-           funct = 3'b101;
-           add_rshift_type = $random & 1'b1;
-           REFout = A;
-           #1;
-           checkOutput(opcode, funct, add_rshift_type);
 	   
 	   // NOP
 	   opcode = `OPC_NOOP;
@@ -398,6 +390,15 @@ module ALUTestbench();
 	funct = 3'b101;
 	add_rshift_type = 1'b1;
 	REFout = -32'd1;
+        #1;
+        checkOutput(opcode, funct, add_rshift_type);
+
+        // csrrwi
+        B = 32'h00000011;
+        opcode = `OPC_CSR;
+	funct = 3'b101;
+        add_rshift_type = $random & 1'b1;
+        REFout = B;
         #1;
         checkOutput(opcode, funct, add_rshift_type);
 

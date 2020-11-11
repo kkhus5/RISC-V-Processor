@@ -60,7 +60,12 @@ module ALUdec(
                             end
 		`OPC_LUI: ALUop = `ALU_COPY_B;
 		`OPC_NOOP: ALUop = `ALU_XXX;
-		`OPC_CSR: ALUop = `ALU_COPY_A; 
+		`OPC_CSR: begin
+			  	case (funct)
+					3'b001: ALUop = `ALU_COPY_A;
+					default: ALUop = `ALU_COPY_B;
+			  	endcase
+			  end  
 	    default: ALUop = `ALU_ADD;
 	endcase 	
   end
