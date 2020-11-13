@@ -32,8 +32,11 @@ simVerilogSrc: &SIM_VERILOG_SRC
   # Add more files here if you need
   - "src/ImmediateGenerator.v"
   - "src/ImmGenTestbench.v"
+  - "src/BranchComparator.v"
+  - "src/BranchCompTestbench.v"
 
-tb_name: &TB_NAME "ImmGenTestbench"
+tb_name: &TB_NAME "BranchCompTestbench"
+#tb_name: &TB_NAME "ImmGenTestbench"
 #tb_name: &TB_NAME "ALUTestbench"
 #tb_name: &TB_NAME "ALUTestVectorTestbench"
 #tb_name: &TB_NAME "Riscv151_testbench.v"
