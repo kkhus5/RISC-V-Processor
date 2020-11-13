@@ -19,16 +19,53 @@ module PCSel (
 wire [6:0] opcode = inst[6:0];
 wire [2:0] funct3 = inst[14:12];
 
-wire pc4 = 2'b00;
-wire alu = 2'b01;
-wire pc_imm = 2'b10;
-wire rs1_imm = 2'b11;
+localparam pc4 = 2'b00;
+localparam alu = 2'b01;
+localparam pc_imm = 2'b10;
+localparam rs1_imm = 2'b11;
 
 always @(*) begin
 	case (opcode)
-		`OPC_BRANCH: begin
-
+        
+		`OPC_BRANCH:
+                begin
+                        case (funct3)
+                            `FNC_BEQ:
+                                        begin
+                                            if (BrEq) PCSignal = alu;
+                                        end
+                            
+                            `FNC_BNE:
+                                        begin
+                                            if (!BrEq) PCSignal = alu;
+                                        end
+                            
+                            `FNC_BLT:
+                                        begin
+                                            if (BrLt) PCSignal = alu;
+                                        end
+                                        
+                            `FNC_BGE:
+                                        begin
+                                            if (!BrLt) PCSignal = alu;
+                                        end
+                                        
+                            `FNC_BLTU:
+                                        begin
+                                            if (BrLt) PCSignal = alu;
+                                        end
+                                        
+                            `FNC_BGEU:
+                                        begin
+                                            if (!BrLt) PCSignal = alu;
+                                        end
+                        endcase
 			     end
+                 
+        `OPC_JAL: PCSignal = pc_imm;
+        
+        `OPC_JALR: PCSignal = rs1_imm;
+        
 		default: PCSignal = pc4;
 	endcase
 end
