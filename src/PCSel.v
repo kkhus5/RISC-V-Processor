@@ -28,7 +28,7 @@ always @(*) begin
 	case (opcode)
         
 		`OPC_BRANCH:
-                begin
+                	begin
                         case (funct3)
                             `FNC_BEQ:
                                         begin
@@ -60,11 +60,11 @@ always @(*) begin
                                             if (!BrLt) PCSignal = alu;
                                         end
                         endcase
-			     end
+			end
                  
-        `OPC_JAL: PCSignal = pc_imm;
+        	`OPC_JAL: PCSignal = pc_imm;
         
-        `OPC_JALR: PCSignal = rs1_imm;
+        	`OPC_JALR: PCSignal = rs1_imm;
         
 		default: PCSignal = pc4;
 	endcase
