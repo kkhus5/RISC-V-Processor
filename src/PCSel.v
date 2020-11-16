@@ -26,7 +26,6 @@ localparam rs1_imm = 2'b11;
 
 always @(*) begin
 	case (opcode)
-        
 		`OPC_BRANCH:
                 	begin
                         case (funct3)
