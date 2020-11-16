@@ -20,6 +20,11 @@ vlsi.inputs.mmmc_corners: [
   {name: "PVT_0P77V_0C", type: "hold", voltage: "0.77 V", temp: "0 C"}
 ]
 
+# SRAMs seem to cause these cells to fail legalization during CTS.
+# Illegal placement causes incomplete clock tree -> fails sim
+vlsi.inputs.dont_use_mode: "append"
+vlsi.inputs.dont_use_list: ["BUFx16f_ASAP7_75t_R", "BUFx16f_ASAP7_75t_L", "BUFx16f_ASAP7_75t_SL", "BUFx16f_ASAP7_75t_SRAM"]
+
 # SRAM Compiler compiler options
 vlsi.core.sram_generator_tool: "sram_compiler"
 # You should specify a location for the SRAM generator in the tech plugin
