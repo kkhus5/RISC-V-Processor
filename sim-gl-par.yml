@@ -17,6 +17,7 @@ simOptions: &SIM_OPTIONS
   - "+incdir+../../src"
 
 simVerilogSrc: &SIM_VERILOG_SRC
+  - "/home/ff/eecs151/verilog_lib/EECS151.v"
   - "src/ExtMemModel.v"
   - "src/riscv_test_harness.v"
 
@@ -37,6 +38,10 @@ sim.inputs:
   defines: 
     - *SIM_CLK_PERIOD
   execute_sim: false
+  # Below is for power analysis. See the spec for instructions!
+  # execution_flags_append:
+  #   - "+loadmem=../../tests/asm/addi.hex"
+  #   - "+max-cycles=10000"
 
 power.inputs:
   database: "build/par-rundir/riscv_top_FINAL"
