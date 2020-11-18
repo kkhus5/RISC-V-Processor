@@ -431,7 +431,7 @@ module Riscv151_testbench();
         CPU.rf.mem[3] = 300;
         CPU.rf.mem[4] = 400;
 
-        IMM       = 32'h0000_0FF0;
+        IMM       = 32'h0000_07F0;
         INST_ADDR = `PC_RESET >> 2;
         JUMP_ADDR = (`PC_RESET + {IMM[20:1], 1'b0}) >> 2;
 
@@ -552,7 +552,7 @@ module Riscv151_testbench();
         INST_ADDR     = `PC_RESET >> 2;
 
         imem.mem[INST_ADDR + 0] = {12'h51e, 5'd1, 3'b001, 5'd0, `OPC_CSR};
-        imem.mem[INST_ADDR + 1] = {12'h51e, IMM,  3'b101, 5'd0, `OPC_CSR};
+        imem.mem[INST_ADDR + 1] = {12'h51e, IMM[4:0],  3'b101, 5'd0, `OPC_CSR};
 
         current_test_id = current_test_id + 1;
         done = 0;

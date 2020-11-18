@@ -7,6 +7,7 @@ simOptions: &SIM_OPTIONS
   - "+v2k"
   - "-debug"
   - "+vcs+lic+wait"
+  - "+vcs+initreg+random"
   - "+udpsched"
   - "+neg_tchk"
   - "+sdfverbose"
@@ -17,6 +18,7 @@ simOptions: &SIM_OPTIONS
   - "+incdir+../../src"
 
 simVerilogSrc: &SIM_VERILOG_SRC
+  - "/home/ff/eecs151/verilog_lib/EECS151.v"
   - "src/ExtMemModel.v"
   - "src/riscv_test_harness.v"
 

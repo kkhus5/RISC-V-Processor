@@ -35,7 +35,7 @@ vlsi.inputs.placement_constraints:
     y: 0
 
     # Floorplan dimensions
-    width:  350
+    width: &FP_WIDTH 350
     height: 400
 
     # Modify the path of the SRAMs according to your design
@@ -81,7 +81,7 @@ vlsi.inputs.placement_constraints:
     obs_types: ["place"]
     x: 0
     y: 0
-    width:  350
+    width: *FP_WIDTH # must span across the whole floorplan
     height: 1.08 # 1 core site tall, necessary to avoid shorts
 
 # Pin placement constraints
