@@ -201,7 +201,7 @@ module rocketTestHarness;
     if (max_cycles > 0 && trace_count > max_cycles) begin
       reason = "timeout";
     end
-    if (exit > 1)
+    if (exit > 1 && trace_count > 1)
       $sformat(reason, "tohost = %d", exit);
 
     if (reason)

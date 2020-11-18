@@ -7,6 +7,7 @@ simOptions: &SIM_OPTIONS
   - "+v2k"
   - "-debug"
   - "+vcs+lic+wait"
+  - "+vcs+initreg+random"
   - "+udpsched"
   - "+neg_tchk"
   - "+sdfverbose"
