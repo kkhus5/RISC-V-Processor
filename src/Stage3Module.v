@@ -97,7 +97,7 @@ WBSelMux wbselmux (
 	.stage3_pc4(stage3_pc4),
 	.stage3_alu_out(stage3_alu_out),
 	.wb_dmem(wb_dmem),
-	.WBSel(WBSelect).
+	.WBSel(WBSelect),
 
 	// outputs
 	.wb_data(wb_data)
