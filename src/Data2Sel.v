@@ -3,9 +3,9 @@
 `include "Opcode.vh"
 
 module Data2Sel (
-        input [31:0] prev_inst, // at PC = 0, at stage 3
-        input [31:0] next_inst, // at PC = 4, at stage 2
-        output reg Data2SelSignal
+    input [31:0] prev_inst, // at PC = 0, at stage 3
+    input [31:0] next_inst, // at PC = 4, at stage 2
+    output reg Data2SelSignal
 );
 
 localparam rs2 = 1'b0;

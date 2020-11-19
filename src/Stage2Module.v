@@ -32,9 +32,9 @@ wire BrUn;
 wire ASel;
 wire BSel;
 wire [3:0] ALUop;
+wire [1:0] StoreSel;
 
 // assign outputs
-assign rs2_data_out = stage2_rs2_data;
 assign stage2_inst_out = stage2_inst_in;
 assign stage2_pc_out = stage2_pc_in;
 
@@ -149,6 +149,24 @@ ALU alu (
 
 	// outputs
 	.Out(stage2_alu_out)
+);
+
+StoreSel storesel (
+	// inputs
+	.stage2_inst(stage2_inst_in),
+
+	// outputs
+	.StoreSelect(StoreSel)
+);
+
+StoreSelMux storeselmux (
+	// inputs
+	.stage2_rs2_data(stage2_rs2_data),
+	.StoreSel(StoreSel),
+	.shamt(stage2_alu_out[1:0]),
+
+	// outputs
+	.dmem_write_data(rs2_data_out)
 );
 
 endmodule

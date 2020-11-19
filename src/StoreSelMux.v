@@ -1,4 +1,4 @@
-// This is the StoreSelMux datapath block.
++// This is the StoreSelMux datapath block.
 
 module StoreSelMux (
 	input [31:0] stage2_rs2_data, // 12345678
