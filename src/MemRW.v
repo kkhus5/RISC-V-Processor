@@ -7,12 +7,12 @@ module MemRW (
 	output MemRWSelect
 );
 
-localparam read = 1'b0;
-localparam write = 1'b1;
+//localparam read = 1'b0;
+//localparam write = 1'b1;
 
 wire [6:0] opcode;
 assign opcode = stage3_inst[6:0];
 
-assign MemRWSelect = (opcode == `OPC_STORE)? write : read;
+assign MemRWSelect = (opcode == `OPC_STORE)? 1'b1 : 1'b0;
 
 endmodule

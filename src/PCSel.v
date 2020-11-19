@@ -3,12 +3,12 @@
 `include "Opcode.vh"
 
 module PCSel (
-	input [31:0] icache_dout,
-	input [31:0] prev_inst,
+    input [31:0] icache_dout,
+    input [31:0] prev_inst,
     input stall,
-	input BrEq,
-	input BrLT,
-	output reg [1:0] PCSignal
+    input BrEq,
+    input BrLT,
+    output reg [1:0] PCSignal
 );
 
 // if R-Type and I-Type, then PC + 4
@@ -32,16 +32,16 @@ assign prev_funct3 = prev_inst[14:12];
 wire [4:0] prev_rd;
 assign prev_rd = prev_inst[11:7];
 
-localparam pc = 2'b00;
-localparam alu = 2'b01;
-localparam adder = 2'b10;
+//localparam pc = 2'b00;
+//localparam alu = 2'b01;
+//localparam adder = 2'b10;
 
 reg take_branch;
 
 always @(*) begin
-	case (prev_opcode)
-		`OPC_BRANCH:
-                	begin
+    case (prev_opcode)
+        `OPC_BRANCH:
+                    begin
                         case (prev_funct3)
                             `FNC_BEQ:
                                         begin
@@ -73,18 +73,18 @@ always @(*) begin
                                             if (!BrLt) take_branch = 1'b1;
                                         end
                         endcase
-					end
-		default: take_branch = 1'b0;
-	endcase
+                    end
+        default: take_branch = 1'b0;
+    endcase
 end
 
 always @(*) begin
-	if (take_branch) begin
-		PCSignal = alu;
-	end else if (!take_branch && prev_opcode == `OP_BRANCH || stall || (curr_opcode == `OPC_JALR && prev_rd == curr_rs1)) begin
-		PCSignal = pc;
-	end else begin
-		PCSignal = adder;
-	end
+    if (take_branch) begin
+        PCSignal = 2'b01;
+    end else if (!take_branch && prev_opcode == `OP_BRANCH || stall || (curr_opcode == `OPC_JALR && prev_rd == curr_rs1)) begin
+        PCSignal = 2'b00;
+    end else begin
+        PCSignal = 2'b10;
+    end
 end
 endmodule
