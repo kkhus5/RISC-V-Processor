@@ -8,11 +8,6 @@ module ASel (
 	output reg BSelSignal 
 );
 
-testing
-
-localparam rs2 = 1'b0;
-localparam imm = 1'b1;
-
 wire [6:0] opcode;
 assign opcode = inst[6:0];
 wire [2:0] funct3;
@@ -23,8 +18,8 @@ assign uses_imm = (opcode == `OPC_ARI_ITYPE || opcode == `OPC_LUI || opcode == `
 
 always @(*) begin
 	case (uses_imm)
-		1'b1: BSelSignal = imm;
-		default: BSelSignal = rs2;
+		1'b1: BSelSignal = 1'b1;
+		default: BSelSignal = 1'b0;
 	endcase
 end
 

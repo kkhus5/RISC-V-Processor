@@ -8,9 +8,6 @@ module Data2Sel (
     output reg Data2SelSignal
 );
 
-localparam rs2 = 1'b0;
-localparam wb_data = 1'b1;
-
 wire [6:0] prev_opcode;
 assign prev_opcode = prev_inst[6:0];
 wire [2:0] prev_funct3;
@@ -34,12 +31,12 @@ always @(*) begin
     case (rd_rs2_fire)
         1'b1: begin 
             if (next_inst[24:20] == prev_inst[11:7]) begin
-                Data2SelSignal = wb_data;
+                Data2SelSignal = 1'b1;
             end else begin
-                Data2SelSignal = rs2;
+                Data2SelSignal = 1'b0;
             end
               end
-        default: Data2SelSignal = rs2;
+        default: Data2SelSignal = 1'b0;
     endcase
 end
 

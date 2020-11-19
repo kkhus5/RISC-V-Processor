@@ -7,10 +7,10 @@ module StoreSel (
 	output reg [1:0] StoreSelect
 );
 
-localparam sb = 2'b00;
-localparam sh = 2'b01;
-localparam sw = 2'b10;
-localparam idc = 2'bxx;
+// localparam sb = 2'b00;
+// localparam sh = 2'b01;
+// localparam sw = 2'b10;
+// localparam idc = 2'bxx;
 
 wire [6:0] opcode;
 assign opcode = stage2_inst[6:0];
@@ -21,12 +21,12 @@ always @(*) begin
 	case (opcode)
 		`OPC_STORE: begin
 					case (funct3)
-						`FNC_SB: StoreSelect = sb;
-						`FNC_SH: StoreSelect = sh;
-						`FNC_SW: StoreSelect = sw;
+						`FNC_SB: StoreSelect = 2'b00;
+						`FNC_SH: StoreSelect = 2'b01;
+						`FNC_SW: StoreSelect = 2'b10;
 					endcase
 				   end
-		default: StoreSelect = idc;
+		default: StoreSelect = 2'bxx;
 	endcase
 end
 
