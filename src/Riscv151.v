@@ -34,6 +34,20 @@ wire [31:0] stage2_rs1;
 wire [31:0] stage1_rs2;
 wire [31:0] stage2_rs2;
 
+wire [31:0] stage2_inst_out;
+wire [31:0] stage3_inst;
+
+wire [31:0] stage2_pc_out;
+wire [31:0] stage3_pc;
+
+wire [31:0] stage2_alu_out;
+wire [31:0] stage3_alu;
+
+wire [31:0] wb_data;
+wire [4:0] wb_addr;
+
+wire [31:0] dmem_write_data;
+
 // controls
 wire BrLT;
 wire BrEq;
@@ -46,11 +60,11 @@ Stage1Module stage1 (
 
     .stall(stall),
 
-    .stage2_inst(),
-    .stage2_alu_out(),
-    .stage3_inst(),
-    .wb_data(),
-    .wb_addr(),
+    .stage2_inst(stage2_inst),
+    .stage2_alu_out(stage2_alu_out),
+    .stage3_inst(stage3_inst),
+    .wb_data(wb_data),
+    .wb_addr(wb_addr),
 
     .BrLT(BrLT),
     .BrEq(BrEq),
@@ -126,34 +140,56 @@ FlipFlop s1_to_s2_rs2 (
 
 Stage2Module stage2 (
     // inputs
-    .stage3_inst(),
+    .stage3_inst(stage3_inst),
     .stage2_inst_in(stage2_inst),
-    .wb_data(),
+    .wb_data(wb_data),
     .rs1_data(stage2_rs1),
     .rs2_data_in(stage2_rs2),
     .stage2_pc_in(stage2_pc),
     .stage2_imm_in(stage2_imm),
 
     // outputs
-    .stage2_inst_out(),
-    .stage2_pc_out(),
-    .stage2_alu_out(),
-    .rs2_data_out(),
+    .stage2_inst_out(stage2_inst_out),
+    .stage2_pc_out(stage2_pc_out),
+    .stage2_alu_out(stage2_alu_out),
+    .rs2_data_out(dmem_write_data),
 
     // control signals
     .BrLT(BrLT),
     .BrEq(BrEq)
 );
 
-FlipFlop s1_to_s2_rs2 (
+FlipFlop s2_to_s3_inst (
     // inputs
     .clk(clk),
     .reset(reset),
 
-    .data(stage1_rs2),
+    .data(stage2_inst_out),
 
     // outputs
-    .data_out(stage2_rs2)
+    .data_out(stage3_inst)
+);
+
+FlipFlop s2_to_s3_pc (
+    // inputs
+    .clk(clk),
+    .reset(reset),
+
+    .data(stage2_pc_out),
+
+    // outputs
+    .data_out(stage3_pc)
+);
+
+FlipFlop s2_to_s3_alu (
+    // inputs
+    .clk(clk),
+    .reset(reset),
+
+    .data(stage2_alu_out),
+
+    // outputs
+    .data_out(stage3_alu)
 );
 
 Stage3Module stage3 (
@@ -161,16 +197,16 @@ Stage3Module stage3 (
     .clk(clk),
     .reset(reset),
 
-    .stage3_inst_in(),
-    .stage3_pc_in(),
-    .stage3_alu_out(),
-    .stage3_dmem_write_addr(),
-    .stage3_dmem_write_data(),
-    .rs1_to_csr(),
+    .stage3_inst_in(stage3_inst),
+    .stage3_pc_in(stage3_pc),
+    .stage3_alu_out(stage3_alu),
+    .stage3_dmem_write_addr(stage2_alu_out),
+    .stage3_dmem_write_data(dmem_write_data),
+    .rs1_to_csr(stage2_alu_out),
 
     // outputs
-    .wb_data(),
-    .rd(),
+    .wb_data(wb_data),
+    .rd(wb_addr),
     .csr_out(csr),
 
     // for dcache
