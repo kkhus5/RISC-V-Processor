@@ -3,7 +3,7 @@
 `include "Opcode.vh"
 
 module PCAddSignal (
-	input [31:0] inst,
+	input [31:0] icache_dout,
 	output reg [1:0] PCAddSelect
 );
 

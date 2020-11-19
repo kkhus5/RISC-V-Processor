@@ -9,10 +9,6 @@ module PCSelMux (
 	output reg [31:0] stage1_pc_mux_to_pc
 );
 
-localparam pc = 2'b00;
-localparam alu = 2'b01;
-localparam adder = 2'b10;
-
 always @(*) begin
 	case (PCSignal)
 		2'b01: stage1_pc_mux_to_pc = stage2_alu_out;

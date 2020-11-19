@@ -9,10 +9,6 @@ module Adder (
 	output reg [31:0] stage1_pc4
 );
 
-localparam pc4 = 2'b00;
-localparam pc_imm = 2'b01;
-localparam rs1_imm = 2'b11;
-
 always @(*) begin
 	case (PCAddSelect)
 		2'b01: stage1_pc4 = stage1_pc + stage1_imm;
