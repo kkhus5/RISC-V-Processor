@@ -33,6 +33,8 @@ wire [2:0] LdSelect;
 wire [1:0] WBSelect;
 wire MemRWSelect;
 
+assign rd = stage3_inst_in[11:7];
+
 assign dcache_addr = stage3_dmem_write_addr;
 assign dcache_din = stage3_dmem_write_data;
 assign dcache_we = {{3{1'b0}}, MemRWSelect};

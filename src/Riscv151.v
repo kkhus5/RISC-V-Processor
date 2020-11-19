@@ -22,6 +22,18 @@ module Riscv151(
 wire [31:0] stage1_inst;
 wire [31:0] stage2_inst;
 
+wire [31:0] stage1_pc;
+wire [31:0] stage2_pc;
+
+wire [31:0] stage1_imm;
+wire [31:0] stage2_imm;
+
+wire [31:0] stage1_rs1;
+wire [31:0] stage2_rs1;
+
+wire [31:0] stage1_rs2;
+wire [31:0] stage2_rs2;
+
 // controls
 wire BrLT;
 wire BrEq;
@@ -45,11 +57,11 @@ Stage1Module stage1 (
 
     // outputs
     .stage1_inst_out(stage1_inst),
-    .stage1_pc_out(),
-    .stage1_imm(),
+    .stage1_pc_out(stage1_pc),
+    .stage1_imm(stage1_imm),
 
-    .rs1_data_out(),
-    .rs2_data_out(),
+    .rs1_data_out(stage1_rs1),
+    .rs2_data_out(stage1_rs2),
 
     // for icache
     .icache_dout(icache_dout),
@@ -68,15 +80,59 @@ FlipFlop s1_to_s2_inst (
     .data_out(stage2_inst)
 );
 
+FlipFlop s1_to_s2_pc (
+    // inputs
+    .clk(clk),
+    .reset(reset),
+
+    .data(stage1_pc),
+
+    // outputs
+    .data_out(stage2_pc)
+);
+
+FlipFlop s1_to_s2_imm (
+    // inputs
+    .clk(clk),
+    .reset(reset),
+
+    .data(stage1_imm),
+
+    // outputs
+    .data_out(stage2_imm)
+);
+
+FlipFlop s1_to_s2_rs1 (
+    // inputs
+    .clk(clk),
+    .reset(reset),
+
+    .data(stage1_rs1),
+
+    // outputs
+    .data_out(stage2_rs1)
+);
+
+FlipFlop s1_to_s2_rs2 (
+    // inputs
+    .clk(clk),
+    .reset(reset),
+
+    .data(stage1_rs2),
+
+    // outputs
+    .data_out(stage2_rs2)
+);
+
 Stage2Module stage2 (
     // inputs
     .stage3_inst(),
     .stage2_inst_in(stage2_inst),
     .wb_data(),
-    .rs1_data(),
-    .rs2_data_in(),
-    .stage2_pc_in(),
-    .stage2_imm_in(),
+    .rs1_data(stage2_rs1),
+    .rs2_data_in(stage2_rs2),
+    .stage2_pc_in(stage2_pc),
+    .stage2_imm_in(stage2_imm),
 
     // outputs
     .stage2_inst_out(),
@@ -87,6 +143,17 @@ Stage2Module stage2 (
     // control signals
     .BrLT(BrLT),
     .BrEq(BrEq)
+);
+
+FlipFlop s1_to_s2_rs2 (
+    // inputs
+    .clk(clk),
+    .reset(reset),
+
+    .data(stage1_rs2),
+
+    // outputs
+    .data_out(stage2_rs2)
 );
 
 Stage3Module stage3 (
