@@ -45,6 +45,10 @@ wire Data2SelSignal;
 wire [1:0] PCAddSelect;
 wire [1:0] PCSelect;
 
+// for testing
+wire [4:0] writeback_address = wb_addr;
+wire [31:0] writeback_data = wb_data;
+
 assign stage1_inst_out = stage1_inst;
 assign stage1_pc_out = stage1_pc;
 assign icache_addr = stage1_pc;
@@ -77,7 +81,8 @@ RegWEn regwen (
 
 ImmSel immsel (
 	// inputs
-	.inst(stage1_inst),
+	//.inst(stage1_inst),
+	.inst(icache_dout),
 
 	// outputs
 	.ImmType(ImmType)
@@ -86,7 +91,8 @@ ImmSel immsel (
 ImmGen immgen (
 	// inputs
 	.ImmSel(ImmType),
-	.inst(stage1_inst),
+	//.inst(stage1_inst),
+	.inst(icache_dout),
 
 	// outputs
 	.imm(stage1_imm)

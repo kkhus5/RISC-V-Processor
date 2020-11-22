@@ -378,7 +378,7 @@ module Riscv151_testbench();
         // DATA_ADDR7      = (CPU.stage1.regfile.mem[9]  + IMM2[11:0]) >> 2;
         // DATA_ADDR8      = (CPU.stage1.regfile.mem[10] + IMM3[11:0]) >> 2;
 
-        // imem.mem[INST_ADDR + 0] = {IMM0[11:5], 5'd1, 5'd2,  `FNC_SW, IMM0[4:0], `OPC_STORE};
+        // //imem.mem[INST_ADDR + 0] = {IMM0[11:5], 5'd1, 5'd2,  `FNC_SW, IMM0[4:0], `OPC_STORE};
         // imem.mem[INST_ADDR + 1] = {IMM0[11:5], 5'd1, 5'd3,  `FNC_SH, IMM0[4:0], `OPC_STORE};
         // imem.mem[INST_ADDR + 2] = {IMM1[11:5], 5'd1, 5'd4,  `FNC_SH, IMM1[4:0], `OPC_STORE};
         // imem.mem[INST_ADDR + 3] = {IMM2[11:5], 5'd1, 5'd5,  `FNC_SH, IMM2[4:0], `OPC_STORE};
@@ -417,10 +417,10 @@ module Riscv151_testbench();
         INST_ADDR = `PC_RESET >> 2;
 
         imem.mem[INST_ADDR + 0] = {IMM[31:12], 5'd3, `OPC_LUI};
-        //imem.mem[INST_ADDR + 1] = {IMM[31:12], 5'd4, `OPC_AUIPC};
+        imem.mem[INST_ADDR + 1] = {IMM[31:12], 5'd4, `OPC_AUIPC};
 
         check_result_rf(5'd3,  32'h7fff0000, "U-Type LUI");
-        //check_result_rf(5'd4,  32'h7fff2004, "U-Type AUIPC");
+        check_result_rf(5'd4,  32'h7fff2004, "U-Type AUIPC");
 
         // Test J-Type Insts --------------------------------------------------
         // - JAL
@@ -723,15 +723,19 @@ module Riscv151_testbench();
     end
 
    // Uncomment this always block to print out more information for debugging
+// always @(posedge clk) begin
+// 	$display("[At time %t, cycle=%d, test_id=%d, test_type=%s] pc=%h, cpu_inst=%h, imem_addrb=%h, dmem_addra=%h, rf_ra1=%d, rf_ra2=%d, rf_rd1=%h, rf_rd2=%h, rf_wa=%d, rf_wd=%h, rf_we=%b, csr=%d, test0=%h, test1=%h",
+// 	$time, cycle, current_test_id, current_test_type,
+// 	CPU.stage1.stage1_pc, CPU.stage1_inst, CPU.stage1.stage1_pc, CPU.stage2_alu_out,
+// 	CPU.stage1.stage1_inst[19:15], CPU.stage1.stage1_inst[24:20], CPU.stage1.rs1_mux_data, CPU.stage1.rs2_mux_data,
+// 	CPU.stage1.regfile.writeback_address,  CPU.stage1.regfile.writeback_data,  CPU.stage1.regfile.RegWEnSelect,
+// 	CPU.csr, imem[INST_ADDR + 0], imem[INST_ADDR + 1]);
+// end
+
 always @(posedge clk) begin
-	$display("[At time %t, cycle=%d, test_id=%d, test_type=%s] pc=%h, cpu_inst=%h, imem_addrb=%h",
-	$time, cycle, current_test_id, current_test_type,
-	CPU.stage1.stage1_pc, CPU.stage1.stage1_inst, CPU.icache_addr);
+    $display("[At time %t, cycle=%d, test_id=%d, test_type=%s] pc=%h, cpu_inst=%h, imem_addrb=%h",
+    $time, cycle, current_test_id, current_test_type,
+    CPU.stage1.stage1_pc, CPU.stage1.stage1_inst, CPU.icache_addr);
 end
 
-// "[At time %t, cycle=%d, test_id=%d, test_type=%s] pc=%h, cpu_inst=%h, imem_addrb=%h, dmem_addra=%h, rf_ra1=%d, rf_ra2=%d, rf_rd1=%h, rf_rd2=%h, rf_wa=%d, rf_wd=%h, rf_we=%b, csr=%d, test0=%h, test1=%h",
-    // CPU.stage1.stage1_pc, CPU.stage1.stage1_inst, CPU.stage1.stage1_pc, CPU.stage2.stage2_alu_out,
-    // CPU.stage1.regfile.rdAddrA, CPU.stage1.regfile.rdAddrB, CPU.stage1.rs1_mux_data, CPU.stage1.rs2_mux_data,
-    // CPU.stage1.regfile.wrAddr,  CPU.stage1.regfile.wrData,  CPU.stage1.regfile.RegWEnSelect,
-    // CPU.csr, imem[INST_ADDR + 0], imem[INST_ADDR + 1]);
 endmodule

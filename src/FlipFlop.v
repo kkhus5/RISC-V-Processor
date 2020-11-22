@@ -9,6 +9,7 @@ module FlipFlop (
 	output reg [31:0] data_out
 );
 
+
 // initial data_out = {32{1'b0}};
 initial data_out = 32'h00002000;
 
