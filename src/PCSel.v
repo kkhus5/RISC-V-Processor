@@ -81,7 +81,7 @@ end
 always @(*) begin
     if (take_branch) begin
         PCSignal = 2'b01;
-    end else if (!take_branch && prev_opcode == `OPC_BRANCH || (curr_opcode == `OPC_JALR && prev_rd == curr_rs1 && prev_opcode != `OPC_NOOP)) begin
+    end else if (!take_branch && prev_opcode == `OPC_BRANCH || (curr_opcode == `OPC_JALR && prev_rd == curr_rs1 && prev_opcode != `OPC_NOOP && prev_opcode != `OPC_BRANCH && prev_opcode != `OPC_STORE)) begin
         PCSignal = 2'b00;
     end else begin
         PCSignal = 2'b10;

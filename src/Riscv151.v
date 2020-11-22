@@ -145,7 +145,7 @@ Stage2Module stage2 (
     .wb_data(wb_data),
     .rs1_data(stage2_rs1),
     .rs2_data_in(stage2_rs2),
-    .stage2_pc_in(stage2_pc),
+    .stage2_pc_in(stage2_pc - 32'd4),
     .stage2_imm_in(stage2_imm),
 
     // outputs

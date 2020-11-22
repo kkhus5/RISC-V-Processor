@@ -11,7 +11,7 @@ module Adder (
 
 always @(*) begin
 	case (PCAddSelect)
-		2'b01: stage1_pc4 = stage1_pc + stage1_imm;
+		2'b01: stage1_pc4 = stage1_pc - 32'd4 + stage1_imm;
 		2'b10: stage1_pc4 = stage1_imm + rs1_data;
 		default: stage1_pc4 = stage1_pc + 32'd4;
 	endcase
