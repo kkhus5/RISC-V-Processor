@@ -723,13 +723,15 @@ module Riscv151_testbench();
     end
 
    // Uncomment this always block to print out more information for debugging
-// always @(posedge clk) begin
-// 	$display("[At time %t, cycle=%d, test_id=%d, test_type=%s] pc=%h, cpu_inst=%h, imem_addrb=%h, dmem_addra=%h, rf_ra1=%d, rf_ra2=%d, rf_rd1=%h, rf_rd2=%h, rf_wa=%d, rf_wd=%h, rf_we=%b, csr=%d, test0=%h, test1=%h",
-// 	$time, cycle, current_test_id, current_test_type,
-// 	CPU.stage1.stage1_pc, CPU.stage1_inst, CPU.stage1.stage1_pc, CPU.stage2_alu_out,
-// 	CPU.stage1.stage1_inst[19:15], CPU.stage1.stage1_inst[24:20], CPU.stage1.rs1_mux_data, CPU.stage1.rs2_mux_data,
-// 	CPU.stage1.regfile.wrAddr,  CPU.stage1.regfile.wrData,  CPU.stage1.regfile.RegWEnSelect,
-// 	CPU.csr, imem[INST_ADDR + 0], imem[INST_ADDR + 1]);
-// end
+always @(posedge clk) begin
+	$display("[At time %t, cycle=%d, test_id=%d, test_type=%s] pc=%h, cpu_inst=%h, imem_addrb=%h",
+	$time, cycle, current_test_id, current_test_type,
+	CPU.stage1.stage1_pc, CPU.stage1.stage1_inst, CPU.icache_addr);
+end
 
+// "[At time %t, cycle=%d, test_id=%d, test_type=%s] pc=%h, cpu_inst=%h, imem_addrb=%h, dmem_addra=%h, rf_ra1=%d, rf_ra2=%d, rf_rd1=%h, rf_rd2=%h, rf_wa=%d, rf_wd=%h, rf_we=%b, csr=%d, test0=%h, test1=%h",
+    // CPU.stage1.stage1_pc, CPU.stage1.stage1_inst, CPU.stage1.stage1_pc, CPU.stage2.stage2_alu_out,
+    // CPU.stage1.regfile.rdAddrA, CPU.stage1.regfile.rdAddrB, CPU.stage1.rs1_mux_data, CPU.stage1.rs2_mux_data,
+    // CPU.stage1.regfile.wrAddr,  CPU.stage1.regfile.wrData,  CPU.stage1.regfile.RegWEnSelect,
+    // CPU.csr, imem[INST_ADDR + 0], imem[INST_ADDR + 1]);
 endmodule
