@@ -6,14 +6,14 @@ module WBSelMux (
 	input [31:0] wb_dmem,
 	input [1:0] WBSel,
 
-	output [31:0] wb_data
+	output reg [31:0] wb_data
 );
 
 always @(*) begin
 	case (WBSel)
 		2'b00: wb_data = wb_dmem;
 		2'b01: wb_data = stage3_alu_out;
-		2'b10: wb_data = stage3_pcd4;
+		2'b10: wb_data = stage3_pc4;
 		default: wb_data = 32'dx;
 	endcase
 end

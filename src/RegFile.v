@@ -18,19 +18,21 @@ module RegFile (
    	output [31:0] rdDataB
 );
 
-reg [31:0] regfile [31:0];
+localparam DEPTH = 32;
 
-assign rdDataA = regfile[rdAddrA];
-assign rdDataB = regfile[rdAddrB];
+reg [31:0] mem [31:0];
+
+assign rdDataA = mem[rdAddrA];
+assign rdDataB = mem[rdAddrB];
 
 integer i;
 always @(posedge clk) begin
 	if (reset) begin
-		for (i = 0; i < 32; i = i + 1) begin
-			regfile[i] <= 32'd0;
+		for (i = 0; i < DEPTH; i = i + 1) begin
+			mem[i] <= 32'd0;
 	 	end
 	end else begin
-		if (write && wrAddr != 5'd0) regfile[wrAddr] <= wrData;
+		if (RegWEnSelect && wrAddr != 5'd0) mem[wrAddr] <= wrData;
 		end // else: !if(reset)
 	end
 

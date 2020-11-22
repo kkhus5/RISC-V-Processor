@@ -3,7 +3,7 @@
 
 `include "Opcode.vh"
 
-module ASel (
+module BSel (
 	input [31:0] inst, // at PC = 0, at stage 3
 	output reg BSelSignal 
 );

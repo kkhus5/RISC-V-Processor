@@ -9,15 +9,15 @@ module PCAddSignal (
 
 //localparam pc4 = 2'b00;
 //localparam pc_imm = 2'b01;
-//localparam rs1_imm = 2'b11;
+//localparam rs1_imm = 2'b10;
 
 wire [6:0] opcode;
-assign opcode = inst[6:0];
+assign opcode = icache_dout[6:0];
 
 always @(*) begin
 	case (opcode)
 		`OPC_JAL: PCAddSelect = 2'b01;
-		`OPC_JALR: PCAddSelect = 2'b11;
+		`OPC_JALR: PCAddSelect = 2'b10;
 		default: PCAddSelect = 2'b00;
 	endcase
 end

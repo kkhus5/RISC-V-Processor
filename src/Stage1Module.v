@@ -126,7 +126,7 @@ Data2Sel rs2DataSel_s1 (
 	.next_inst(stage1_inst),
 
 	// outputs
-	.Data1SelSignal(Data2SelSignal)
+	.Data2SelSignal(Data2SelSignal)
 );
 
 DataSelMux data1sel_s1 (

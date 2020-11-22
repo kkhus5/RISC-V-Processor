@@ -11,6 +11,8 @@ module Stage3Module (
 	input [31:0] stage3_dmem_write_data,
 	input [31:0] rs1_to_csr,
 
+	input [31:0] stage2_inst,
+
 	output [31:0] wb_data,
 	output [4:0] rd,
 	output [31:0] csr_out,
@@ -42,7 +44,7 @@ assign dcache_re = 1'b1;
 
 CSRSel csrsel (
 	// inputs
-	.stage3_inst(stage3_inst_in),
+	.stage3_inst(stage2_inst),
 
 	// outputs
 	.CSRSelSignal(CSRSelect)
@@ -107,7 +109,7 @@ WBSelMux wbselmux (
 
 MemRW memrw (
 	// inputs
-	.stage3_inst(stage3_inst_in),
+	.stage3_inst(stage2_inst),
 
 	// outputs
 	.MemRWSelect(MemRWSelect)

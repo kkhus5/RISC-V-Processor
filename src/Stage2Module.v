@@ -12,7 +12,7 @@ module Stage2Module (
 	output [31:0] stage2_inst_out,
 	output [31:0] stage2_pc_out,
 	output [31:0] stage2_alu_out,
-	output [31:0] rs2_data_out
+	output [31:0] rs2_data_out,
 
 	// control signals
 	output BrLT,

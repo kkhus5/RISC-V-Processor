@@ -19,10 +19,10 @@ wire [2:0] next_funct3;
 assign next_funct3 = next_inst[14:12];
 
 wire has_rd;
-assign has_rd = (prev_opcode == `OPC_BRANCH || prev_opcode == `OP_STORE)? 1'b0: 1'b1;
+assign has_rd = (prev_opcode == `OPC_BRANCH || prev_opcode == `OPC_STORE)? 1'b0: 1'b1;
 
 wire has_rs2;
-assign has_rs2 = (next_opcode == `OPC_LUI || next_opcode == `OPC_AUIPIC || next_opcode == `OPC_JAL || next_opcode == `OPC_JALR || next_opcode == `OPC_LOAD || next_opcode == `OPC_ARI_ITYPE || next_opcode == `OPC_CSR)? 1'b0 : 1'b1;
+assign has_rs2 = (next_opcode == `OPC_LUI || next_opcode == `OPC_AUIPC || next_opcode == `OPC_JAL || next_opcode == `OPC_JALR || next_opcode == `OPC_LOAD || next_opcode == `OPC_ARI_ITYPE || next_opcode == `OPC_CSR)? 1'b0 : 1'b1;
 
 wire rd_rs2_fire;
 assign rd_rs2_fire = (has_rd && has_rs2)? 1'b1 : 1'b0;

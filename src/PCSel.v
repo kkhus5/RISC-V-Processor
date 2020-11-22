@@ -55,22 +55,22 @@ always @(*) begin
                             
                             `FNC_BLT:
                                         begin
-                                            if (BrLt) take_branch = 1'b1;
+                                            if (BrLT) take_branch = 1'b1;
                                         end
                                         
                             `FNC_BGE:
                                         begin
-                                            if (!BrLt) take_branch = 1'b1;
+                                            if (!BrLT) take_branch = 1'b1;
                                         end
                                         
                             `FNC_BLTU:
                                         begin
-                                            if (BrLt) take_branch = 1'b1;
+                                            if (BrLT) take_branch = 1'b1;
                                         end
                                         
                             `FNC_BGEU:
                                         begin
-                                            if (!BrLt) take_branch = 1'b1;
+                                            if (!BrLT) take_branch = 1'b1;
                                         end
                         endcase
                     end
@@ -81,7 +81,7 @@ end
 always @(*) begin
     if (take_branch) begin
         PCSignal = 2'b01;
-    end else if (!take_branch && prev_opcode == `OP_BRANCH || stall || (curr_opcode == `OPC_JALR && prev_rd == curr_rs1)) begin
+    end else if (!take_branch && prev_opcode == `OPC_BRANCH || (curr_opcode == `OPC_JALR && prev_rd == curr_rs1 && prev_opcode != `OPC_NOOP)) begin
         PCSignal = 2'b00;
     end else begin
         PCSignal = 2'b10;

@@ -5,7 +5,7 @@ module LdSelMux (
 	input [2:0] LdSel,
 	input [1:0] shamt, // alu_out[1:0]
 
-	output [31:0] wb_dmem 
+	output reg [31:0] wb_dmem 
 );
 
 reg [31:0] shifted_raw_dmem;
