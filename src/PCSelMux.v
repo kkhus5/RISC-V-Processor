@@ -13,7 +13,7 @@ always @(*) begin
 	case (PCSignal)
 		2'b01: stage1_pc_mux_to_pc = stage2_alu_out;
 		2'b10: stage1_pc_mux_to_pc = stage1_pc4;
-		default: stage1_pc_mux_to_pc = stage1_pc - 32'd4;
+		default: stage1_pc_mux_to_pc = stage1_pc;
 	endcase
 end
 

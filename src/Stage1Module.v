@@ -52,7 +52,7 @@ wire [31:0] rs2_data = rs2_data_out;
 
 assign stage1_inst_out = stage1_inst;
 assign stage1_pc_out = stage1_pc;
-assign icache_addr = stage1_pc;
+assign icache_addr = stage1_pc_mux_to_pc;
 assign icache_re = 1'b1;
 
 RegFile regfile (
@@ -160,6 +160,8 @@ FlipFlop pcreg (
 	// inputs
 	.clk(clk),
 	.reset(reset),
+	.isPC(1'b1),
+
 	.data(stage1_pc_mux_to_pc),
 
 	// outputs

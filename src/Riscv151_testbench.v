@@ -466,11 +466,7 @@ module Riscv151_testbench();
         // Test B-Type Insts --------------------------------------------------
         // - BEQ, BNE, BLT, BGE, BLTU, BGEU
         resets();
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 0ed99eb045596133dc703059ae4c9f5a9cfce90d
         IMM       = 32'h0000_0FF0;
         INST_ADDR = `PC_RESET >> 2;
         JUMP_ADDR = (`PC_RESET + IMM[12:0]) >> 2;
@@ -740,11 +736,7 @@ module Riscv151_testbench();
 always @(posedge clk) begin
     $display("[At time %t, cycle=%d, test_id=%d, test_type=%s] pc=%h, cpu_inst=%h, s1_rs2=%h, s2_rs2_data=%h, s3_dmem_write=%h, stage2_alu_out=%h, s3_dmem_addr=%h, csr=%h",
     $time, cycle, current_test_id, current_test_type,
-<<<<<<< HEAD
-    CPU.stage1.stage1_pc, CPU.stage1.stage1_inst, CPU.stage1.rs2_data, CPU.stage2.stage2_rs2_data, CPU.dcache_din, CPU.dcache_addr);
-=======
     CPU.stage1.stage1_pc, CPU.stage1.stage1_inst, CPU.stage1.rs2_data, CPU.stage2.stage2_rs2_data, CPU.stage3.dcache_din, CPU.stage2.s2_alu_out, CPU.stage3.dcache_addr, CPU.csr);
->>>>>>> 0ed99eb045596133dc703059ae4c9f5a9cfce90d
 end
 
 endmodule
