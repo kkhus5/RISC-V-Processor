@@ -1,5 +1,7 @@
 // This is the top-level for the Stage 3 Datapath and Control Signals.
 
+`include "Opcode.vh"
+
 module Stage3Module (
 	input clk,
 	input reset,
@@ -39,7 +41,7 @@ assign rd = stage3_inst_in[11:7];
 
 assign dcache_addr = stage3_dmem_write_addr;
 assign dcache_din = stage3_dmem_write_data;
-assign dcache_we = {{3{1'b0}}, MemRWSelect};
+assign dcache_we = (stage2_inst[6:0] == `OPC_STORE)? {4{MemRWSelect}} : 4'b0000;
 assign dcache_re = 1'b1;
 
 CSRSel csrsel (
