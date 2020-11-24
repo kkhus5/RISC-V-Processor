@@ -343,71 +343,71 @@ module Riscv151_testbench();
         // Test S-Type Insts --------------------------------------------------
         // - SW, SH, SB
 
-        // resets();
+        resets();
 
-        // CPU.stage1.regfile.mem[1]  = 32'h12345678;
+        CPU.stage1.regfile.mem[1]  = 32'h12345678;
 
-        // CPU.stage1.regfile.mem[2]  = 32'h0000_1010;
+        CPU.stage1.regfile.mem[2]  = 32'h0000_1010;
 
-        // CPU.stage1.regfile.mem[3]  = 32'h0000_1020;
-        // CPU.stage1.regfile.mem[4]  = 32'h0000_1030;
-        // CPU.stage1.regfile.mem[5]  = 32'h0000_1040;
-        // CPU.stage1.regfile.mem[6]  = 32'h0000_1050;
+        CPU.stage1.regfile.mem[3]  = 32'h0000_1020;
+        CPU.stage1.regfile.mem[4]  = 32'h0000_1030;
+        CPU.stage1.regfile.mem[5]  = 32'h0000_1040;
+        CPU.stage1.regfile.mem[6]  = 32'h0000_1050;
 
-        // CPU.stage1.regfile.mem[7]  = 32'h0000_1060;
-        // CPU.stage1.regfile.mem[8]  = 32'h0000_1070;
-        // CPU.stage1.regfile.mem[9]  = 32'h0000_1080;
-        // CPU.stage1.regfile.mem[10] = 32'h0000_1090;
+        CPU.stage1.regfile.mem[7]  = 32'h0000_1060;
+        CPU.stage1.regfile.mem[8]  = 32'h0000_1070;
+        CPU.stage1.regfile.mem[9]  = 32'h0000_1080;
+        CPU.stage1.regfile.mem[10] = 32'h0000_1090;
 
-        // IMM0            = 32'h0000_0100;
-        // IMM1            = 32'h0000_0101;
-        // IMM2            = 32'h0000_0102;
-        // IMM3            = 32'h0000_0103;
+        IMM0            = 32'h0000_0100;
+        IMM1            = 32'h0000_0101;
+        IMM2            = 32'h0000_0102;
+        IMM3            = 32'h0000_0103;
 
-        // INST_ADDR       = `PC_RESET >> 2;
+        INST_ADDR       = `PC_RESET >> 2;
 
-        // DATA_ADDR0      = (CPU.stage1.regfile.mem[2]  + IMM0[11:0]) >> 2;
+        DATA_ADDR0      = (CPU.stage1.regfile.mem[2]  + IMM0[11:0]) >> 2;
 
-        // DATA_ADDR1      = (CPU.stage1.regfile.mem[3]  + IMM0[11:0]) >> 2;
-        // DATA_ADDR2      = (CPU.stage1.regfile.mem[4]  + IMM1[11:0]) >> 2;
-        // DATA_ADDR3      = (CPU.stage1.regfile.mem[5]  + IMM2[11:0]) >> 2;
-        // DATA_ADDR4      = (CPU.stage1.regfile.mem[6]  + IMM3[11:0]) >> 2;
+        DATA_ADDR1      = (CPU.stage1.regfile.mem[3]  + IMM0[11:0]) >> 2;
+        DATA_ADDR2      = (CPU.stage1.regfile.mem[4]  + IMM1[11:0]) >> 2;
+        DATA_ADDR3      = (CPU.stage1.regfile.mem[5]  + IMM2[11:0]) >> 2;
+        DATA_ADDR4      = (CPU.stage1.regfile.mem[6]  + IMM3[11:0]) >> 2;
 
-        // DATA_ADDR5      = (CPU.stage1.regfile.mem[7]  + IMM0[11:0]) >> 2;
-        // DATA_ADDR6      = (CPU.stage1.regfile.mem[8]  + IMM1[11:0]) >> 2;
-        // DATA_ADDR7      = (CPU.stage1.regfile.mem[9]  + IMM2[11:0]) >> 2;
-        // DATA_ADDR8      = (CPU.stage1.regfile.mem[10] + IMM3[11:0]) >> 2;
+        DATA_ADDR5      = (CPU.stage1.regfile.mem[7]  + IMM0[11:0]) >> 2;
+        DATA_ADDR6      = (CPU.stage1.regfile.mem[8]  + IMM1[11:0]) >> 2;
+        DATA_ADDR7      = (CPU.stage1.regfile.mem[9]  + IMM2[11:0]) >> 2;
+        DATA_ADDR8      = (CPU.stage1.regfile.mem[10] + IMM3[11:0]) >> 2;
 
-        // //imem.mem[INST_ADDR + 0] = {IMM0[11:5], 5'd1, 5'd2,  `FNC_SW, IMM0[4:0], `OPC_STORE};
-        // imem.mem[INST_ADDR + 1] = {IMM0[11:5], 5'd1, 5'd3,  `FNC_SH, IMM0[4:0], `OPC_STORE};
-        // imem.mem[INST_ADDR + 2] = {IMM1[11:5], 5'd1, 5'd4,  `FNC_SH, IMM1[4:0], `OPC_STORE};
-        // imem.mem[INST_ADDR + 3] = {IMM2[11:5], 5'd1, 5'd5,  `FNC_SH, IMM2[4:0], `OPC_STORE};
-        // imem.mem[INST_ADDR + 4] = {IMM3[11:5], 5'd1, 5'd6,  `FNC_SH, IMM3[4:0], `OPC_STORE};
-        // imem.mem[INST_ADDR + 5] = {IMM0[11:5], 5'd1, 5'd7,  `FNC_SB, IMM0[4:0], `OPC_STORE};
-        // imem.mem[INST_ADDR + 6] = {IMM1[11:5], 5'd1, 5'd8,  `FNC_SB, IMM1[4:0], `OPC_STORE};
-        // imem.mem[INST_ADDR + 7] = {IMM2[11:5], 5'd1, 5'd9,  `FNC_SB, IMM2[4:0], `OPC_STORE};
-        // imem.mem[INST_ADDR + 8] = {IMM3[11:5], 5'd1, 5'd10, `FNC_SB, IMM3[4:0], `OPC_STORE};
+        //imem.mem[INST_ADDR + 0] = {IMM0[11:5], 5'd1, 5'd2,  `FNC_SW, IMM0[4:0], `OPC_STORE};
+        imem.mem[INST_ADDR + 1] = {IMM0[11:5], 5'd1, 5'd3,  `FNC_SH, IMM0[4:0], `OPC_STORE};
+        imem.mem[INST_ADDR + 2] = {IMM1[11:5], 5'd1, 5'd4,  `FNC_SH, IMM1[4:0], `OPC_STORE};
+        imem.mem[INST_ADDR + 3] = {IMM2[11:5], 5'd1, 5'd5,  `FNC_SH, IMM2[4:0], `OPC_STORE};
+        imem.mem[INST_ADDR + 4] = {IMM3[11:5], 5'd1, 5'd6,  `FNC_SH, IMM3[4:0], `OPC_STORE};
+        imem.mem[INST_ADDR + 5] = {IMM0[11:5], 5'd1, 5'd7,  `FNC_SB, IMM0[4:0], `OPC_STORE};
+        imem.mem[INST_ADDR + 6] = {IMM1[11:5], 5'd1, 5'd8,  `FNC_SB, IMM1[4:0], `OPC_STORE};
+        imem.mem[INST_ADDR + 7] = {IMM2[11:5], 5'd1, 5'd9,  `FNC_SB, IMM2[4:0], `OPC_STORE};
+        imem.mem[INST_ADDR + 8] = {IMM3[11:5], 5'd1, 5'd10, `FNC_SB, IMM3[4:0], `OPC_STORE};
 
-        // dmem.mem[DATA_ADDR0]    = 0;
-        // dmem.mem[DATA_ADDR1]    = 0;
-        // dmem.mem[DATA_ADDR3]    = 0;
-        // dmem.mem[DATA_ADDR4]    = 0;
-        // dmem.mem[DATA_ADDR5]    = 0;
-        // dmem.mem[DATA_ADDR6]    = 0;
-        // dmem.mem[DATA_ADDR7]    = 0;
-        // dmem.mem[DATA_ADDR8]    = 0;
+        dmem.mem[DATA_ADDR0]    = 0;
+        dmem.mem[DATA_ADDR1]    = 0;
+        dmem.mem[DATA_ADDR3]    = 0;
+        dmem.mem[DATA_ADDR4]    = 0;
+        dmem.mem[DATA_ADDR5]    = 0;
+        dmem.mem[DATA_ADDR6]    = 0;
+        dmem.mem[DATA_ADDR7]    = 0;
+        dmem.mem[DATA_ADDR8]    = 0;
 
-        // check_result_dmem(DATA_ADDR0, 32'h12345678, "S-Type SW");
+        check_result_dmem(DATA_ADDR0, 32'h12345678, "S-Type SW");
 
-        // check_result_dmem(DATA_ADDR1, 32'h00005678, "S-Type SH 1");
-        // check_result_dmem(DATA_ADDR2, 32'h00567800, "S-Type SH 2");
-        // check_result_dmem(DATA_ADDR3, 32'h56780000, "S-Type SH 3");
-        // check_result_dmem(DATA_ADDR4, 32'h56780000, "S-Type SH 4");
+        check_result_dmem(DATA_ADDR1, 32'h00005678, "S-Type SH 1");
+        check_result_dmem(DATA_ADDR2, 32'h00567800, "S-Type SH 2");
+        check_result_dmem(DATA_ADDR3, 32'h56780000, "S-Type SH 3");
+        check_result_dmem(DATA_ADDR4, 32'h56780000, "S-Type SH 4");
 
-        // check_result_dmem(DATA_ADDR5, 32'h00000078, "S-Type SB 1");
-        // check_result_dmem(DATA_ADDR6, 32'h00007800, "S-Type SB 2");
-        // check_result_dmem(DATA_ADDR7, 32'h00780000, "S-Type SB 3");
-        // check_result_dmem(DATA_ADDR8, 32'h78000000, "S-Type SB 4");
+        check_result_dmem(DATA_ADDR5, 32'h00000078, "S-Type SB 1");
+        check_result_dmem(DATA_ADDR6, 32'h00007800, "S-Type SB 2");
+        check_result_dmem(DATA_ADDR7, 32'h00780000, "S-Type SB 3");
+        check_result_dmem(DATA_ADDR8, 32'h78000000, "S-Type SB 4");
 
         // Test U-Type Insts --------------------------------------------------
         // - LUI, AUIPC
