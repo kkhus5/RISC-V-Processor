@@ -713,7 +713,19 @@ module Riscv151_testbench();
         check_result_rf(5'd3, CPU.stage1.regfile.mem[2] + `PC_RESET + 4, "Hazard 12");
 
         // ... what else?
-
+        // Hazard 13
+	resets();
+	
+        INST_ADDR = `PC_RESET >> 2;
+	
+	imem.mem[INST_ADDR + 0] = 32'h0040006f;
+        imem.mem[INST_ADDR + 1] = 32'h51e05073;
+        imem.mem[INST_ADDR + 2] = 32'h00000093;
+	imem.mem[INST_ADDR + 3] = 32'h4000d713;
+        imem.mem[INST_ADDR + 4] = 32'h00000393;
+	imem.mem[INST_ADDR + 5] = 32'h00200193;
+	
+	check_result_rf(
 
         all_tests_passed = 1'b1;
         #100;
