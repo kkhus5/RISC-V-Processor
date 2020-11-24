@@ -34,6 +34,9 @@ wire BSel;
 wire [3:0] ALUop;
 wire [1:0] StoreSel;
 
+// for testing
+wire [31:0] s2_alu_out = stage2_alu_out;
+
 // assign outputs
 assign stage2_inst_out = stage2_inst_in;
 assign stage2_pc_out = stage2_pc_in;
