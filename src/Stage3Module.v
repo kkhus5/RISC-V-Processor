@@ -8,7 +8,7 @@ module Stage3Module (
 
 	input [31:0] stage3_inst_in,
 	input [31:0] stage3_pc_in,
-	input [31:0] stage3_alu_out,
+	input [31:0] stage3_alu_ff_out,
 	input [31:0] stage3_dmem_write_addr,
 	input [31:0] stage3_dmem_write_data,
 	input [31:0] rs1_to_csr,
@@ -84,7 +84,7 @@ LdSelMux ldselmux (
 	// inputs
 	.raw_dmem(dcache_dout),
 	.LdSel(LdSelect),
-	.shamt(stage3_alu_out[1:0]),
+	.shamt(stage3_alu_ff_out[1:0]),
 
 	// outputs
 	.wb_dmem(wb_dmem)
@@ -101,7 +101,7 @@ WBSel wbsel (
 WBSelMux wbselmux (
 	// inputs
 	.stage3_pc4(stage3_pc4),
-	.stage3_alu_out(stage3_alu_out),
+	.stage3_alu_out(stage3_alu_ff_out),
 	.wb_dmem(wb_dmem),
 	.WBSel(WBSelect),
 

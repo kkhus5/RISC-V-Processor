@@ -33,7 +33,7 @@ module ALU(
 		`ALU_COPY_B: Out = B;
 		`ALU_COPY_A: Out = A;
 		`ALU_XXX: Out = 32'd0;
-		default : Out = 32'dx;
+		default : Out = 32'd0;
 	endcase
     end
 endmodule

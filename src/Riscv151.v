@@ -207,7 +207,7 @@ Stage3Module stage3 (
 
     .stage3_inst_in(stage3_inst),
     .stage3_pc_in(stage3_pc),
-    .stage3_alu_out(stage3_alu),
+    .stage3_alu_ff_out(stage3_alu),
     .stage3_dmem_write_addr(stage2_alu_out),
     .stage3_dmem_write_data(dmem_write_data),
     .rs1_to_csr(stage2_alu_out),

@@ -30,7 +30,7 @@ assign rd_rs2_fire = (has_rd && has_rs2)? 1'b1 : 1'b0;
 always @(*) begin
     case (rd_rs2_fire)
         1'b1: begin 
-            if (next_inst[24:20] == prev_inst[11:7]) begin
+            if (next_inst[24:20] == prev_inst[11:7] && prev_inst[11:7] != 5'b00000) begin
                 Data2SelSignal = 1'b1;
             end else begin
                 Data2SelSignal = 1'b0;
