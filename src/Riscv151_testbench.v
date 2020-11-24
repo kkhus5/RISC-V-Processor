@@ -378,7 +378,7 @@ module Riscv151_testbench();
         DATA_ADDR7      = (CPU.stage1.regfile.mem[9]  + IMM2[11:0]) >> 2;
         DATA_ADDR8      = (CPU.stage1.regfile.mem[10] + IMM3[11:0]) >> 2;
 
-        //imem.mem[INST_ADDR + 0] = {IMM0[11:5], 5'd1, 5'd2,  `FNC_SW, IMM0[4:0], `OPC_STORE};
+        imem.mem[INST_ADDR + 0] = {IMM0[11:5], 5'd1, 5'd2,  `FNC_SW, IMM0[4:0], `OPC_STORE};
         imem.mem[INST_ADDR + 1] = {IMM0[11:5], 5'd1, 5'd3,  `FNC_SH, IMM0[4:0], `OPC_STORE};
         imem.mem[INST_ADDR + 2] = {IMM1[11:5], 5'd1, 5'd4,  `FNC_SH, IMM1[4:0], `OPC_STORE};
         imem.mem[INST_ADDR + 3] = {IMM2[11:5], 5'd1, 5'd5,  `FNC_SH, IMM2[4:0], `OPC_STORE};
@@ -733,9 +733,9 @@ module Riscv151_testbench();
 // end
 
 always @(posedge clk) begin
-    $display("[At time %t, cycle=%d, test_id=%d, test_type=%s] pc=%h, cpu_inst=%h, imem_addrb=%h",
+    $display("[At time %t, cycle=%d, test_id=%d, test_type=%s] pc=%h, cpu_inst=%h, s1_rs2=%h, s2_rs2_data=%h, s3_dmem_write=%h, stage2_alu_out=%h",
     $time, cycle, current_test_id, current_test_type,
-    CPU.stage1.stage1_pc, CPU.stage1.stage1_inst, CPU.icache_addr);
+    CPU.stage1.stage1_pc, CPU.stage1.stage1_inst, CPU.stage1.rs2_data, CPU.stage2.stage2_rs2_data, CPU.dmem_write_data, CPU.stage2.s2_alu_out);
 end
 
 endmodule

@@ -22,6 +22,6 @@ assign curr_opcode = icache_dout[6:0];
 wire [4:0] curr_rs1;
 assign curr_rs1 = icache_dout[19:15];
 
-assign NOPSignal = (prev_opcode == `OPC_BRANCH || (curr_opcode == `OPC_JALR && prev_rd == curr_rs1))? 1'b1 : 1'b0;
+assign NOPSignal = (prev_opcode == `OPC_BRANCH || (curr_opcode == `OPC_JALR && prev_rd == curr_rs1 && prev_opcode != `OPC_NOOP && prev_opcode != `OPC_BRANCH && prev_opcode != `OPC_STORE))? 1'b1 : 1'b0;
 
 endmodule

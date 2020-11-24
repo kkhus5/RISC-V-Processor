@@ -48,6 +48,7 @@ wire [1:0] PCSelect;
 // for testing
 wire [4:0] writeback_address = wb_addr;
 wire [31:0] writeback_data = wb_data;
+wire [31:0] rs2_data = rs2_data_out;
 
 assign stage1_inst_out = stage1_inst;
 assign stage1_pc_out = stage1_pc;
