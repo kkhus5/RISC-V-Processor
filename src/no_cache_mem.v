@@ -26,11 +26,14 @@ module no_cache_mem #(
   wire [WORD_ADDR_BITS-`ceilLog2(WORDS)-1:0] upper_addr;
   assign upper_addr = cpu_req_addr[WORD_ADDR_BITS-1:`ceilLog2(WORDS)];
 
+  wire [`ceilLog2(DEPTH)-1:0] ram_addr;
+  assign ram_addr = upper_addr[`ceilLog2(DEPTH)-1:0];
+
   wire [`ceilLog2(WORDS)-1:0] lower_addr;
   assign lower_addr = cpu_req_addr[`ceilLog2(WORDS)-1:0];
 
   wire [`MEM_DATA_BITS-1:0] read_data;
-  assign read_data = (ram[upper_addr] >> CPU_WIDTH*lower_addr);
+  assign read_data = (ram[ram_addr] >> CPU_WIDTH*lower_addr);
 
   assign cpu_req_ready = 1'b1;
 
@@ -41,7 +44,7 @@ module no_cache_mem #(
                   {8{cpu_req_write[0]}}};
 
   wire [`MEM_DATA_BITS-1:0] write_data;
-  assign write_data = (ram[upper_addr] & ~({{`MEM_DATA_BITS-CPU_WIDTH{1'b0}},wmask} << CPU_WIDTH*lower_addr)) | ((cpu_req_data & wmask) << CPU_WIDTH*lower_addr);
+  assign write_data = (ram[ram_addr] & ~({{`MEM_DATA_BITS-CPU_WIDTH{1'b0}},wmask} << CPU_WIDTH*lower_addr)) | ((cpu_req_data & wmask) << CPU_WIDTH*lower_addr);
 
   always @(posedge clk) begin
     if (reset) 
@@ -49,7 +52,7 @@ module no_cache_mem #(
     else if (cpu_req_valid && cpu_req_ready) begin
       if (cpu_req_write) begin
         cpu_resp_valid <= 1'b0;
-        ram[upper_addr] <= write_data;
+        ram[ram_addr] <= write_data;
       end else begin
         cpu_resp_valid <= 1'b1;
         cpu_resp_data <= read_data[CPU_WIDTH-1:0];
