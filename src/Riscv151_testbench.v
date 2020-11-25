@@ -725,7 +725,7 @@ module Riscv151_testbench();
         imem.mem[INST_ADDR + 4] = 32'h00000393;
 	imem.mem[INST_ADDR + 5] = 32'h00200193;
 	
-	check_result_rf(
+	//check_result_rf(
 
         all_tests_passed = 1'b1;
         #100;

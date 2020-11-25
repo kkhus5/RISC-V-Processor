@@ -45,32 +45,56 @@ always @(*) begin
                         case (prev_funct3)
                             `FNC_BEQ:
                                         begin
-                                            if (BrEq) take_branch = 1'b1;
+                                            if (BrEq) begin
+                                                take_branch = 1'b1;
+                                            end else begin
+                                                take_branch = 1'b0;
+                                            end
                                         end
                             
                             `FNC_BNE:
                                         begin
-                                            if (!BrEq) take_branch = 1'b1;
+                                            if (!BrEq) begin
+                                                take_branch = 1'b1;
+                                            end else begin
+                                                take_branch = 1'b0;
+                                            end
                                         end
                             
                             `FNC_BLT:
                                         begin
-                                            if (BrLT) take_branch = 1'b1;
+                                            if (BrLT) begin
+                                                take_branch = 1'b1;
+                                            end else begin
+                                                take_branch = 1'b0;
+                                            end
                                         end
                                         
                             `FNC_BGE:
                                         begin
-                                            if (!BrLT) take_branch = 1'b1;
+                                            if (!BrLT) begin
+                                                take_branch = 1'b1;
+                                            end else begin
+                                                take_branch = 1'b0;
+                                            end
                                         end
                                         
                             `FNC_BLTU:
                                         begin
-                                            if (BrLT) take_branch = 1'b1;
+                                            if (BrLT) begin
+                                                take_branch = 1'b1;
+                                            end else begin
+                                                take_branch = 1'b0;
+                                            end
                                         end
                                         
                             `FNC_BGEU:
                                         begin
-                                            if (!BrLT) take_branch = 1'b1;
+                                            if (!BrLT) begin
+                                                take_branch = 1'b1;
+                                            end else begin
+                                                take_branch = 1'b0;
+                                            end
                                         end
                         endcase
                     end
