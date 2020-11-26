@@ -14,6 +14,7 @@ module Stage3Module (
 	input [31:0] rs1_to_csr,
 
 	input [31:0] stage2_inst,
+	input [1:0] stage2_alu_out,
 
 	output [31:0] wb_data,
 	output [4:0] rd,
@@ -35,13 +36,14 @@ wire [31:0] wb_dmem;
 wire CSRSelect;
 wire [2:0] LdSelect;
 wire [1:0] WBSelect;
-wire MemRWSelect;
+wire [3:0] MemRWSelect;
 
 assign rd = stage3_inst_in[11:7];
 
 assign dcache_addr = stage3_dmem_write_addr;
 assign dcache_din = stage3_dmem_write_data;
-assign dcache_we = (stage2_inst[6:0] == `OPC_STORE)? {4{MemRWSelect}} : 4'b0000;
+// assign dcache_we = (stage2_inst[6:0] == `OPC_STORE)? {4{MemRWSelect}} : 4'b0000;
+assign dcache_we = MemRWSelect;
 assign dcache_re = 1'b1;
 
 CSRSel csrsel (
@@ -112,6 +114,7 @@ WBSelMux wbselmux (
 MemRW memrw (
 	// inputs
 	.stage3_inst(stage2_inst),
+	.shamt(stage2_alu_out),
 
 	// outputs
 	.MemRWSelect(MemRWSelect)

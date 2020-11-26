@@ -14,27 +14,27 @@ always @(*) begin
 	case (StoreSel)
 		2'b01: // SH
 		begin
-			shift_extended = {{16{1'b0}}, stage2_rs2_data[15:0]};
+			//shift_extended = {{16{1'b0}}, stage2_rs2_data[15:0]};
 			case (shamt)
-				2'b00: dmem_write_data = shift_extended;
+				2'b00: dmem_write_data = stage2_rs2_data;
 				
-				2'b01: dmem_write_data = shift_extended << 8; 
+				2'b01: dmem_write_data = stage2_rs2_data << 8;
 				
-				default: dmem_write_data = shift_extended << 16;
+				default: dmem_write_data = stage2_rs2_data << 16;
 			endcase
 		end
 
 		2'b00: // SB
 		begin
-			shift_extended = {{24{1'b0}}, stage2_rs2_data[7:0]};
+			//shift_extended = {{24{1'b0}}, stage2_rs2_data[7:0]};
 			case (shamt)
-				2'b00: dmem_write_data = shift_extended;
+				2'b00: dmem_write_data = stage2_rs2_data;
 				
-				2'b01: dmem_write_data = shift_extended << 8; 
+				2'b01: dmem_write_data = stage2_rs2_data << 8; 
 
-				2'b10: dmem_write_data = shift_extended << 16;
+				2'b10: dmem_write_data = stage2_rs2_data << 16;
 
-				2'b11: dmem_write_data = shift_extended << 24;
+				2'b11: dmem_write_data = stage2_rs2_data << 24;
 			endcase
 		end
 

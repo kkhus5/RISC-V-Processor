@@ -212,6 +212,7 @@ Stage3Module stage3 (
     .stage3_dmem_write_data(dmem_write_data),
     .rs1_to_csr(stage2_alu_out),
     .stage2_inst(stage2_inst),
+    .stage2_alu_out(stage2_alu_out[1:0]),
 
     // outputs
     .wb_data(wb_data),
