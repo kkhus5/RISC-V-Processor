@@ -252,9 +252,10 @@ always @(*) begin
 
               data_in = mem_resp_data;
               data_addr = (index*4) + count;
-              count = count + 1;
+              // count = count + 1;
 
               if (count < 4) begin
+                count = count + 3;
                 NEXT_STATE = MISS;
                 mem_req_addr = mem_req_addr + 1;
               end else if (count == 4) begin
@@ -278,22 +279,22 @@ always @(*) begin
               mem_req_rw = 1'b1;
 
               case (offset[1:0])
-                2'b00: begin
+                2'b11: begin
                     mem_req_data_mask = {cpu_req_write, {12{1'b0}}};
                     mem_req_data_bits = {cpu_req_data, 96'd0};
                      end
 
-                2'b01: begin
+                2'b10: begin
                     mem_req_data_mask = {4'd0, cpu_req_write, 8'd0};
                     mem_req_data_bits = {32'd0, cpu_req_data, 64'd0};             
                      end
 
-                2'b10: begin
+                2'b01: begin
                     mem_req_data_mask = {8'd0, cpu_req_write, 4'd0};
                     mem_req_data_bits = {64'd0, cpu_req_data, 32'd0};               
                      end
 
-                2'b11: begin
+                2'b00: begin
                     mem_req_data_mask = {12'd0, cpu_req_write};
                     mem_req_data_bits = {96'd0, cpu_req_data};              
                      end
