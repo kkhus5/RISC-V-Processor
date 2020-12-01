@@ -89,6 +89,8 @@ FlipFlop s1_to_s2_inst (
     .reset(reset),
     .isPC(1'b0),
 
+    .stall(stall),
+
     .data(stage1_inst),
 
     // outputs
@@ -100,6 +102,8 @@ FlipFlop s1_to_s2_pc (
     .clk(clk),
     .reset(reset),
     .isPC(1'b0),
+
+    .stall(stall),
 
     .data(stage1_pc),
 
@@ -113,6 +117,8 @@ FlipFlop s1_to_s2_imm (
     .reset(reset),
     .isPC(1'b0),
 
+    .stall(stall),
+
     .data(stage1_imm),
 
     // outputs
@@ -125,6 +131,8 @@ FlipFlop s1_to_s2_rs1 (
     .reset(reset),
     .isPC(1'b0),
 
+    .stall(stall),
+
     .data(stage1_rs1),
 
     // outputs
@@ -136,6 +144,8 @@ FlipFlop s1_to_s2_rs2 (
     .clk(clk),
     .reset(reset),
     .isPC(1'b0),
+
+    .stall(stall),
 
     .data(stage1_rs2),
 
@@ -170,6 +180,8 @@ FlipFlop s2_to_s3_inst (
     .reset(reset),
     .isPC(1'b0),
 
+    .stall(stall),
+
     .data(stage2_inst_out),
 
     // outputs
@@ -182,6 +194,8 @@ FlipFlop s2_to_s3_pc (
     .reset(reset),
     .isPC(1'b0),
 
+    .stall(stall),
+
     .data(stage2_pc_out),
 
     // outputs
@@ -193,6 +207,8 @@ FlipFlop s2_to_s3_alu (
     .clk(clk),
     .reset(reset),
     .isPC(1'b0),
+
+    .stall(stall),
 
     .data(stage2_alu_out),
 

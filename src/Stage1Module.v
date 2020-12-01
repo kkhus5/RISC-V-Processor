@@ -162,6 +162,8 @@ FlipFlop pcreg (
 	.reset(reset),
 	.isPC(1'b1),
 
+	.stall(stall),
+
 	.data(stage1_pc_mux_to_pc),
 
 	// outputs

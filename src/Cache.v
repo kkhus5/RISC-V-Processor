@@ -17,18 +17,18 @@ module cache #
   input [CPU_WIDTH-1:0]       cpu_req_data, // 32 bits // done
   input [3:0]                 cpu_req_write, // done
 
-  output                      cpu_resp_valid, // done
-  output [CPU_WIDTH-1:0]      cpu_resp_data, // done
+  output                      reg cpu_resp_valid, // done
+  output reg [CPU_WIDTH-1:0]      cpu_resp_data, // done
 
-  output                      mem_req_valid, // done
+  output                      reg mem_req_valid, // done
   input                       mem_req_ready, // done
-  output [WORD_ADDR_BITS-1:`ceilLog2(`MEM_DATA_BITS/CPU_WIDTH)] mem_req_addr, // done
-  output                           mem_req_rw, // done
-  output                           mem_req_data_valid, // done
+  output reg [WORD_ADDR_BITS-1:`ceilLog2(`MEM_DATA_BITS/CPU_WIDTH)] mem_req_addr, // done
+  output                           reg mem_req_rw, // done
+  output                           reg mem_req_data_valid, // done
   input                            mem_req_data_ready, // done
-  output [`MEM_DATA_BITS-1:0]      mem_req_data_bits, // done
+  output reg [`MEM_DATA_BITS-1:0]      mem_req_data_bits, // done
   // byte level masking
-  output [(`MEM_DATA_BITS/8)-1:0]  mem_req_data_mask, // done
+  output reg [(`MEM_DATA_BITS/8)-1:0]  mem_req_data_mask, // done
 
   input                       mem_resp_valid, // done
   input [`MEM_DATA_BITS-1:0]  mem_resp_data // done
@@ -95,10 +95,10 @@ wire [1:0] READ;
 assign READ = 2'b01;
 
 wire [1:0] MISS;
-assign READMEM = 2'b10;
+assign MISS = 2'b10;
 
 wire [1:0] WRITE;
-assign READDATA = 2'b011;
+assign WRITE = 2'b11;
 
 //-----------------------------------//
 
@@ -146,7 +146,7 @@ SRAM2RW16x32 tag_valid_sram (
  .I1(tag_valid_in), // Input Data pin
  .I2(),
  .O1(tag_valid_out), // Output Data pin
- .O2(),
+ .O2()
 );
 
 
@@ -164,7 +164,7 @@ SRAM1RW64x128 data_sram (
 
   .A(data_addr),
   .I(data_in),
-  .O(data_out),
+  .O(data_out)
 );
 
 // mealy state machine
@@ -180,124 +180,134 @@ end
 // combinational logic
 always @(*) begin
   case (STATE)
-  	IDLE: begin
-  			if (cpu_req_valid) begin
-	  			original_addr = cpu_req_addr; // 30 bits
-	  			tag = cpu_req_addr[30:7]; // 23 bits
-	  			index = cpu_req_addr[6:4]; // 3 bits
-	  			offset = cpu_req_addr[3:0]; // 4 bits
+    IDLE: begin
+            if (cpu_req_valid) begin
+              cpu_resp_valid = 1'b0;
+              mem_req_valid = 1'b0;
+              mem_req_data_valid = 1'b0;
+              mem_req_valid = 1'b0;
 
-	  			tag_valid_addr = {{1{1'b0}}, index}; // 4 bits
-	  			data_addr = (index*4) + offset[3:2]; // 6 bits
+              original_addr = cpu_req_addr; // 30 bits
+              tag = cpu_req_addr[30:7]; // 23 bits
+              index = cpu_req_addr[6:4]; // 3 bits
+              offset = cpu_req_addr[3:0]; // 4 bits
 
-	  			write_enable_tag_valid = 1'b1; // SRAM -> READ
-				write_enable_data = 1'b1; // SRAM -> READ
+              tag_valid_addr = {{1{1'b0}}, index}; // 4 bits
+              data_addr = (index*4) + offset[3:2]; // 6 bits
 
-				done = 1'b0;
+              write_enable_tag_valid = 1'b1; // SRAM -> READ
+              write_enable_data = 1'b1; // SRAM -> READ
 
-				mask = {{8{cpu_req_write[3]}},
-					    {8{cpu_req_write[2]}},
-					    {8{cpu_req_write[1]}},
-					    {8{cpu_req_write[0]}}};
+              done = 1'b0;
 
-	  			if (cpu_req_write == 4'b0000) begin
-	  				NEXT_STATE = READ;
-	  			end else begin
-	  				NEXT_STATE = WRITE;
-	  			end
-	  		end
-  		  end
+              mask = {{8{cpu_req_write[3]}},
+                    {8{cpu_req_write[2]}},
+                    {8{cpu_req_write[1]}},
+                    {8{cpu_req_write[0]}}};
 
-  	READ: begin
-  			if (tag_valid_out[22:0] == tag && tag_valid_out[31]) begin
-  				cpu_resp_data = data_out[127-offset[1:0]*32 : 96-offset[1:0]*32];
-  				cpu_resp_valid = 1'b1;
-  				NEXT_STATE = IDLE;
-  			end else begin
-  				if (mem_req_ready) begin
-  					write_enable_tag_valid = 1'b0; // SRAM -> WRITE
+                if (cpu_req_write == 4'b0000) begin
+                  NEXT_STATE = READ;
+                end else begin
+                  NEXT_STATE = WRITE;
+                end
+            end
+          end
 
-  					mem_req_addr = original_addr[30:2];
-  					mem_req_valid = 1'b1;
-  					mem_req_rw = 1'b0;
+    READ: begin
+            if (tag_valid_out[22:0] == tag && tag_valid_out[31]) begin
+              case (offset[1:0])
+                2'b00: cpu_resp_data = data_out[31:0];
+                2'b01: cpu_resp_data = data_out[63:32];
+                2'b10: cpu_resp_data = data_out[95:64];
+                2'b11: cpu_resp_data = data_out[127:96];
+              endcase
+              cpu_resp_valid = 1'b1;
+              NEXT_STATE = IDLE;
+            end else begin
+              if (mem_req_ready) begin
+                write_enable_tag_valid = 1'b0; // SRAM -> WRITE
 
-  					tag_valid_addr = {{1{1'b0}}, index};
-  					tag_valid_in = {1'b1, {8{1'b0}}, tag};
+                mem_req_addr = original_addr[30:2];
+                mem_req_valid = 1'b1;
+                mem_req_rw = 1'b0;
 
-  					NEXT_STATE = MISS;
-  					count = 0;
-  				end
-  			end
-  		  end
+                tag_valid_addr = {{1{1'b0}}, index};
+                tag_valid_in = {1'b1, {8{1'b0}}, tag};
 
-  	MISS: begin
-  			if (done) begin
-  				write_enable_data = 1'b1; // SRAM -> READ
-  				data_addr = (index*4) + offset[3:2];  			
-  				NEXT_STATE = READ;
-  			end
+                NEXT_STATE = MISS;
+                count = 0;
+              end
+            end
+          end
 
-  			if (!done && mem_resp_valid) begin
-  				write_enable_data = 1'b0; // SRAM -> WRITE
+    MISS: begin
+            if (done) begin
+              write_enable_data = 1'b1; // SRAM -> READ
+              data_addr = (index*4) + offset[3:2];        
+              NEXT_STATE = READ;
+            end
 
-  				data_in = mem_resp_data;
-  				data_addr = (index*4) + count;
-  				count = count + 1;
+            if (!done && mem_resp_valid) begin
+              write_enable_data = 1'b0; // SRAM -> WRITE
 
-  				if (count < 4) begin
-  					NEXT_STATE = MISS;
-  					mem_req_addr = mem_req_addr + 1;
-  				end else if (count == 4) begin
-  					done = 1'b1;
-  					NEXT_STATE = MISS;
-  				end
-  			end else if (!mem_resp_valid) begin
-  				NEXT_STATE = MISS;
-  			end
-  		  end
+              data_in = mem_resp_data;
+              data_addr = (index*4) + count;
+              count = count + 1;
 
-  	WRITE: begin
-  			if (mem_req_data_ready && mem_req_ready) begin
-	  			if (tag_valid_out[22:0] == tag && tag_valid_out[31] == 1'b1) begin
-	  				// this is for SRAM
-	  				write_enable_data = 1'b1;
-					data_in = (data_out & ~({{`MEM_DATA_BITS-CPU_WIDTH{1'b0}}, mask} << CPU_WIDTH*lower_addr)) | ((cpu_req_data & mask) << CPU_WIDTH*lower_addr);
-					data_addr = (index*4) + offset[3:2];
-	  			end
+              if (count < 4) begin
+                NEXT_STATE = MISS;
+                mem_req_addr = mem_req_addr + 1;
+              end else if (count == 4) begin
+                done = 1'b1;
+                NEXT_STATE = MISS;
+              end
+            end else if (!mem_resp_valid) begin
+              NEXT_STATE = MISS;
+            end
+          end
 
-  				mem_req_rw = 1'b1;
+    WRITE: begin
+            if (mem_req_data_ready && mem_req_ready) begin
+              if (tag_valid_out[22:0] == tag && tag_valid_out[31] == 1'b1) begin
+                // this is for SRAM
+                write_enable_data = 1'b1;
+                data_in = (data_out & ~({{`MEM_DATA_BITS-CPU_WIDTH{1'b0}}, mask} << CPU_WIDTH*lower_addr)) | ((cpu_req_data & mask) << CPU_WIDTH*lower_addr);
+                data_addr = (index*4) + offset[3:2];
+              end
 
-  				case (offset[1:0])
-  					2'b00: begin
-  							mem_req_data_mask = {cpu_req_write, {12{1'b0}}};
-  							mem_req_data_bits = {cpu_req_data, 96'd0};
-  						   end
+              mem_req_rw = 1'b1;
 
-  					2'b01: begin
-  							mem_req_data_mask = {4'd0, cpu_req_write, 8'd0};
-  							mem_req_data_bits = {32'd0, cpu_req_data, 64'd0};  						
-  						   end
+              case (offset[1:0])
+                2'b00: begin
+                    mem_req_data_mask = {cpu_req_write, {12{1'b0}}};
+                    mem_req_data_bits = {cpu_req_data, 96'd0};
+                     end
 
-  					2'b10: begin
-  							mem_req_data_mask = {8'd0, cpu_req_write, 4'd0};
-  							mem_req_data_bits = {64'd0, cpu_req_data, 32'd0};   						
-  						   end
+                2'b01: begin
+                    mem_req_data_mask = {4'd0, cpu_req_write, 8'd0};
+                    mem_req_data_bits = {32'd0, cpu_req_data, 64'd0};             
+                     end
 
-  					2'b11: begin
-   							mem_req_data_mask = {12'd0, cpu_req_write};
-  							mem_req_data_bits = {96'd0, cpu_req_data};  						
-  						   end
-  				endcase
+                2'b10: begin
+                    mem_req_data_mask = {8'd0, cpu_req_write, 4'd0};
+                    mem_req_data_bits = {64'd0, cpu_req_data, 32'd0};               
+                     end
 
-  				mem_req_data_valid = 1'b1;
+                2'b11: begin
+                    mem_req_data_mask = {12'd0, cpu_req_write};
+                    mem_req_data_bits = {96'd0, cpu_req_data};              
+                     end
+              endcase
 
-  				mem_req_addr = original_addr[31:4];
-  				mem_req_valid = 1'b1; // it means the address provided above is valid
-  				NEXT_STATE = IDLE;
-  			end else begin
-  				NEXT_STATE = WRITE;
-  			end
-  		   end
+              mem_req_data_valid = 1'b1;
+
+              mem_req_addr = original_addr[29:2];
+              mem_req_valid = 1'b1; // it means the address provided above is valid
+              NEXT_STATE = IDLE;
+            end else begin
+              NEXT_STATE = WRITE;
+            end
+         end
   endcase
 end
 

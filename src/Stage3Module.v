@@ -44,7 +44,7 @@ assign dcache_addr = stage3_dmem_write_addr;
 assign dcache_din = stage3_dmem_write_data;
 // assign dcache_we = (stage2_inst[6:0] == `OPC_STORE)? {4{MemRWSelect}} : 4'b0000;
 assign dcache_we = MemRWSelect;
-assign dcache_re = 1'b1;
+assign dcache_re = (stage2_inst[6:0] == `OPC_LOAD)? 1'b1 : 1'b0;
 
 CSRSel csrsel (
 	// inputs
