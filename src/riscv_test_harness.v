@@ -23,6 +23,7 @@ module rocketTestHarness;
   wire [`MEM_DATA_BITS-1:0] mem_req_data_bits;
   wire mem_req_ready, mem_req_data_ready, mem_resp_valid;
   wire #`INPUT_DELAY mem_req_ready_delay = mem_req_ready;
+  wire #`INPUT_DELAY mem_req_data_ready_delay = mem_req_data_ready;
   wire #`INPUT_DELAY mem_resp_valid_delay = mem_resp_valid;
   wire [`MEM_TAG_BITS-1:0]  mem_resp_tag;
   wire [`MEM_TAG_BITS-1:0] #`INPUT_DELAY mem_resp_tag_delay = mem_resp_tag;
@@ -46,7 +47,7 @@ module rocketTestHarness;
       .mem_req_tag(mem_req_tag),
 
       .mem_req_data_valid(mem_req_data_valid),
-      .mem_req_data_ready(mem_req_data_ready),
+      .mem_req_data_ready(mem_req_data_ready_delay),
       .mem_req_data_bits(mem_req_data_bits),
       .mem_req_data_mask(mem_req_data_mask),
 
