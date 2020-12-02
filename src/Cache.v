@@ -122,7 +122,11 @@ reg done;
 
 reg [31:0] mask;
 
-integer count;
+//integer count;
+
+integer clk_counter;
+
+//reg [2:0] look_at_me;
 
 localparam WORDS = `MEM_DATA_BITS/CPU_WIDTH;
 wire [`ceilLog2(WORDS)-1:0] lower_addr;
@@ -167,13 +171,21 @@ SRAM1RW64x128 data_sram (
   .O(data_out)
 );
 
-// mealy state machine
+// mealy state machine?
 // sequential logic
 always @(posedge clk) begin
   if (reset) begin
     STATE <= IDLE;
   end else begin
     STATE <= NEXT_STATE;
+  end
+end
+
+always @(posedge clk) begin
+  if (reset || (STATE == IDLE && NEXT_STATE == READ)) begin
+    clk_counter <= 0;
+  end else begin
+    clk_counter <= clk_counter + 1;
   end
 end
 
@@ -227,7 +239,7 @@ always @(*) begin
               if (mem_req_ready) begin
                 write_enable_tag_valid = 1'b0; // SRAM -> WRITE
 
-                mem_req_addr = original_addr[30:2];
+                mem_req_addr = original_addr[29:2];
                 mem_req_valid = 1'b1;
                 mem_req_rw = 1'b0;
 
@@ -235,13 +247,16 @@ always @(*) begin
                 tag_valid_in = {1'b1, {8{1'b0}}, tag};
 
                 NEXT_STATE = MISS;
-                count = 0;
+                //look_at_me = 3'b000;
+                //count = 0;
               end
             end
           end
 
     MISS: begin
             if (done) begin
+              tag_valid_addr = {{1{1'b0}}, index};
+              write_enable_tag_valid = 1'b1;
               write_enable_data = 1'b1; // SRAM -> READ
               data_addr = (index*4) + offset[3:2];        
               NEXT_STATE = READ;
@@ -251,16 +266,20 @@ always @(*) begin
               write_enable_data = 1'b0; // SRAM -> WRITE
 
               data_in = mem_resp_data;
-              data_addr = (index*4) + count;
-              // count = count + 1;
+              data_addr = (index*4) + clk_counter;
+              //count = count + 1;
 
-              if (count < 4) begin
-                count = count + 3;
+              $display("COUNT: %d AT CLK: %d", clk_counter, clk_counter);
+
+              if (clk_counter < 4) begin
                 NEXT_STATE = MISS;
-                mem_req_addr = mem_req_addr + 1;
-              end else if (count == 4) begin
+                mem_req_addr = original_addr[29:2] + clk_counter;
+                //mem_req_addr = mem_req_addr + 1;
+                $display("MEM_REQ_ADDR: %b", mem_req_addr);
+              end else if (clk_counter == 4) begin
                 done = 1'b1;
                 NEXT_STATE = MISS;
+                $display("WE HAVE NOW SET DONE TO ONE");
               end
             end else if (!mem_resp_valid) begin
               NEXT_STATE = MISS;
