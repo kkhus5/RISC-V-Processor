@@ -85,20 +85,23 @@ module cache #
 // so the cache can tell the main mem that it is providing write data
 // don't provide data until main mem is ready (mem_req_data_ready)
 
-reg [1:0] STATE;
-reg [1:0] NEXT_STATE;
+reg [2:0] STATE;
+reg [2:0] NEXT_STATE;
 
-wire [1:0] IDLE;
-assign IDLE = 2'b00;
+wire [2:0] IDLE;
+assign IDLE = 3'b000;
 
-wire [1:0] READ;
-assign READ = 2'b01;
+wire [2:0] READ;
+assign READ = 3'b001;
 
-wire [1:0] MISS;
-assign MISS = 2'b10;
+wire [2:0] MISS;
+assign MISS = 3'b010;
 
-wire [1:0] WRITE;
-assign WRITE = 2'b11;
+wire [2:0] WRITE;
+assign WRITE = 3'b011;
+
+wire [2:0] DONE;
+assign DONE = 3'b100;
 
 //-----------------------------------//
 
@@ -122,6 +125,8 @@ reg done;
 
 reg [31:0] mask;
 
+initial STATE = IDLE;
+initial NEXT_STATE = IDLE;
 //integer count;
 
 integer clk_counter;
@@ -176,13 +181,14 @@ SRAM1RW64x128 data_sram (
 always @(posedge clk) begin
   if (reset) begin
     STATE <= IDLE;
+    NEXT_STATE <= IDLE;
   end else begin
     STATE <= NEXT_STATE;
   end
 end
 
 always @(posedge clk) begin
-  if (reset || (STATE == IDLE && NEXT_STATE == READ)) begin
+  if (reset || (STATE == READ && NEXT_STATE == MISS)) begin
     clk_counter <= 0;
   end else begin
     clk_counter <= clk_counter + 1;
@@ -197,7 +203,9 @@ always @(*) begin
               cpu_resp_valid = 1'b0;
               mem_req_valid = 1'b0;
               mem_req_data_valid = 1'b0;
-              mem_req_valid = 1'b0;
+  
+              // I added this
+              // cpu_req_ready = 1'b1;
 
               original_addr = cpu_req_addr; // 30 bits
               tag = cpu_req_addr[30:7]; // 23 bits
@@ -210,16 +218,16 @@ always @(*) begin
               write_enable_tag_valid = 1'b1; // SRAM -> READ
               write_enable_data = 1'b1; // SRAM -> READ
 
-              done = 1'b0;
+              //done = 1'b0;
 
               mask = {{8{cpu_req_write[3]}},
                     {8{cpu_req_write[2]}},
                     {8{cpu_req_write[1]}},
                     {8{cpu_req_write[0]}}};
 
-                if (cpu_req_write == 4'b0000) begin
+                if (cpu_req_write == 4'b0000 && cpu_req_valid) begin
                   NEXT_STATE = READ;
-                end else begin
+                end else if (cpu_req_write != 4'b0000) begin
                   NEXT_STATE = WRITE;
                 end
             end
@@ -254,38 +262,49 @@ always @(*) begin
           end
 
     MISS: begin
-            if (done) begin
+            if (mem_resp_valid) begin
+              if (clk_counter < 4) begin  
+                write_enable_data = 1'b0; // SRAM -> WRITE
+
+                data_in = mem_resp_data;
+                data_addr = (index*4) + clk_counter;
+              end
+//count = count + 1;
+
+              $display("COUNT: %d AT CLK: %d", clk_counter, clk_counter);
+
+              if (clk_counter < 3) begin
+	        //write_enable_data = 1'b0;
+                  
+                //data_in = mem_resp_data;
+                //data_addr = (index*4) + clk_counter;
+ 
+                NEXT_STATE = MISS;
+                mem_req_addr = original_addr[29:2] + clk_counter + 1;
+                //mem_req_addr = mem_req_addr + 1;
+                $display("MEM_REQ_ADDR: %b", mem_req_addr);
+              end else if (clk_counter == 3) begin
+               // done = 1'b1;
+                NEXT_STATE = DONE;
+                $display("WE HAVE NOW SET DONE TO ONE");
+              //end else if (clk_counter == 3) begin
+              //  NEXT_STATE = MISS;
+	      end
+            end else if (!mem_resp_valid) begin
+              NEXT_STATE = MISS;
+            end
+          end
+    DONE: begin
+            //if (done) begin
               tag_valid_addr = {{1{1'b0}}, index};
               write_enable_tag_valid = 1'b1;
               write_enable_data = 1'b1; // SRAM -> READ
               data_addr = (index*4) + offset[3:2];        
               NEXT_STATE = READ;
-            end
+            //end
+         
 
-            if (!done && mem_resp_valid) begin
-              write_enable_data = 1'b0; // SRAM -> WRITE
-
-              data_in = mem_resp_data;
-              data_addr = (index*4) + clk_counter;
-              //count = count + 1;
-
-              $display("COUNT: %d AT CLK: %d", clk_counter, clk_counter);
-
-              if (clk_counter < 4) begin
-                NEXT_STATE = MISS;
-                mem_req_addr = original_addr[29:2] + clk_counter;
-                //mem_req_addr = mem_req_addr + 1;
-                $display("MEM_REQ_ADDR: %b", mem_req_addr);
-              end else if (clk_counter == 4) begin
-                done = 1'b1;
-                NEXT_STATE = MISS;
-                $display("WE HAVE NOW SET DONE TO ONE");
-              end
-            end else if (!mem_resp_valid) begin
-              NEXT_STATE = MISS;
-            end
           end
-
     WRITE: begin
             if (mem_req_data_ready && mem_req_ready) begin
               if (tag_valid_out[22:0] == tag && tag_valid_out[31] == 1'b1) begin
