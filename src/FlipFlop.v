@@ -56,6 +56,7 @@ always @(posedge clk) begin
 		if (isPC) register <= 32'h00001FFC;
 		else register <= `INSTR_NOP;
 	end else if (stall) begin
+		// register <= register;
 		register <= register;
 	end else begin
 		register <= data;

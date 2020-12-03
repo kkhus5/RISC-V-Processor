@@ -238,6 +238,34 @@ always @(*) begin
                   // mem_req_addr = original_addr[29:2];
                   //mem_req_rw = 1'b1;
                   // mem_req_valid = 1'b1;
+                  mem_req_rw = 1'b1;
+
+                  case (offset[1:0])
+                    2'b11: begin
+                        mem_req_data_mask = {original_write, {12{1'b0}}};
+                        mem_req_data_bits = {original_data, 96'd0};
+                         end
+
+                    2'b10: begin
+                        mem_req_data_mask = {4'd0, original_write, 8'd0};
+                        mem_req_data_bits = {32'd0, original_data, 64'd0};             
+                         end
+
+                    2'b01: begin
+                        mem_req_data_mask = {8'd0, original_write, 4'd0};
+                        mem_req_data_bits = {64'd0, original_data, 32'd0};               
+                         end
+
+                    2'b00: begin
+                        mem_req_data_mask = {12'd0, original_write};
+                        mem_req_data_bits = {96'd0, original_data};              
+                         end
+                  endcase
+
+                  mem_req_data_valid = 1'b1;
+
+                  mem_req_addr = original_addr[29:2];
+                  mem_req_valid = 1'b1; // it means the address provided above is valid
                 end
             end
           end
@@ -324,34 +352,34 @@ always @(*) begin
                 data_addr = (index*4) + offset[3:2];
               end
               
-              mem_req_rw = 1'b1;
+              // mem_req_rw = 1'b1;
 
-              case (offset[1:0])
-                2'b11: begin
-                    mem_req_data_mask = {original_write, {12{1'b0}}};
-                    mem_req_data_bits = {original_data, 96'd0};
-                     end
+              // case (offset[1:0])
+              //   2'b11: begin
+              //       mem_req_data_mask = {original_write, {12{1'b0}}};
+              //       mem_req_data_bits = {original_data, 96'd0};
+              //        end
 
-                2'b10: begin
-                    mem_req_data_mask = {4'd0, original_write, 8'd0};
-                    mem_req_data_bits = {32'd0, original_data, 64'd0};             
-                     end
+              //   2'b10: begin
+              //       mem_req_data_mask = {4'd0, original_write, 8'd0};
+              //       mem_req_data_bits = {32'd0, original_data, 64'd0};             
+              //        end
 
-                2'b01: begin
-                    mem_req_data_mask = {8'd0, original_write, 4'd0};
-                    mem_req_data_bits = {64'd0, original_data, 32'd0};               
-                     end
+              //   2'b01: begin
+              //       mem_req_data_mask = {8'd0, original_write, 4'd0};
+              //       mem_req_data_bits = {64'd0, original_data, 32'd0};               
+              //        end
 
-                2'b00: begin
-                    mem_req_data_mask = {12'd0, original_write};
-                    mem_req_data_bits = {96'd0, original_data};              
-                     end
-              endcase
+              //   2'b00: begin
+              //       mem_req_data_mask = {12'd0, original_write};
+              //       mem_req_data_bits = {96'd0, original_data};              
+              //        end
+              // endcase
 
-              mem_req_data_valid = 1'b1;
+              // mem_req_data_valid = 1'b1;
 
-              mem_req_addr = original_addr[29:2];
-              mem_req_valid = 1'b1; // it means the address provided above is valid
+              // mem_req_addr = original_addr[29:2];
+              // mem_req_valid = 1'b1; // it means the address provided above is valid
               NEXT_STATE = IDLE;
             // end else begin
             //   NEXT_STATE = WRITE;
