@@ -48,13 +48,13 @@ reg [31:0] register;
 assign data_out = (!stall)? register : (isPC)? register : `INSTR_NOP;
 
 // initial data_out = {32{1'b0}};
-initial register = (isPC)? 32'h00001FFC: 32'h00002000;
+initial register = (isPC)? 32'h00001FFC: `INSTR_NOP;
 
 always @(posedge clk) begin
 	if (reset) begin
 		// data_out <= {32{1'b0}};
 		if (isPC) register <= 32'h00001FFC;
-		else register <= 32'h00002000;
+		else register <= `INSTR_NOP;
 	end else if (stall) begin
 		register <= register;
 	end else begin

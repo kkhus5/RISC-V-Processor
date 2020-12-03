@@ -6,6 +6,8 @@ module Stage3Module (
 	input clk,
 	input reset,
 
+	input stall,
+
 	input [31:0] stage3_inst_in,
 	input [31:0] stage3_pc_in,
 	input [31:0] stage3_alu_ff_out,
@@ -43,8 +45,8 @@ assign rd = stage3_inst_in[11:7];
 assign dcache_addr = stage3_dmem_write_addr;
 assign dcache_din = stage3_dmem_write_data;
 // assign dcache_we = (stage2_inst[6:0] == `OPC_STORE)? {4{MemRWSelect}} : 4'b0000;
-assign dcache_we = MemRWSelect;
-assign dcache_re = (stage2_inst[6:0] == `OPC_LOAD)? 1'b1 : 1'b0;
+assign dcache_we = (!stall)? MemRWSelect : 4'b0000;
+assign dcache_re = (stage2_inst[6:0] == `OPC_LOAD && !stall)? 1'b1 : 1'b0;
 
 CSRSel csrsel (
 	// inputs

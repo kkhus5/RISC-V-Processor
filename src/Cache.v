@@ -121,7 +121,8 @@ wire [127:0] data_out;
 reg [31:0] tag_valid_in;
 reg [127:0] data_in;
 
-reg done;
+reg [31:0] original_data;
+reg [3:0] original_write;
 
 reg [31:0] mask;
 
@@ -206,6 +207,10 @@ always @(*) begin
   
               // I added this
               // cpu_req_ready = 1'b1;
+              mem_req_rw = 1'b0;
+
+              original_data = cpu_req_data;
+              original_write = cpu_req_write;
 
               original_addr = cpu_req_addr; // 30 bits
               tag = cpu_req_addr[30:7]; // 23 bits
@@ -227,8 +232,12 @@ always @(*) begin
 
                 if (cpu_req_write == 4'b0000 && cpu_req_valid) begin
                   NEXT_STATE = READ;
+                  // added && !cpu_req_valid
                 end else if (cpu_req_write != 4'b0000) begin
                   NEXT_STATE = WRITE;
+                  // mem_req_addr = original_addr[29:2];
+                  //mem_req_rw = 1'b1;
+                  // mem_req_valid = 1'b1;
                 end
             end
           end
@@ -271,7 +280,7 @@ always @(*) begin
               end
 //count = count + 1;
 
-              $display("COUNT: %d AT CLK: %d", clk_counter, clk_counter);
+              //$display("COUNT: %d AT CLK: %d", clk_counter, clk_counter);
 
               if (clk_counter < 3) begin
 	        //write_enable_data = 1'b0;
@@ -282,11 +291,11 @@ always @(*) begin
                 NEXT_STATE = MISS;
                 mem_req_addr = original_addr[29:2] + clk_counter + 1;
                 //mem_req_addr = mem_req_addr + 1;
-                $display("MEM_REQ_ADDR: %b", mem_req_addr);
+                //$display("MEM_REQ_ADDR: %b", mem_req_addr);
               end else if (clk_counter == 3) begin
                // done = 1'b1;
                 NEXT_STATE = DONE;
-                $display("WE HAVE NOW SET DONE TO ONE");
+                //$display("WE HAVE NOW SET DONE TO ONE");
               //end else if (clk_counter == 3) begin
               //  NEXT_STATE = MISS;
 	      end
@@ -306,35 +315,36 @@ always @(*) begin
 
           end
     WRITE: begin
-            if (mem_req_data_ready && mem_req_ready) begin
+    //mem_req_data_ready && mem_req_ready
+            //if (mem_req_data_ready) begin
               if (tag_valid_out[22:0] == tag && tag_valid_out[31] == 1'b1) begin
                 // this is for SRAM
-                write_enable_data = 1'b1;
+                write_enable_data = 1'b0;
                 data_in = (data_out & ~({{`MEM_DATA_BITS-CPU_WIDTH{1'b0}}, mask} << CPU_WIDTH*lower_addr)) | ((cpu_req_data & mask) << CPU_WIDTH*lower_addr);
                 data_addr = (index*4) + offset[3:2];
               end
-
+              
               mem_req_rw = 1'b1;
 
               case (offset[1:0])
                 2'b11: begin
-                    mem_req_data_mask = {cpu_req_write, {12{1'b0}}};
-                    mem_req_data_bits = {cpu_req_data, 96'd0};
+                    mem_req_data_mask = {original_write, {12{1'b0}}};
+                    mem_req_data_bits = {original_data, 96'd0};
                      end
 
                 2'b10: begin
-                    mem_req_data_mask = {4'd0, cpu_req_write, 8'd0};
-                    mem_req_data_bits = {32'd0, cpu_req_data, 64'd0};             
+                    mem_req_data_mask = {4'd0, original_write, 8'd0};
+                    mem_req_data_bits = {32'd0, original_data, 64'd0};             
                      end
 
                 2'b01: begin
-                    mem_req_data_mask = {8'd0, cpu_req_write, 4'd0};
-                    mem_req_data_bits = {64'd0, cpu_req_data, 32'd0};               
+                    mem_req_data_mask = {8'd0, original_write, 4'd0};
+                    mem_req_data_bits = {64'd0, original_data, 32'd0};               
                      end
 
                 2'b00: begin
-                    mem_req_data_mask = {12'd0, cpu_req_write};
-                    mem_req_data_bits = {96'd0, cpu_req_data};              
+                    mem_req_data_mask = {12'd0, original_write};
+                    mem_req_data_bits = {96'd0, original_data};              
                      end
               endcase
 
@@ -343,9 +353,9 @@ always @(*) begin
               mem_req_addr = original_addr[29:2];
               mem_req_valid = 1'b1; // it means the address provided above is valid
               NEXT_STATE = IDLE;
-            end else begin
-              NEXT_STATE = WRITE;
-            end
+            // end else begin
+            //   NEXT_STATE = WRITE;
+            //end
          end
   endcase
 end
