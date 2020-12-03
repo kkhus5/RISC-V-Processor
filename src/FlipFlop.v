@@ -45,7 +45,9 @@ module FlipFlop (
 
 reg [31:0] register;
 
-assign data_out = (!stall)? register : (isPC)? register : `INSTR_NOP;
+//assign data_out = (!stall)? register : (isPC)? register : `INSTR_NOP;
+
+assign data_out = register;
 
 // initial data_out = {32{1'b0}};
 initial register = (isPC)? 32'h00001FFC: `INSTR_NOP;
@@ -55,11 +57,11 @@ always @(posedge clk) begin
 		// data_out <= {32{1'b0}};
 		if (isPC) register <= 32'h00001FFC;
 		else register <= `INSTR_NOP;
-	end else if (stall) begin
+	end else if (!stall) begin
 		// register <= register;
-		register <= register;
-	end else begin
 		register <= data;
+	// end else begin
+	// 	register <= data;
 	end
 end
 

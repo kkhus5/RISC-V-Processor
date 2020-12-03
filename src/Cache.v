@@ -138,7 +138,7 @@ localparam WORDS = `MEM_DATA_BITS/CPU_WIDTH;
 wire [`ceilLog2(WORDS)-1:0] lower_addr;
 assign lower_addr = original_addr[`ceilLog2(WORDS)-1:0];
 
-assign cpu_req_ready = (STATE == IDLE)? 1'b1 : 1'b0;
+assign cpu_req_ready = (STATE == IDLE || STATE == WRITE)? 1'b1 : 1'b0;
 
 // You should include a separate SRAM per way for the tags. Implement the valid bits as part of the tag SRAM.
 SRAM2RW16x32 tag_valid_sram (
@@ -182,7 +182,7 @@ SRAM1RW64x128 data_sram (
 always @(posedge clk) begin
   if (reset) begin
     STATE <= IDLE;
-    NEXT_STATE <= IDLE;
+    //NEXT_STATE <= IDLE;
   end else begin
     STATE <= NEXT_STATE;
   end
@@ -230,7 +230,7 @@ always @(*) begin
                     {8{cpu_req_write[1]}},
                     {8{cpu_req_write[0]}}};
 
-                if (cpu_req_write == 4'b0000 && cpu_req_valid) begin
+                if (cpu_req_write == 4'b0000) begin
                   NEXT_STATE = READ;
                   // added && !cpu_req_valid
                 end else if (cpu_req_write != 4'b0000) begin
