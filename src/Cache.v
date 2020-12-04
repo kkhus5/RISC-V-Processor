@@ -34,57 +34,6 @@ module cache #
   input [`MEM_DATA_BITS-1:0]  mem_resp_data // done
 );
 
-  // Implement your cache here, then delete this comment
-
-// write-through policy
- 
-// states
-// no memory access underway
-
-// IN IDLE STATE:
-// if cpu requests a mem xact (cpu_req_valid)
-  // then cache lets cpu know it is ready for a CPU mem xact (cpu_req_ready)
-  // then transition from IDLE to READ state
-
-// IN READ STATE:
-// read access initiated
-// cache is checked
-  // look at index's valid bit tag in the cache, is the data valid?
-    // if no, then compulsory cache miss
-    // transition to READMEM state to initiate main mem access
-  // if so, look at block at index. does the tag match tag?
-    // if yes, we have a cache hit
-      // then access is satisfied during this cycle
-      // when cache read is successfull
-      // then cache tells cpu that it has valid output data (cpu_resp_valid)
-      // return IDLE state at next transition
-    // if no, miss
-      // transition to READMEM state to initiate main mem access
-
-// IN MISS (READMEM) STATE:
-// when we are in a miss state
-// initiate memory access following a read miss
-// main memory read in progress
-// cache needs to request a mem xact to main mem (mem_req_valid)
-// and the main mem needs to tell the cache that it is ready for the cache to provide a mem addr (mem_req_ready)
-// since we are only requesting to read the main mem addr, then set mem_req_rw = 1'b0
-// remain in this state until necessary data from main memory is read
-// transition to READDATA state
-
-// IN READDATA STATE:
-// data available from main memory is read
-// we can only fulfill a cpu request when the main memory response data is valid (mem_resp_valid)
-// write this data into the cache line
-// when memory read is successful
-// then cache tells cpu that it has valid output data (cpu_resp_valid)
-
-// IN WRITE STATE:
-// whenever the cache gets written to
-// then set mem_req_rw = 1'b1
-// and set mem_req_data_valid = 1'b1
-// so the cache can tell the main mem that it is providing write data
-// don't provide data until main mem is ready (mem_req_data_ready)
-
 reg [2:0] STATE;
 reg [2:0] NEXT_STATE;
 
@@ -128,11 +77,8 @@ reg [31:0] mask;
 
 initial STATE = IDLE;
 initial NEXT_STATE = IDLE;
-//integer count;
 
 integer clk_counter;
-
-//reg [2:0] look_at_me;
 
 localparam WORDS = `MEM_DATA_BITS/CPU_WIDTH;
 wire [`ceilLog2(WORDS)-1:0] lower_addr;
@@ -223,8 +169,6 @@ always @(*) begin
               write_enable_tag_valid = 1'b1; // SRAM -> READ
               write_enable_data = 1'b1; // SRAM -> READ
 
-              //done = 1'b0;
-
               mask = {{8{cpu_req_write[3]}},
                     {8{cpu_req_write[2]}},
                     {8{cpu_req_write[1]}},
@@ -232,7 +176,6 @@ always @(*) begin
 
                 if (cpu_req_write == 4'b0000) begin
                   NEXT_STATE = READ;
-                  // added && !cpu_req_valid
                 end else if (cpu_req_write != 4'b0000) begin
                   NEXT_STATE = WRITE;
                   // mem_req_addr = original_addr[29:2];
@@ -292,8 +235,6 @@ always @(*) begin
                 tag_valid_in = {1'b1, {8{1'b0}}, tag};
 
                 NEXT_STATE = MISS;
-                //look_at_me = 3'b000;
-                //count = 0;
               end
             end
           end
@@ -322,8 +263,11 @@ always @(*) begin
                 //$display("MEM_REQ_ADDR: %b", mem_req_addr);
               end else if (clk_counter == 3) begin
                // done = 1'b1;
+
+               // added the following////////////
+                mem_req_valid = 1'b0;
+
                 NEXT_STATE = DONE;
-                //$display("WE HAVE NOW SET DONE TO ONE");
               //end else if (clk_counter == 3) begin
               //  NEXT_STATE = MISS;
 	      end
