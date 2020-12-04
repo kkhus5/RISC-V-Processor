@@ -6,6 +6,8 @@ module Stage3Module (
 	input clk,
 	input reset,
 
+	input stall,
+
 	input [31:0] stage3_inst_in,
 	input [31:0] stage3_pc_in,
 	input [31:0] stage3_alu_ff_out,

@@ -52,8 +52,8 @@ wire [31:0] rs2_data = rs2_data_out;
 
 assign stage1_inst_out = stage1_inst;
 assign stage1_pc_out = stage1_pc;
-assign icache_addr = stage1_pc_mux_to_pc;
-assign icache_re = 1'b1;
+assign icache_addr = (!stall)? stage1_pc_mux_to_pc : stage1_pc;
+assign icache_re = (!stall)? 1'b1 : 1'b0;
 
 RegFile regfile (
 	// inputs

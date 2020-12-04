@@ -221,6 +221,8 @@ Stage3Module stage3 (
     .clk(clk),
     .reset(reset),
 
+    .stall(stall),
+
     .stage3_inst_in(stage3_inst),
     .stage3_pc_in(stage3_pc),
     .stage3_alu_ff_out(stage3_alu),
