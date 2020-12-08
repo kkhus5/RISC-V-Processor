@@ -1,4 +1,5 @@
 `include "util.vh"
+`include "const.vh"
 
 module ExtMemModel
 (

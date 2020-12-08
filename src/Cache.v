@@ -159,7 +159,7 @@ always @(*) begin
               original_write = cpu_req_write;
 
               original_addr = cpu_req_addr; // 30 bits
-              tag = cpu_req_addr[30:7]; // 23 bits
+              tag = cpu_req_addr[29:7]; // 23 bits
               index = cpu_req_addr[6:4]; // 3 bits
               offset = cpu_req_addr[3:0]; // 4 bits
 
