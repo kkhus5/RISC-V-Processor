@@ -96,6 +96,7 @@ always @(*) begin
                                                 take_branch = 1'b0;
                                             end
                                         end
+                            default: take_branch = 1'b0;
                         endcase
                     end
         default: take_branch = 1'b0;

@@ -1,6 +1,6 @@
 # Specify Global Variables
-clockPeriod: &CLK_PERIOD "2.0ns"
-clockPeriodby5: &CLK_PERIOD_BY_5 "0.4" # used for pin delays, update accordingly
+clockPeriod: &CLK_PERIOD "0.9ns"
+clockPeriodby5: &CLK_PERIOD_BY_5 "0.18" # used for pin delays, update accordingly
 verilogSrc: &VERILOG_SRC
   - "/home/ff/eecs151/verilog_lib/EECS151.v"
   - "src/ALUdec.v"
@@ -11,7 +11,39 @@ verilogSrc: &VERILOG_SRC
   - "src/riscv_arbiter.v"
   - "src/riscv_top.v"
   # Add more source files here if you need
-
+  - "src/ImmediateGenerator.v"
+  - "src/BranchComparator.v"
+  - "src/Adder.v"
+  - "src/ASel.v"
+  - "src/ASelMux.v"
+  - "src/BrUn.v"
+  - "src/BSel.v"
+  - "src/BSelMux.v"
+  - "src/CSR.v"
+  - "src/CSRSel.v"
+  - "src/Data1Sel.v"
+  - "src/Data2Sel.v"
+  - "src/DataSelMux.v"
+  - "src/FlipFlop.v"
+  - "src/ImmSel.v"
+  - "src/LdSel.v"
+  - "src/LdSelMux.v"
+  - "src/MemRW.v"
+  - "src/NOPSel.v"
+  - "src/NOPSelMux.v"
+  - "src/PCAddSignal.v"
+  - "src/PCFour.v"
+  - "src/PCSel.v"
+  - "src/PCSelMux.v"
+  - "src/RegFile.v"
+  - "src/RegWEn.v"
+  - "src/Stage1Module.v"
+  - "src/Stage2Module.v"
+  - "src/Stage3Module.v"
+  - "src/StoreSel.v"
+  - "src/StoreSelMux.v"
+  - "src/WBSel.v"
+  - "src/WBSelMux.v"
 
 # Specify clock signals
 vlsi.inputs.clocks: [

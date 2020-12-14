@@ -12,7 +12,7 @@ module CSR (
 
 always @(posedge clk) begin
 	if (reset) begin
-		csr <= 32'dx;
+		csr <= 32'd0;
 	end else begin
 		if (CSRSel) begin
 			csr <= rs1_to_csr;

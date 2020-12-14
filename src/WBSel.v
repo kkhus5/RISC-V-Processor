@@ -24,7 +24,7 @@ always @(*) begin
 		`OPC_LUI: WBSelect = 2'b01;
 		`OPC_JALR: WBSelect = 2'b10;
 		`OPC_JAL: WBSelect = 2'b10;
-		default: WBSelect = 2'bxx;
+		default: WBSelect = 2'b00;
 	endcase
 end
 

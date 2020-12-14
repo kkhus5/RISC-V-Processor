@@ -14,7 +14,7 @@ always @(*) begin
 		2'b00: wb_data = wb_dmem;
 		2'b01: wb_data = stage3_alu_out;
 		2'b10: wb_data = stage3_pc4;
-		default: wb_data = 32'dx;
+		default: wb_data = 32'd0;
 	endcase
 end
 
