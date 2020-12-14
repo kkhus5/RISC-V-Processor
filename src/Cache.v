@@ -57,13 +57,15 @@ initial NEXT_STATE = IDLE;
 
 // reg for input cpu_req_addr
 reg [29:0] original_addr;
+reg [3:0] original_write;
+reg[31:0] original_data;
 
 // tag, index and offset fields of cpu_req_addr
 wire [21:0] tag;
 wire [3:0] index;
 wire [3:0] offset;
 assign tag = original_addr[29:8];
-assign index = original_addr[7:4];
+assign index = original_addr[7:4]; 
 assign offset = original_addr[3:0];
 
 // input and ouput reg/wire for tag_valid_sram
@@ -140,13 +142,13 @@ always @(*) begin
   data_addr = index * 4 + offset[3:2];
 
   // default mask for writing to sram
-  mask = {{8{cpu_req_write[3]}},
-          {8{cpu_req_write[2]}},
-          {8{cpu_req_write[1]}},
-          {8{cpu_req_write[0]}}}; 
+  mask = {{8{original_write[3]}},
+          {8{original_write[2]}},
+          {8{original_write[1]}},
+          {8{original_write[0]}}}; 
   // default input data for data_sram
   data_in = (data_out & ~({{`MEM_DATA_BITS-CPU_WIDTH{1'b0}}, mask} << CPU_WIDTH*lower_addr)) 
-          | ((cpu_req_data & mask) << CPU_WIDTH*lower_addr);
+          | ((original_data & mask) << CPU_WIDTH*lower_addr);
 
 
 
@@ -160,7 +162,7 @@ always @(*) begin
   // endcase
 
   // default ext memory request address
-  mem_req_addr = cpu_req_addr[29:2];
+  mem_req_addr = original_addr[29:2];
   // read data from ext mem by default
   mem_req_rw = 1'b0;
 
@@ -176,40 +178,45 @@ always @(*) begin
   case (offset[1:0])
     2'b00: 
       begin
-        mem_req_data_bits = {96'd0, cpu_req_data};
-        mem_req_data_mask = {12'd0, cpu_req_write};
+        mem_req_data_bits = {96'd0, original_data};
+        mem_req_data_mask = {12'd0, original_write};
       end
 
     2'b01: 
       begin
-        mem_req_data_bits = {64'd0, cpu_req_data, 32'd0};
-        mem_req_data_mask = {8'd0, cpu_req_write, 4'd0};
+        mem_req_data_bits = {64'd0, original_data, 32'd0};
+        mem_req_data_mask = {8'd0, original_write, 4'd0};
       end
 
     2'b10: 
       begin
-        mem_req_data_bits = {32'd0, cpu_req_data, 64'd0};
-        mem_req_data_mask = {4'd0, cpu_req_write, 8'd0}; 
+        mem_req_data_bits = {32'd0, original_data, 64'd0};
+        mem_req_data_mask = {4'd0, original_write, 8'd0}; 
       end
 
     2'b11: 
       begin
-        mem_req_data_bits = {cpu_req_data, 96'd0};
-        mem_req_data_mask = {cpu_req_write, 12'd0};
+        mem_req_data_bits = {original_data, 96'd0};
+        mem_req_data_mask = {original_write, 12'd0};
       end
   endcase
 
-  //assign
+  original_addr = original_addr;
+  original_write = original_write;
+  original_data = original_data;
 
 
   case (STATE)
     IDLE:
       begin
         cpu_req_ready = 1'b1;
-        original_addr = cpu_req_addr;
+        
         if (cpu_req_valid) begin
+          original_addr = cpu_req_addr;
+          original_write = cpu_req_write;
+          original_data = cpu_req_data;
 
-          if (cpu_req_write == 4'b0000) begin
+          if (original_write == 4'b0000) begin
             NEXT_STATE = READ;
           end else if (mem_req_ready) begin
             NEXT_STATE = WRITE;
@@ -253,7 +260,7 @@ always @(*) begin
           data_in = mem_resp_data;
           write_en_data = 1'b0;
 
-          mem_req_addr = cpu_req_addr[29:2] + 1;
+          mem_req_addr = original_addr[29:2] + 1;
           mem_req_valid = 1'b1;
           NEXT_STATE = MISS1;
         end
@@ -268,7 +275,7 @@ always @(*) begin
           data_in = mem_resp_data;
           write_en_data = 1'b0;
 
-          mem_req_addr = cpu_req_addr[29:2] + 2;
+          mem_req_addr = original_addr[29:2] + 2;
           mem_req_valid = 1'b1;
           NEXT_STATE = MISS2;
         end
@@ -283,7 +290,7 @@ always @(*) begin
           data_in = mem_resp_data;
           write_en_data = 1'b0;
 
-          mem_req_addr = cpu_req_addr[29:2] + 3;
+          mem_req_addr = original_addr[29:2] + 3;
           mem_req_valid = 1'b1;
           NEXT_STATE = MISS3;
         end
