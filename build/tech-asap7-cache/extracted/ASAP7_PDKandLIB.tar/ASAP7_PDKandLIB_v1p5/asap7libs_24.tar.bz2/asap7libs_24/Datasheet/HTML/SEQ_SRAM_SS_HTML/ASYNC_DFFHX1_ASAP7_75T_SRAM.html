@@ -1,0 +1,984 @@
+<HTML><BODY TEXT="#000000"  LINK="#0000FF" VLINK="#0000FF" ALINK="#00FFFF"><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100%>
+<TR align=center><th align=left><H1><font size=+3>ASYNC_DFFHX1_ASAP7_75T_SRAM</font></H1></th>
+<TR align=center><th align=left></th><th align=right><h5><em><A>asap7sc7p5t_24_SEQ_SRAM_SS Cell Library: Process , Voltage 0.63, Temp 100.00 </A></em></h5></th></TR>
+</TABLE>
+<HR>
+<BR>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=100%>
+<TR ALIGN=LEFT VALIGN=TOP><TH><FONT SIZE=+2><B>Truth Table</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4>
+<TR valign=middle><TH colspan=4><font size=3>INPUT</font></TH>
+<TH colspan=1><font size=3>OUTPUT</font></TH>
+<TR><Th>D</Th><Th>RESET</Th><Th>SET</Th><Th>CLK</Th><Th>QN</Th></TR>
+<TR><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th><Th><font size=2>R</font></Th><Th><font size=2>1</font></Th></TR>
+<TR><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th><Th><font size=2>R</font></Th><Th><font size=2>0</font></Th></TR>
+<TR><Th><font size=2>x</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th><Th><font size=2>x</font></Th><Th><font size=2>IQN</font></Th></TR>
+<TR><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th></TR>
+<TR><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th><Th><font size=2>x</font></Th><Th><font size=2>0</font></Th></TR>
+</TABLE>
+</TR></TABLE>
+<BR>
+<FONT SIZE=+2><B>Footprint</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=60%>
+<TR valign=middle><TH>Cell Name</TH><TH>Area</TH></TR>
+<TR><TH><FONT>ASYNC_DFFHx1_ASAP7_75t_SRAM</FONT></TH>
+<TD align=center>6.06528</TD></TR>
+</TABLE>
+<BR>
+<BR>
+<FONT SIZE=+2><B>Pin Capacitance Information</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH colspan=4>Pin Cap(ff) </TH>
+<TH colspan=1>Max Cap(ff) </TH>
+</TR>
+<TR>
+<TH>D</TH>
+<TH>RESET</TH>
+<TH>SET</TH>
+<TH>CLK</TH>
+<TH>QN</TH>
+</TR>
+<TR><Th><font>ASYNC_DFFHx1_ASAP7_75t_SRAM</font></Th>
+<TD align=center>0.35185</TD>
+<TD align=center>0.49579</TD>
+<TD align=center>0.83470</TD>
+<TD align=center>0.27852</TD>
+<TD align=center>46.08000</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT SIZE=+2><B>Leakage Information</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH colspan=3>Leakage(pW)</TH>
+</TR><TR><TH>Min.</TH><TH>Avg</TH><TH>Max.</TH></TR>
+<TR><Th><font>ASYNC_DFFHx1_ASAP7_75t_SRAM</font></Th>
+<TD align=center>0.00000</TD>
+<TD align=center>788.35700</TD>
+<TD align=center>1030.43000</TD>
+</TABLE>
+<BR>
+<!--NewPage-->
+<BR>
+<FONT SIZE=+2><B>Delay Information</B></FONT>
+<BR>
+<BR>
+<FONT><B>Delay(ps) to QN rising :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Arc(Dir)</TH>
+<TH colspan=3>Delay(ps)</TH></TR><TR><TH>Min</TH><TH>Mid</TH><TH>Max</TH></TR>
+<BR>
+<TR><TH rowspan=2>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>CLK->QN (RR)</font></Th>
+<TD align=center>73.70070</TD>
+<TD align=center>137.89500</TD>
+<TD align=center>540.79100</TD>
+</TR>
+<TR>
+<Th><font>SET->QN (RR)</font></Th>
+<TD align=center>48.20340</TD>
+<TD align=center>109.44400</TD>
+<TD align=center>514.81300</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Delay(ps) to QN falling :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Arc(Dir)</TH>
+<TH colspan=3>Delay(ps)</TH></TR><TR><TH>Min</TH><TH>Mid</TH><TH>Max</TH></TR>
+<BR>
+<TR><TH rowspan=3>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>CLK->QN (RF)</font></Th>
+<TD align=center>78.06550</TD>
+<TD align=center>143.55000</TD>
+<TD align=center>507.44500</TD>
+</TR>
+<TR>
+<Th><font>RESET->QN (RF)</font></Th>
+<TD align=center>86.23780</TD>
+<TD align=center>142.98200</TD>
+<TD align=center>506.58400</TD>
+</TR>
+<TR>
+<Th><font>SET->QN (FF)</font></Th>
+<TD align=center>78.27610</TD>
+<TD align=center>132.88500</TD>
+<TD align=center>469.02500</TD>
+</TR>
+</TABLE>
+<BR>
+<!--NewPage-->
+<BR>
+<FONT SIZE=+2><B>Constraint Information</B></FONT>
+<BR>
+<BR>
+<FONT><B>Constraints(ps) for D rising :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ps)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=2>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>hold</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>-3.28198</TD>
+<TD align=center>-3.28125</TD>
+<TD align=center>-3.55920</TD>
+</TR>
+<TR>
+<Th><font>setup</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>18.01300</TD>
+<TD align=center>15.00000</TD>
+<TD align=center>14.94550</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ps) for D falling :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ps)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=2>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>hold</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>11.61660</TD>
+<TD align=center>16.25000</TD>
+<TD align=center>67.32710</TD>
+</TR>
+<TR>
+<Th><font>setup</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>10.99500</TD>
+<TD align=center>5.00000</TD>
+<TD align=center>-47.08380</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ps) for D rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ps)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=2>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>hold</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>-3.28198</TD>
+<TD align=center>-3.28125</TD>
+<TD align=center>-3.55920</TD>
+</TR>
+<TR>
+<Th><font>setup</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>18.01300</TD>
+<TD align=center>15.00000</TD>
+<TD align=center>14.94550</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ps) for D falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ps)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=2>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>hold</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>11.61660</TD>
+<TD align=center>16.25000</TD>
+<TD align=center>67.32710</TD>
+</TR>
+<TR>
+<Th><font>setup</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>10.99500</TD>
+<TD align=center>5.00000</TD>
+<TD align=center>-47.08380</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ps) for RESET falling :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ps)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=4>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>recovery</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>-41.57470</TD>
+<TD align=center>-64.84380</TD>
+<TD align=center>-202.49900</TD>
+</TR>
+<TR>
+<Th><font>removal</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>54.63380</TD>
+<TD align=center>79.49220</TD>
+<TD align=center>260.18300</TD>
+</TR>
+<TR>
+<Th><font>hold</font></Th>
+<Th><font>SET (F)</font></Th>
+<TD align=center>29.65090</TD>
+<TD align=center>34.21880</TD>
+<TD align=center>78.65150</TD>
+</TR>
+<TR>
+<Th><font>setup</font></Th>
+<Th><font>SET (F)</font></Th>
+<TD align=center>7.70594</TD>
+<TD align=center>8.43750</TD>
+<TD align=center>13.02270</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Min Pulse Width (ps) for RESET:</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=1>Cell Name</TH><TH>High</TH><TH>Low</TH></TR>
+<BR>
+<TR><TH rowspan=1>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<TD align=center>  321.0450</TD>
+<TD align=center>     -    </TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ps) for RESET falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ps)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=6>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>recovery</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>-41.57470</TD>
+<TD align=center>-64.84380</TD>
+<TD align=center>-202.49900</TD>
+</TR>
+<TR>
+<Th><font>removal</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>54.63380</TD>
+<TD align=center>79.49220</TD>
+<TD align=center>260.18300</TD>
+</TR>
+<TR>
+<Th><font>hold</font></Th>
+<Th><font>SET (F)</font></Th>
+<TD align=center>29.65090</TD>
+<TD align=center>34.21880</TD>
+<TD align=center>78.65150</TD>
+</TR>
+<TR>
+<Th><font>hold</font></Th>
+<Th><font>SET (F)</font></Th>
+<TD align=center>27.10540</TD>
+<TD align=center>31.87500</TD>
+<TD align=center>68.77670</TD>
+</TR>
+<TR>
+<Th><font>setup</font></Th>
+<Th><font>SET (F)</font></Th>
+<TD align=center>7.70594</TD>
+<TD align=center>8.43750</TD>
+<TD align=center>13.02270</TD>
+</TR>
+<TR>
+<Th><font>setup</font></Th>
+<Th><font>SET (F)</font></Th>
+<TD align=center>-8.09229</TD>
+<TD align=center>-8.75000</TD>
+<TD align=center>-24.03010</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ps) for SET falling :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ps)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=4>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>recovery</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>8.22218</TD>
+<TD align=center>2.12500</TD>
+<TD align=center>-34.90690</TD>
+</TR>
+<TR>
+<Th><font>removal</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>10.73570</TD>
+<TD align=center>16.91410</TD>
+<TD align=center>68.12590</TD>
+</TR>
+<TR>
+<Th><font>hold</font></Th>
+<Th><font>RESET (F)</font></Th>
+<TD align=center>7.42518</TD>
+<TD align=center>7.34375</TD>
+<TD align=center>11.77730</TD>
+</TR>
+<TR>
+<Th><font>setup</font></Th>
+<Th><font>RESET (F)</font></Th>
+<TD align=center>24.04780</TD>
+<TD align=center>27.99670</TD>
+<TD align=center>52.86090</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Min Pulse Width (ps) for SET:</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=1>Cell Name</TH><TH>High</TH><TH>Low</TH></TR>
+<BR>
+<TR><TH rowspan=1>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<TD align=center>  321.0450</TD>
+<TD align=center>     -    </TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ps) for SET falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ps)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=6>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>recovery</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>8.22218</TD>
+<TD align=center>2.12500</TD>
+<TD align=center>-34.90690</TD>
+</TR>
+<TR>
+<Th><font>removal</font></Th>
+<Th><font>CLK (R)</font></Th>
+<TD align=center>10.73570</TD>
+<TD align=center>16.91410</TD>
+<TD align=center>68.12590</TD>
+</TR>
+<TR>
+<Th><font>hold</font></Th>
+<Th><font>RESET (F)</font></Th>
+<TD align=center>7.42518</TD>
+<TD align=center>7.34375</TD>
+<TD align=center>11.77730</TD>
+</TR>
+<TR>
+<Th><font>hold</font></Th>
+<Th><font>RESET (F)</font></Th>
+<TD align=center>-15.39550</TD>
+<TD align=center>-18.98440</TD>
+<TD align=center>-31.44360</TD>
+</TR>
+<TR>
+<Th><font>setup</font></Th>
+<Th><font>RESET (F)</font></Th>
+<TD align=center>4.18192</TD>
+<TD align=center>7.31792</TD>
+<TD align=center>5.98445</TD>
+</TR>
+<TR>
+<Th><font>setup</font></Th>
+<Th><font>RESET (F)</font></Th>
+<TD align=center>24.04780</TD>
+<TD align=center>27.99670</TD>
+<TD align=center>52.86090</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Min Pulse Width (ps) for CLK:</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=1>Cell Name</TH><TH>High</TH><TH>Low</TH></TR>
+<BR>
+<TR><TH rowspan=1>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<TD align=center>  321.0450</TD>
+<TD align=center>  321.0450</TD>
+</TR>
+</TABLE>
+<BR>
+<!--NewPage-->
+<BR>
+<FONT SIZE=+2><B>Power Information</B></FONT>
+<BR>
+<BR>
+<FONT><B>Internal switching power(fJ) to QN rising :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Input</TH>
+<TH colspan=3>Power(fJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=4>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>CLK</font></Th>
+<TD align=center>0.30760</TD>
+<TD align=center>0.30446</TD>
+<TD align=center>0.30911</TD>
+</TR>
+<TR>
+<Th><font>CLK</font></Th>
+<TD align=center>0.38060</TD>
+<TD align=center>0.37906</TD>
+<TD align=center>0.38336</TD>
+</TR>
+<TR>
+<Th><font>SET</font></Th>
+<TD align=center>0.24835</TD>
+<TD align=center>0.24406</TD>
+<TD align=center>0.22910</TD>
+</TR>
+<TR>
+<Th><font>SET</font></Th>
+<TD align=center>0.39054</TD>
+<TD align=center>0.38625</TD>
+<TD align=center>0.37620</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Internal switching power(fJ) to QN falling :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Input</TH>
+<TH colspan=3>Power(fJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=6>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>CLK</font></Th>
+<TD align=center>0.26122</TD>
+<TD align=center>0.26163</TD>
+<TD align=center>0.26076</TD>
+</TR>
+<TR>
+<Th><font>CLK</font></Th>
+<TD align=center>0.31444</TD>
+<TD align=center>0.31605</TD>
+<TD align=center>0.31452</TD>
+</TR>
+<TR>
+<Th><font>RESET</font></Th>
+<TD align=center>0.25429</TD>
+<TD align=center>0.25633</TD>
+<TD align=center>0.25539</TD>
+</TR>
+<TR>
+<Th><font>RESET</font></Th>
+<TD align=center>0.32419</TD>
+<TD align=center>0.32755</TD>
+<TD align=center>0.32443</TD>
+</TR>
+<TR>
+<Th><font>SET</font></Th>
+<TD align=center>0.31376</TD>
+<TD align=center>0.31046</TD>
+<TD align=center>0.31286</TD>
+</TR>
+<TR>
+<Th><font>SET</font></Th>
+<TD align=center>0.13909</TD>
+<TD align=center>0.13762</TD>
+<TD align=center>0.13537</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(fJ) for D rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(fJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=6>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>CLK</font></Th>
+<TD align=center>-0.02018</TD>
+<TD align=center>-0.02145</TD>
+<TD align=center>-0.02212</TD>
+</TR>
+<TR>
+<Th><font>CLK</font></Th>
+<TD align=center>0.03914</TD>
+<TD align=center>0.03788</TD>
+<TD align=center>0.03746</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * SET * QN)</font></Th>
+<TD align=center>0.01030</TD>
+<TD align=center>0.00756</TD>
+<TD align=center>0.01163</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * SET * QN)</font></Th>
+<TD align=center>0.08867</TD>
+<TD align=center>0.08579</TD>
+<TD align=center>0.08972</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * RESET * !SET * !QN) + (!CLK * !RESET * !SET)</font></Th>
+<TD align=center>0.12012</TD>
+<TD align=center>0.11686</TD>
+<TD align=center>0.11962</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * RESET * !SET * !QN) + (!CLK * !RESET * !SET)</font></Th>
+<TD align=center>0.17555</TD>
+<TD align=center>0.17216</TD>
+<TD align=center>0.17475</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(fJ) for D falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(fJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=6>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>CLK</font></Th>
+<TD align=center>0.02401</TD>
+<TD align=center>0.02406</TD>
+<TD align=center>0.02402</TD>
+</TR>
+<TR>
+<Th><font>CLK</font></Th>
+<TD align=center>-0.03524</TD>
+<TD align=center>-0.03532</TD>
+<TD align=center>-0.03552</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * SET * QN)</font></Th>
+<TD align=center>0.11613</TD>
+<TD align=center>0.11395</TD>
+<TD align=center>0.11836</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * SET * QN)</font></Th>
+<TD align=center>0.03794</TD>
+<TD align=center>0.03599</TD>
+<TD align=center>0.04050</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * RESET * !SET * !QN) + (!CLK * !RESET * !SET)</font></Th>
+<TD align=center>0.14129</TD>
+<TD align=center>0.13853</TD>
+<TD align=center>0.13998</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * RESET * !SET * !QN) + (!CLK * !RESET * !SET)</font></Th>
+<TD align=center>0.08581</TD>
+<TD align=center>0.08330</TD>
+<TD align=center>0.08478</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(fJ) for RESET rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(fJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=10>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>(CLK * SET * QN)</font></Th>
+<TD align=center>0.00645</TD>
+<TD align=center>0.00311</TD>
+<TD align=center>0.00571</TD>
+</TR>
+<TR>
+<Th><font>(CLK * SET * QN)</font></Th>
+<TD align=center>0.11282</TD>
+<TD align=center>0.10929</TD>
+<TD align=center>0.11189</TD>
+</TR>
+<TR>
+<Th><font>(CLK * !SET * !QN)</font></Th>
+<TD align=center>-0.02810</TD>
+<TD align=center>-0.02889</TD>
+<TD align=center>-0.02937</TD>
+</TR>
+<TR>
+<Th><font>(CLK * !SET * !QN)</font></Th>
+<TD align=center>0.05373</TD>
+<TD align=center>0.05301</TD>
+<TD align=center>0.05258</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * SET * QN)</font></Th>
+<TD align=center>-0.01782</TD>
+<TD align=center>-0.02087</TD>
+<TD align=center>-0.01878</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * SET * QN)</font></Th>
+<TD align=center>0.07549</TD>
+<TD align=center>0.07242</TD>
+<TD align=center>0.07445</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * D * !SET * !QN)</font></Th>
+<TD align=center>-0.03134</TD>
+<TD align=center>-0.03209</TD>
+<TD align=center>-0.03257</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * D * !SET * !QN)</font></Th>
+<TD align=center>0.05047</TD>
+<TD align=center>0.04972</TD>
+<TD align=center>0.04937</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * !D * !SET * !QN)</font></Th>
+<TD align=center>-0.02961</TD>
+<TD align=center>-0.03067</TD>
+<TD align=center>-0.03135</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * !D * !SET * !QN)</font></Th>
+<TD align=center>0.05216</TD>
+<TD align=center>0.05105</TD>
+<TD align=center>0.05055</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(fJ) for RESET falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(fJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=10>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>(CLK * SET * QN)</font></Th>
+<TD align=center>0.20921</TD>
+<TD align=center>0.20588</TD>
+<TD align=center>0.20737</TD>
+</TR>
+<TR>
+<Th><font>(CLK * SET * QN)</font></Th>
+<TD align=center>0.10278</TD>
+<TD align=center>0.09963</TD>
+<TD align=center>0.10096</TD>
+</TR>
+<TR>
+<Th><font>(CLK * !SET * !QN)</font></Th>
+<TD align=center>0.03079</TD>
+<TD align=center>0.03084</TD>
+<TD align=center>0.03081</TD>
+</TR>
+<TR>
+<Th><font>(CLK * !SET * !QN)</font></Th>
+<TD align=center>-0.05163</TD>
+<TD align=center>-0.05170</TD>
+<TD align=center>-0.05189</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * SET * QN)</font></Th>
+<TD align=center>0.12845</TD>
+<TD align=center>0.12721</TD>
+<TD align=center>0.12869</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * SET * QN)</font></Th>
+<TD align=center>0.03511</TD>
+<TD align=center>0.03395</TD>
+<TD align=center>0.03493</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * D * !SET * !QN)</font></Th>
+<TD align=center>0.03405</TD>
+<TD align=center>0.03408</TD>
+<TD align=center>0.03404</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * D * !SET * !QN)</font></Th>
+<TD align=center>-0.04855</TD>
+<TD align=center>-0.04844</TD>
+<TD align=center>-0.04863</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * !D * !SET * !QN)</font></Th>
+<TD align=center>0.03309</TD>
+<TD align=center>0.03293</TD>
+<TD align=center>0.03283</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * !D * !SET * !QN)</font></Th>
+<TD align=center>-0.04875</TD>
+<TD align=center>-0.04915</TD>
+<TD align=center>-0.04949</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(fJ) for SET rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(fJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=6>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>(CLK * !RESET * QN)</font></Th>
+<TD align=center>-0.03288</TD>
+<TD align=center>-0.03351</TD>
+<TD align=center>-0.03390</TD>
+</TR>
+<TR>
+<Th><font>(CLK * !RESET * QN)</font></Th>
+<TD align=center>0.09268</TD>
+<TD align=center>0.09196</TD>
+<TD align=center>0.09174</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * D * !RESET * QN)</font></Th>
+<TD align=center>-0.00807</TD>
+<TD align=center>-0.01361</TD>
+<TD align=center>-0.01198</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * D * !RESET * QN)</font></Th>
+<TD align=center>0.14166</TD>
+<TD align=center>0.13605</TD>
+<TD align=center>0.13778</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * !D * !RESET * QN)</font></Th>
+<TD align=center>-0.03341</TD>
+<TD align=center>-0.03456</TD>
+<TD align=center>-0.03514</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * !D * !RESET * QN)</font></Th>
+<TD align=center>0.09225</TD>
+<TD align=center>0.09094</TD>
+<TD align=center>0.09051</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(fJ) for SET falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(fJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=6>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>(CLK * !RESET * QN)</font></Th>
+<TD align=center>0.03548</TD>
+<TD align=center>0.03557</TD>
+<TD align=center>0.03551</TD>
+</TR>
+<TR>
+<Th><font>(CLK * !RESET * QN)</font></Th>
+<TD align=center>-0.09100</TD>
+<TD align=center>-0.09106</TD>
+<TD align=center>-0.09114</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * D * !RESET * QN)</font></Th>
+<TD align=center>0.15304</TD>
+<TD align=center>0.14841</TD>
+<TD align=center>0.14962</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * D * !RESET * QN)</font></Th>
+<TD align=center>0.00260</TD>
+<TD align=center>-0.00199</TD>
+<TD align=center>-0.00120</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * !D * !RESET * QN)</font></Th>
+<TD align=center>0.03690</TD>
+<TD align=center>0.03697</TD>
+<TD align=center>0.03692</TD>
+</TR>
+<TR>
+<Th><font>(!CLK * !D * !RESET * QN)</font></Th>
+<TD align=center>-0.08967</TD>
+<TD align=center>-0.08973</TD>
+<TD align=center>-0.08982</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(fJ) for CLK rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(fJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=12>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>(D * RESET * SET * QN)</font></Th>
+<TD align=center>0.13090</TD>
+<TD align=center>0.12720</TD>
+<TD align=center>0.12710</TD>
+</TR>
+<TR>
+<Th><font>(D * RESET * SET * QN)</font></Th>
+<TD align=center>0.18691</TD>
+<TD align=center>0.18318</TD>
+<TD align=center>0.18322</TD>
+</TR>
+<TR>
+<Th><font>(D * !SET * !QN)</font></Th>
+<TD align=center>0.12360</TD>
+<TD align=center>0.11953</TD>
+<TD align=center>0.11933</TD>
+</TR>
+<TR>
+<Th><font>(D * !SET * !QN)</font></Th>
+<TD align=center>0.18208</TD>
+<TD align=center>0.17805</TD>
+<TD align=center>0.17802</TD>
+</TR>
+<TR>
+<Th><font>(D * !RESET * SET * QN)</font></Th>
+<TD align=center>0.17818</TD>
+<TD align=center>0.17418</TD>
+<TD align=center>0.17298</TD>
+</TR>
+<TR>
+<Th><font>(D * !RESET * SET * QN)</font></Th>
+<TD align=center>0.22606</TD>
+<TD align=center>0.22203</TD>
+<TD align=center>0.22096</TD>
+</TR>
+<TR>
+<Th><font>(!D * RESET * SET * QN)</font></Th>
+<TD align=center>0.16029</TD>
+<TD align=center>0.15570</TD>
+<TD align=center>0.15418</TD>
+</TR>
+<TR>
+<Th><font>(!D * RESET * SET * QN)</font></Th>
+<TD align=center>0.22833</TD>
+<TD align=center>0.22394</TD>
+<TD align=center>0.22237</TD>
+</TR>
+<TR>
+<Th><font>(!D * RESET * !SET * !QN)</font></Th>
+<TD align=center>0.31718</TD>
+<TD align=center>0.31216</TD>
+<TD align=center>0.30945</TD>
+</TR>
+<TR>
+<Th><font>(!D * RESET * !SET * !QN)</font></Th>
+<TD align=center>0.36444</TD>
+<TD align=center>0.35936</TD>
+<TD align=center>0.35693</TD>
+</TR>
+<TR>
+<Th><font>(!D * !RESET * QN)</font></Th>
+<TD align=center>0.12599</TD>
+<TD align=center>0.12182</TD>
+<TD align=center>0.12192</TD>
+</TR>
+<TR>
+<Th><font>(!D * !RESET * QN)</font></Th>
+<TD align=center>0.18605</TD>
+<TD align=center>0.18185</TD>
+<TD align=center>0.18211</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(fJ) for CLK falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(fJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=16>ASYNC_DFFHx1_ASAP7_75t_SRAM</TH>
+<Th><font>(D * RESET * SET * QN)</font></Th>
+<TD align=center>0.19957</TD>
+<TD align=center>0.19578</TD>
+<TD align=center>0.19690</TD>
+</TR>
+<TR>
+<Th><font>(D * RESET * SET * QN)</font></Th>
+<TD align=center>0.14360</TD>
+<TD align=center>0.13984</TD>
+<TD align=center>0.14061</TD>
+</TR>
+<TR>
+<Th><font>(D * !SET * !QN)</font></Th>
+<TD align=center>0.21079</TD>
+<TD align=center>0.20733</TD>
+<TD align=center>0.20812</TD>
+</TR>
+<TR>
+<Th><font>(D * !SET * !QN)</font></Th>
+<TD align=center>0.15238</TD>
+<TD align=center>0.14874</TD>
+<TD align=center>0.14941</TD>
+</TR>
+<TR>
+<Th><font>(D * !RESET * SET * QN)</font></Th>
+<TD align=center>0.22065</TD>
+<TD align=center>0.21636</TD>
+<TD align=center>0.21543</TD>
+</TR>
+<TR>
+<Th><font>(D * !RESET * SET * QN)</font></Th>
+<TD align=center>0.17313</TD>
+<TD align=center>0.16891</TD>
+<TD align=center>0.16764</TD>
+</TR>
+<TR>
+<Th><font>(D * !RESET * !SET * QN)</font></Th>
+<TD align=center>0.33602</TD>
+<TD align=center>0.33190</TD>
+<TD align=center>0.32993</TD>
+</TR>
+<TR>
+<Th><font>(D * !RESET * !SET * QN)</font></Th>
+<TD align=center>0.27195</TD>
+<TD align=center>0.26778</TD>
+<TD align=center>0.26548</TD>
+</TR>
+<TR>
+<Th><font>(!D * RESET * SET * QN)</font></Th>
+<TD align=center>0.28091</TD>
+<TD align=center>0.27687</TD>
+<TD align=center>0.27536</TD>
+</TR>
+<TR>
+<Th><font>(!D * RESET * SET * QN)</font></Th>
+<TD align=center>0.21308</TD>
+<TD align=center>0.20902</TD>
+<TD align=center>0.20750</TD>
+</TR>
+<TR>
+<Th><font>(!D * RESET * !SET * !QN)</font></Th>
+<TD align=center>0.31360</TD>
+<TD align=center>0.30971</TD>
+<TD align=center>0.30772</TD>
+</TR>
+<TR>
+<Th><font>(!D * RESET * !SET * !QN)</font></Th>
+<TD align=center>0.26693</TD>
+<TD align=center>0.26301</TD>
+<TD align=center>0.26119</TD>
+</TR>
+<TR>
+<Th><font>(!D * !RESET * QN)</font></Th>
+<TD align=center>0.20372</TD>
+<TD align=center>0.19990</TD>
+<TD align=center>0.20117</TD>
+</TR>
+<TR>
+<Th><font>(!D * !RESET * QN)</font></Th>
+<TD align=center>0.14365</TD>
+<TD align=center>0.13981</TD>
+<TD align=center>0.14095</TD>
+</TR>
+<TR>
+<Th><font>(!D * !RESET * !SET * !QN)</font></Th>
+<TD align=center>0.31933</TD>
+<TD align=center>0.31547</TD>
+<TD align=center>0.31335</TD>
+</TR>
+<TR>
+<Th><font>(!D * !RESET * !SET * !QN)</font></Th>
+<TD align=center>0.26971</TD>
+<TD align=center>0.26583</TD>
+<TD align=center>0.26389</TD>
+</TR>
+</TABLE>
+<BR>
+<DIV class=NOPRINT>
+<HR>
+<TABLE BORDER=0 WIDTH=100%>
+<TR>
+<TD ALIGN=LEFT></TD>
+<TD ALIGN=RIGHT><TABLE BORDER=5><TD><em><A hREF="DFFHQNX1_ASAP7_75T_SRAM.html">Next (DFFHQNX1_ASAP7_75T_SRAM)</A></em></TD></TABLE>
+</TR></TABLE>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,5 @@
+#!/bin/bash
+        cd /home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/par-rundir
+        source enter
+        $INNOVUS_BIN -common_ui -win -files /home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/par-rundir/generated-scripts/open_chip.tcl
+                
