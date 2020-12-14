@@ -102,7 +102,7 @@ always @(*) begin
 
 		3'b010: wb_dmem = raw_dmem;
 
-		default: wb_dmem = 32'dx;
+		default: wb_dmem = 32'd0;
 		
 	endcase
 end

@@ -10,6 +10,7 @@ module StoreSelMux (
 
 reg [31:0] shift_extended;
 
+initial dmem_write_data = 32'd0;
 always @(*) begin
 	case (StoreSel)
 		2'b01: // SH
@@ -40,7 +41,7 @@ always @(*) begin
 
 		2'b10: dmem_write_data = stage2_rs2_data; // SW
 
-		default: dmem_write_data = 32'dx; // idc
+		default: dmem_write_data = 32'd0; // idc
 	endcase
 end
 

@@ -21,9 +21,10 @@ always @(*) begin
 						`FNC_LW: LdSelect = 3'b010;
 						`FNC_LBU: LdSelect = 3'b011;
 						`FNC_LHU: LdSelect = 3'b100;
+						default: LdSelect = 3'b111;
 					endcase
 				   end
-		default: LdSelect = 3'bxxx;
+		default: LdSelect = 3'b111;
 	endcase
 end
 

@@ -15,6 +15,7 @@ assign funct3 = inst[14:12];
 wire uses_pc;
 assign uses_pc = (opcode == `OPC_AUIPC || opcode == `OPC_JAL || opcode == `OPC_BRANCH)? 1'b1: 1'b0;
 
+initial ASelSignal = 1'b0;
 always @(*) begin
 	case (uses_pc)
 		1'b1: ASelSignal = 1'b1;
