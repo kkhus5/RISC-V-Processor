@@ -1,0 +1,13 @@
+catch { setDesignMode -flowEffort standard }
+catch { setDesignMode -process 7 }
+catch { setAnalysisMode -analysisType onChipVariation }
+catch { setAnalysisMode -cppr both }
+setExtractRCMode  -engine preRoute -total_c_th 5 -relative_c_th 0.03 -coupling_c_th 3
+catch {setNanoRouteMode -quiet -routeBottomRoutingLayer 2}
+catch {setNanoRouteMode -quiet -routeTopRoutingLayer 7}
+
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepFlatten true }
+catch { setDelayCalMode -engine aae }
+catch { setFPlanMode -defaultPowerDomainSite true }
+catch { setFPlanMode -maxIoHeight true }
+catch { setFPlanMode -powerRailLayer {} }

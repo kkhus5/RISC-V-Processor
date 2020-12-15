@@ -1,0 +1,1686 @@
+{
+    "vlsi.builtins.is_complete": false,
+    "vlsi.technology.extra_libraries": [
+        {
+            "library": {
+                "name": "SRAM1RW1024x8",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW1024x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW1024x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW1024x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW128x46",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x46_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x46_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x46_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW128x48",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x48_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x48_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x48_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW128x8",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW256x128",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x128_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x128_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x128_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW256x32",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW256x46",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x46_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x46_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x46_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW256x48",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x48_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x48_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x48_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW256x8",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW32x50",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW32x50_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW32x50_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW32x50_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW512x128",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x128_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x128_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x128_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW512x32",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW512x8",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW64x128",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x128_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x128_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x128_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW64x32",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW64x34",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x34_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x34_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x34_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW64x8",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW128x16",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x16_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x16_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x16_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW128x32",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW128x4",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x4_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x4_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x4_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW128x8",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW16x16",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x16_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x16_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x16_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW16x32",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW16x4",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x4_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x4_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x4_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW16x8",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x16",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x16_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x16_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x16_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x22",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x22_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x22_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x22_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x32",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x39",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x39_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x39_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x39_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x4",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x4_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x4_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x4_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x8",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW64x16",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x16_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x16_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x16_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW64x32",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW64x4",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x4_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x4_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x4_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW64x8",
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW1024x8",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW1024x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW1024x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW1024x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW128x46",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x46_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x46_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x46_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW128x48",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x48_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x48_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x48_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW128x8",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW256x128",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x128_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x128_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x128_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW256x32",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW256x46",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x46_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x46_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x46_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW256x48",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x48_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x48_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x48_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW256x8",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW32x50",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW32x50_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW32x50_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW32x50_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW512x128",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x128_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x128_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x128_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW512x32",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW512x8",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW64x128",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x128_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x128_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x128_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW64x32",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW64x34",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x34_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x34_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x34_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM1RW64x8",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW128x16",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x16_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x16_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x16_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW128x32",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW128x4",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x4_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x4_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x4_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW128x8",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW16x16",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x16_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x16_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x16_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW16x32",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW16x4",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x4_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x4_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x4_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW16x8",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x16",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x16_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x16_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x16_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x22",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x22_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x22_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x22_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x32",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x39",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x39_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x39_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x39_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x4",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x4_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x4_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x4_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW32x8",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW64x16",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x16_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x16_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x16_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW64x32",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x32_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x32_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW64x4",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x4_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x4_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x4_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "name": "SRAM2RW64x8",
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x8_x4.lef",
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x8_x4.gds",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        }
+    ],
+    "vlsi.technology.extra_libraries_meta": "append"
+}

@@ -1,7 +1,6 @@
 # Hammer
 hammer-vlsi*.log
 output.json
-build
 
 # ASM/Benchmarks
 *.bin

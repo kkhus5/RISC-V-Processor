@@ -1,0 +1,7 @@
+::db::check_and_set_root_attr design_flow_effort {standard}
+::db::check_and_set_root_attr extract_rc_coupling_cap_threshold {3.0}
+::db::check_and_set_root_attr extract_rc_relative_cap_threshold {0.03}
+::db::check_and_set_root_attr extract_rc_total_cap_threshold {5.0}
+::db::check_and_set_root_attr floorplan_default_power_domain_site {true}
+::db::check_and_set_root_attr route_design_bottom_routing_layer {2}
+::db::check_and_set_root_attr route_design_top_routing_layer {7}

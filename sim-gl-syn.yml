@@ -1,5 +1,5 @@
 # Specify Global Variables
-simClockPeriod : &SIM_CLK_PERIOD "CLOCK_PERIOD=2.00"
+simClockPeriod : &SIM_CLK_PERIOD "CLOCK_PERIOD=2.50"
 simOptions: &SIM_OPTIONS
   - "-notice"
   - "-line"
@@ -37,4 +37,4 @@ sim.inputs:
   defines: 
     - *SIM_CLK_PERIOD
   execute_sim: false
-
+  

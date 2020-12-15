@@ -1,0 +1,3427 @@
+{
+    "cadence.CDS_LIC_FILE": "5280@bisc.EECS.Berkeley.EDU",
+    "cadence.cadence_home": "/home/ff/eecs151/hammer-tools/cadence",
+    "cadence.common_path": "/home/ff/eecs151/hammer/src/hammer-vlsi/common/cadence",
+    "cadence.extra_env_vars": [],
+    "clockPeriod": "0.9ns",
+    "clockPeriodby5": "0.18",
+    "drc.calibre.MGC_HOME": "/shared/instsww/mgc",
+    "drc.calibre.calibre_drc_bin": "/share/instsww/mgc/calibre2017/aoi_cal_2017.4_35.25/bin/calibre",
+    "drc.calibre.calibredrv_bin": "/share/instsww/mgc/calibre2017/aoi_cal_2017.4_35.25/bin/calibredrv",
+    "drc.inputs.additional_drc_text": "",
+    "drc.inputs.additional_drc_text_mode": "auto",
+    "drc.inputs.drc_rules_to_run": [],
+    "drc.inputs.layout_file": null,
+    "drc.inputs.top_module": null,
+    "drc.submit.command": "local",
+    "drc.submit.settings": [],
+    "lvs.calibre.MGC_HOME": "/shared/instsww/mgc",
+    "lvs.calibre.calibre_lvs_bin": "/share/instsww/mgc/calibre2017/aoi_cal_2017.4_35.25/bin/calibre",
+    "lvs.calibre.calibredrv_bin": "/share/instsww/mgc/calibre2017/aoi_cal_2017.4_35.25/bin/calibredrv",
+    "lvs.calibre.v2lvs_bin": "/share/instsww/mgc/calibre2017/aoi_cal_2017.4_35.25/bin/v2lvs",
+    "lvs.inputs.additional_lvs_text": "",
+    "lvs.inputs.additional_lvs_text_mode": "auto",
+    "lvs.inputs.ilms": [],
+    "lvs.inputs.layout_file": null,
+    "lvs.inputs.schematic_files": [],
+    "lvs.inputs.top_module": null,
+    "lvs.submit.command": "local",
+    "lvs.submit.settings": [],
+    "mentor.MGLS_LICENSE_FILE": "1717@bwrcflex-1.eecs.berkeley.edu:1717@bwrcflex-2.eecs.berkeley.edu",
+    "mentor.common_path": "/home/ff/eecs151/hammer/src/hammer-vlsi/common/mentor",
+    "mentor.extra_env_vars": [
+        {
+            "VAR_M4_YOFFSET": "0"
+        },
+        {
+            "VAR_M5_XOFFSET": "0"
+        },
+        {
+            "VAR_M6_YOFFSET": "0"
+        },
+        {
+            "VAR_M7_XOFFSET": "0"
+        }
+    ],
+    "mentor.mentor_home": "/share/instsww/mgc",
+    "openroad.common_path": "/home/ff/eecs151/hammer/src/hammer-vlsi/common/openroad",
+    "par.blockage_spacing": 2.0,
+    "par.blockage_spacing_top_layer": null,
+    "par.generate_power_straps_method": "by_tracks",
+    "par.generate_power_straps_options.by_tracks.blockage_spacing": 2.0,
+    "par.generate_power_straps_options.by_tracks.pin_layers": [
+        "M9"
+    ],
+    "par.generate_power_straps_options.by_tracks.power_utilization": 0.25,
+    "par.generate_power_straps_options.by_tracks.power_utilization_M8": 1.0,
+    "par.generate_power_straps_options.by_tracks.power_utilization_M9": 1.0,
+    "par.generate_power_straps_options.by_tracks.strap_layers": [
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "M9"
+    ],
+    "par.generate_power_straps_options.by_tracks.track_offset": 0.0,
+    "par.generate_power_straps_options.by_tracks.track_spacing": 0,
+    "par.generate_power_straps_options.by_tracks.track_spacing_M3": 1,
+    "par.generate_power_straps_options.by_tracks.track_start": 10,
+    "par.generate_power_straps_options.by_tracks.track_width": 7,
+    "par.innovus.design_flow_effort": "standard",
+    "par.innovus.floorplan_mode": "generate",
+    "par.innovus.floorplan_script_contents": null,
+    "par.innovus.innovus_bin": "/home/ff/eecs151/hammer-tools/cadence/INNOVUS/INNOVUS191/bin/innovus",
+    "par.innovus.use_cco": true,
+    "par.innovus.version": "191",
+    "par.inputs.gds_map_file": null,
+    "par.inputs.gds_map_mode": "auto",
+    "par.inputs.gds_merge": true,
+    "par.inputs.gds_precision": 1000,
+    "par.inputs.gds_precision_mode": "auto",
+    "par.inputs.input_files": [
+        "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/syn-rundir/riscv_top.mapped.v"
+    ],
+    "par.inputs.physical_only_cells_list": [],
+    "par.inputs.physical_only_cells_mode": "auto",
+    "par.inputs.post_synth_sdc": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/syn-rundir/riscv_top.mapped.sdc",
+    "par.inputs.top_module": "riscv_top",
+    "par.power_straps_mode": "generate",
+    "par.power_straps_script_contents": null,
+    "par.submit.command": "local",
+    "par.submit.settings": [],
+    "pcb.inputs.top_module": null,
+    "pcb.submit.command": "local",
+    "pcb.submit.settings": [],
+    "power.inputs.database": null,
+    "power.inputs.end_times": [],
+    "power.inputs.saifs": [],
+    "power.inputs.spefs": [],
+    "power.inputs.start_times": [],
+    "power.inputs.tb_dut": "dut",
+    "power.inputs.tb_name": "TestDriver",
+    "power.inputs.waveforms": [],
+    "power.submit.command": "local",
+    "power.submit.settings": [],
+    "power.voltus.version": "181",
+    "sim.inputs.all_regs": "",
+    "sim.inputs.benchmarks": [],
+    "sim.inputs.compiler_cc_opts": [],
+    "sim.inputs.compiler_ld_opts": [],
+    "sim.inputs.defines": [],
+    "sim.inputs.execute_sim": true,
+    "sim.inputs.execution_flags": [],
+    "sim.inputs.execution_flags_append": [],
+    "sim.inputs.execution_flags_prepend": [],
+    "sim.inputs.gl_register_force_value": 0,
+    "sim.inputs.input_files": [],
+    "sim.inputs.level": "rtl",
+    "sim.inputs.options": [],
+    "sim.inputs.parallel_runs": 1,
+    "sim.inputs.saif.end_time": "1ns",
+    "sim.inputs.saif.end_trigger_raw": "",
+    "sim.inputs.saif.mode": "none",
+    "sim.inputs.saif.start_time": "0ns",
+    "sim.inputs.saif.start_trigger_raw": "",
+    "sim.inputs.sdf_file": null,
+    "sim.inputs.seq_cells": "",
+    "sim.inputs.tb_dut": "dut",
+    "sim.inputs.tb_name": "TestDriver",
+    "sim.inputs.timescale": null,
+    "sim.inputs.timing_annotated": false,
+    "sim.inputs.top_module": null,
+    "sim.submit.command": "local",
+    "sim.submit.settings": [],
+    "sim.vcs.version": "P-2019.06",
+    "sram_generator.submit.command": "local",
+    "sram_generator.submit.settings": [],
+    "synopsys.MGLS_LICENSE_FILE": "1717@bwrcflex-1.eecs.berkeley.edu:1717@bwrcflex-2.eecs.berkeley.edu",
+    "synopsys.SNPSLMD_LICENSE_FILE": "27005@license-srv.eecs.berkeley.edu",
+    "synopsys.synopsys_home": "/home/ff/eecs151/hammer-tools/synopsys",
+    "synthesis.clock_gating_mode": "auto",
+    "synthesis.genus.version": "191",
+    "synthesis.inputs.input_files": [
+        "/home/ff/eecs151/verilog_lib/EECS151.v",
+        "src/ALUdec.v",
+        "src/ALU.v",
+        "src/Cache.v",
+        "src/Memory151.v",
+        "src/Riscv151.v",
+        "src/riscv_arbiter.v",
+        "src/riscv_top.v",
+        "src/ImmediateGenerator.v",
+        "src/BranchComparator.v",
+        "src/Adder.v",
+        "src/ASel.v",
+        "src/ASelMux.v",
+        "src/BrUn.v",
+        "src/BSel.v",
+        "src/BSelMux.v",
+        "src/CSR.v",
+        "src/CSRSel.v",
+        "src/Data1Sel.v",
+        "src/Data2Sel.v",
+        "src/DataSelMux.v",
+        "src/FlipFlop.v",
+        "src/ImmSel.v",
+        "src/LdSel.v",
+        "src/LdSelMux.v",
+        "src/MemRW.v",
+        "src/NOPSel.v",
+        "src/NOPSelMux.v",
+        "src/PCAddSignal.v",
+        "src/PCFour.v",
+        "src/PCSel.v",
+        "src/PCSelMux.v",
+        "src/RegFile.v",
+        "src/RegWEn.v",
+        "src/Stage1Module.v",
+        "src/Stage2Module.v",
+        "src/Stage3Module.v",
+        "src/StoreSel.v",
+        "src/StoreSelMux.v",
+        "src/WBSel.v",
+        "src/WBSelMux.v"
+    ],
+    "synthesis.inputs.top_module": "riscv_top",
+    "synthesis.outputs.all_regs": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/syn-rundir/find_regs_paths.json",
+    "synthesis.outputs.output_files": [
+        "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/syn-rundir/riscv_top.mapped.v"
+    ],
+    "synthesis.outputs.sdc": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/syn-rundir/riscv_top.mapped.sdc",
+    "synthesis.outputs.sdf_file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/syn-rundir/riscv_top.mapped.sdf",
+    "synthesis.outputs.seq_cells": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/syn-rundir/find_regs_cells.json",
+    "synthesis.submit.command": "local",
+    "synthesis.submit.settings": [],
+    "technology.asap7.tarball_dir": "/home/ff/eecs151/",
+    "technology.core.special_cells": null,
+    "technology.core.stackup": "asap7_3Ma_2Mb_2Mc_2Md",
+    "technology.core.std_cell_rail_layer": "M1",
+    "technology.core.tap_cell_rail_reference": "{TAPCELL*}",
+    "technology.pcb.bump_pad_metal_diameter": null,
+    "technology.pcb.bump_pad_opening_diameter": null,
+    "verilogSrc": [
+        "/home/ff/eecs151/verilog_lib/EECS151.v",
+        "src/ALUdec.v",
+        "src/ALU.v",
+        "src/Cache.v",
+        "src/Memory151.v",
+        "src/Riscv151.v",
+        "src/riscv_arbiter.v",
+        "src/riscv_top.v",
+        "src/ImmediateGenerator.v",
+        "src/BranchComparator.v",
+        "src/Adder.v",
+        "src/ASel.v",
+        "src/ASelMux.v",
+        "src/BrUn.v",
+        "src/BSel.v",
+        "src/BSelMux.v",
+        "src/CSR.v",
+        "src/CSRSel.v",
+        "src/Data1Sel.v",
+        "src/Data2Sel.v",
+        "src/DataSelMux.v",
+        "src/FlipFlop.v",
+        "src/ImmSel.v",
+        "src/LdSel.v",
+        "src/LdSelMux.v",
+        "src/MemRW.v",
+        "src/NOPSel.v",
+        "src/NOPSelMux.v",
+        "src/PCAddSignal.v",
+        "src/PCFour.v",
+        "src/PCSel.v",
+        "src/PCSelMux.v",
+        "src/RegFile.v",
+        "src/RegWEn.v",
+        "src/Stage1Module.v",
+        "src/Stage2Module.v",
+        "src/Stage3Module.v",
+        "src/StoreSel.v",
+        "src/StoreSelMux.v",
+        "src/WBSel.v",
+        "src/WBSelMux.v"
+    ],
+    "vlsi.builtins.hammer_vlsi_path": "/home/ff/eecs151/hammer/src/hammer-vlsi",
+    "vlsi.builtins.is_complete": false,
+    "vlsi.core.build_system": "make",
+    "vlsi.core.drc_tool": "calibre",
+    "vlsi.core.drc_tool_path": [
+        "/home/ff/eecs151/hammer-mentor-plugins/drc"
+    ],
+    "vlsi.core.lvs_tool": "calibre",
+    "vlsi.core.lvs_tool_path": [
+        "/home/ff/eecs151/hammer-mentor-plugins/lvs"
+    ],
+    "vlsi.core.max_threads": 4,
+    "vlsi.core.node": 7,
+    "vlsi.core.par_tool": "innovus",
+    "vlsi.core.par_tool_path": [
+        "/home/ff/eecs151/hammer-cadence-plugins/par"
+    ],
+    "vlsi.core.pcb_tool": "generic",
+    "vlsi.core.pcb_tool_path": [
+        "/home/ff/eecs151/hammer/src/hammer-vlsi/pcb"
+    ],
+    "vlsi.core.power_tool": "voltus",
+    "vlsi.core.power_tool_path": [
+        "/home/ff/eecs151/hammer-cadence-plugins/power"
+    ],
+    "vlsi.core.sim_tool": "vcs",
+    "vlsi.core.sim_tool_path": [
+        "/home/ff/eecs151/hammer-synopsys-plugins/sim"
+    ],
+    "vlsi.core.sram_generator_tool": "sram_compiler",
+    "vlsi.core.sram_generator_tool_path": [
+        "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7"
+    ],
+    "vlsi.core.synthesis_tool": "genus",
+    "vlsi.core.synthesis_tool_path": [
+        "/home/ff/eecs151/hammer-cadence-plugins/synthesis"
+    ],
+    "vlsi.core.technology": "asap7",
+    "vlsi.core.technology_path": [
+        "/home/ff/eecs151/hammer/src/hammer-vlsi/technology"
+    ],
+    "vlsi.inputs.bumps.assignments": [],
+    "vlsi.inputs.bumps.cell": "",
+    "vlsi.inputs.bumps.pitch": 0.0,
+    "vlsi.inputs.bumps.x": 0,
+    "vlsi.inputs.bumps.y": 0,
+    "vlsi.inputs.bumps_mode": "empty",
+    "vlsi.inputs.bumps_pin_naming_scheme": "A1",
+    "vlsi.inputs.clocks": [
+        {
+            "name": "clk",
+            "period": "0.9ns",
+            "uncertainty": "0.1ns"
+        }
+    ],
+    "vlsi.inputs.custom_sdc_constraints": [],
+    "vlsi.inputs.default_output_load": 1,
+    "vlsi.inputs.delays": [
+        {
+            "clock": "clk",
+            "delay": "0.18",
+            "direction": "input",
+            "name": "mem*"
+        }
+    ],
+    "vlsi.inputs.dont_use_list": [
+        "BUFx16f_ASAP7_75t_R",
+        "BUFx16f_ASAP7_75t_L",
+        "BUFx16f_ASAP7_75t_SL",
+        "BUFx16f_ASAP7_75t_SRAM"
+    ],
+    "vlsi.inputs.dont_use_mode": "append",
+    "vlsi.inputs.hierarchical.config_source": "none",
+    "vlsi.inputs.hierarchical.constraints": [],
+    "vlsi.inputs.hierarchical.manual_modules": [],
+    "vlsi.inputs.hierarchical.manual_placement_constraints": [],
+    "vlsi.inputs.hierarchical.mode": "flat",
+    "vlsi.inputs.hierarchical.top_module": "null",
+    "vlsi.inputs.ilms": [],
+    "vlsi.inputs.mmmc_corners": [
+        {
+            "name": "PVT_0P63V_100C",
+            "temp": "100 C",
+            "type": "setup",
+            "voltage": "0.63 V"
+        },
+        {
+            "name": "PVT_0P77V_0C",
+            "temp": "0 C",
+            "type": "hold",
+            "voltage": "0.77 V"
+        }
+    ],
+    "vlsi.inputs.output_loads": [],
+    "vlsi.inputs.pin.assignments": [
+        {
+            "layers": [
+                "M5",
+                "M7"
+            ],
+            "pins": "*",
+            "side": "bottom"
+        }
+    ],
+    "vlsi.inputs.pin.generate_mode": "semi_auto",
+    "vlsi.inputs.pin_mode": "generated",
+    "vlsi.inputs.placement_constraints": [
+        {
+            "height": 400,
+            "margins": {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "top": 0
+            },
+            "path": "riscv_top",
+            "type": "toplevel",
+            "width": 350,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "master": "SRAM2RW16x32",
+            "orientation": "my",
+            "path": "riscv_top/mem/icache/tag_valid_sram",
+            "type": "hardmacro",
+            "x": 95.04,
+            "y": 14.04
+        },
+        {
+            "master": "SRAM2RW16x32",
+            "orientation": "r0",
+            "path": "riscv_top/mem/dcache/tag_valid_sram",
+            "type": "hardmacro",
+            "x": 264.6,
+            "y": 9.72
+        },
+        {
+            "master": "SRAM1RW64x128",
+            "orientation": "my",
+            "path": "riscv_top/mem/icache/data_sram",
+            "type": "hardmacro",
+            "x": 19.44,
+            "y": 139.32
+        },
+        {
+            "master": "SRAM1RW64x128",
+            "orientation": "r0",
+            "path": "riscv_top/mem/dcache/data_sram",
+            "type": "hardmacro",
+            "x": 284.04,
+            "y": 140.4
+        },
+        {
+            "height": 1.08,
+            "obs_types": [
+                "place"
+            ],
+            "path": "riscv_top/place_obs_bottom",
+            "type": "obstruction",
+            "width": 350,
+            "x": 0,
+            "y": 0
+        }
+    ],
+    "vlsi.inputs.power_spec_contents": null,
+    "vlsi.inputs.power_spec_mode": "auto",
+    "vlsi.inputs.power_spec_type": "cpf",
+    "vlsi.inputs.sram_parameters": [
+        {
+            "depth": "1024",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW1024x8",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 8
+        },
+        {
+            "depth": "128",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW128x46",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 46
+        },
+        {
+            "depth": "128",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW128x48",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 48
+        },
+        {
+            "depth": "128",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW128x8",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 8
+        },
+        {
+            "depth": "256",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW256x128",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 128
+        },
+        {
+            "depth": "256",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW256x32",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 32
+        },
+        {
+            "depth": "256",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW256x46",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 46
+        },
+        {
+            "depth": "256",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW256x48",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 48
+        },
+        {
+            "depth": "256",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW256x8",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 8
+        },
+        {
+            "depth": "32",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW32x50",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 50
+        },
+        {
+            "depth": "512",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW512x128",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 128
+        },
+        {
+            "depth": "512",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW512x32",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 32
+        },
+        {
+            "depth": "512",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW512x8",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 8
+        },
+        {
+            "depth": "64",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW64x128",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 128
+        },
+        {
+            "depth": "64",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW64x32",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 32
+        },
+        {
+            "depth": "64",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW64x34",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 34
+        },
+        {
+            "depth": "64",
+            "extra ports": [],
+            "family": "1RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM1RW64x8",
+            "ports": [
+                {
+                    "address port name": "A",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I",
+                    "input port polarity": "active high",
+                    "output port name": "O",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 8
+        },
+        {
+            "depth": "128",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW128x16",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 16
+        },
+        {
+            "depth": "128",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW128x32",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 32
+        },
+        {
+            "depth": "128",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW128x4",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 4
+        },
+        {
+            "depth": "128",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW128x8",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 8
+        },
+        {
+            "depth": "16",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW16x16",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 16
+        },
+        {
+            "depth": "16",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW16x32",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 32
+        },
+        {
+            "depth": "16",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW16x4",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 4
+        },
+        {
+            "depth": "16",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW16x8",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 8
+        },
+        {
+            "depth": "32",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW32x16",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 16
+        },
+        {
+            "depth": "32",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW32x22",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 22
+        },
+        {
+            "depth": "32",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW32x32",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 32
+        },
+        {
+            "depth": "32",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW32x39",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 39
+        },
+        {
+            "depth": "32",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW32x4",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 4
+        },
+        {
+            "depth": "32",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW32x8",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 8
+        },
+        {
+            "depth": "64",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW64x16",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 16
+        },
+        {
+            "depth": "64",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW64x32",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 32
+        },
+        {
+            "depth": "64",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW64x4",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 4
+        },
+        {
+            "depth": "64",
+            "extra ports": [],
+            "family": "2RW",
+            "mask": "false",
+            "mux": 1,
+            "name": "SRAM2RW64x8",
+            "ports": [
+                {
+                    "address port name": "A1",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB1",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE1",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I1",
+                    "input port polarity": "active high",
+                    "output port name": "O1",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB1",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB1",
+                    "write enable port polarity": "active low"
+                },
+                {
+                    "address port name": "A2",
+                    "address port polarity": "active high",
+                    "chip enable port name": "CSB2",
+                    "chip enable port polarity": "active low",
+                    "clock port name": "CE2",
+                    "clock port polarity": "positive edge",
+                    "input port name": "I2",
+                    "input port polarity": "active high",
+                    "output port name": "O2",
+                    "output port polarity": "active high",
+                    "read enable port name": "OEB2",
+                    "read enable port polarity": "active low",
+                    "write enable port name": "WEB2",
+                    "write enable port polarity": "active low"
+                }
+            ],
+            "type": "sram",
+            "vt": "SRAM",
+            "width": 8
+        }
+    ],
+    "vlsi.inputs.supplies.GND": "0 V",
+    "vlsi.inputs.supplies.VDD": "0.7 V",
+    "vlsi.inputs.supplies.ground": [
+        {
+            "name": "VSS",
+            "pin": "VSS"
+        }
+    ],
+    "vlsi.inputs.supplies.power": [
+        {
+            "name": "VDD",
+            "pin": "VDD"
+        }
+    ],
+    "vlsi.inputs.visualization.mode": "all",
+    "vlsi.inputs.visualization.shorten_path_depth": 1,
+    "vlsi.inputs.visualization.svg_file": "all.svg",
+    "vlsi.submit.command": "local",
+    "vlsi.submit.settings": [],
+    "vlsi.technology.bump_block_cut_layer": "V9",
+    "vlsi.technology.extra_libraries": [
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW1024x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW1024x8_x4.lef",
+                "name": "SRAM1RW1024x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW1024x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x46_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x46_x4.lef",
+                "name": "SRAM1RW128x46",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x46_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x48_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x48_x4.lef",
+                "name": "SRAM1RW128x48",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x48_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x8_x4.lef",
+                "name": "SRAM1RW128x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x128_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x128_x4.lef",
+                "name": "SRAM1RW256x128",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x128_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x32_x4.lef",
+                "name": "SRAM1RW256x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x46_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x46_x4.lef",
+                "name": "SRAM1RW256x46",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x46_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x48_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x48_x4.lef",
+                "name": "SRAM1RW256x48",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x48_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x8_x4.lef",
+                "name": "SRAM1RW256x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW32x50_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW32x50_x4.lef",
+                "name": "SRAM1RW32x50",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW32x50_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x128_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x128_x4.lef",
+                "name": "SRAM1RW512x128",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x128_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x32_x4.lef",
+                "name": "SRAM1RW512x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x8_x4.lef",
+                "name": "SRAM1RW512x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x128_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x128_x4.lef",
+                "name": "SRAM1RW64x128",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x128_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x32_x4.lef",
+                "name": "SRAM1RW64x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x34_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x34_x4.lef",
+                "name": "SRAM1RW64x34",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x34_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x8_x4.lef",
+                "name": "SRAM1RW64x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x16_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x16_x4.lef",
+                "name": "SRAM2RW128x16",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x16_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x32_x4.lef",
+                "name": "SRAM2RW128x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x4_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x4_x4.lef",
+                "name": "SRAM2RW128x4",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x4_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x8_x4.lef",
+                "name": "SRAM2RW128x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x16_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x16_x4.lef",
+                "name": "SRAM2RW16x16",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x16_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x32_x4.lef",
+                "name": "SRAM2RW16x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x4_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x4_x4.lef",
+                "name": "SRAM2RW16x4",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x4_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x8_x4.lef",
+                "name": "SRAM2RW16x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x16_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x16_x4.lef",
+                "name": "SRAM2RW32x16",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x16_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x22_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x22_x4.lef",
+                "name": "SRAM2RW32x22",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x22_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x32_x4.lef",
+                "name": "SRAM2RW32x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x39_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x39_x4.lef",
+                "name": "SRAM2RW32x39",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x39_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x4_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x4_x4.lef",
+                "name": "SRAM2RW32x4",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x4_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x8_x4.lef",
+                "name": "SRAM2RW32x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x16_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x16_x4.lef",
+                "name": "SRAM2RW64x16",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x16_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x32_x4.lef",
+                "name": "SRAM2RW64x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x32_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x4_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x4_x4.lef",
+                "name": "SRAM2RW64x4",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x4_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "slow",
+                    "pmos": "slow",
+                    "temperature": "100.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x8_x4.lef",
+                "name": "SRAM2RW64x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x8_PVT_0P63V_100C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.63 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW1024x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW1024x8_x4.lef",
+                "name": "SRAM1RW1024x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW1024x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x46_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x46_x4.lef",
+                "name": "SRAM1RW128x46",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x46_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x48_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x48_x4.lef",
+                "name": "SRAM1RW128x48",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x48_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x8_x4.lef",
+                "name": "SRAM1RW128x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW128x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x128_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x128_x4.lef",
+                "name": "SRAM1RW256x128",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x128_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x32_x4.lef",
+                "name": "SRAM1RW256x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x46_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x46_x4.lef",
+                "name": "SRAM1RW256x46",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x46_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x48_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x48_x4.lef",
+                "name": "SRAM1RW256x48",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x48_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x8_x4.lef",
+                "name": "SRAM1RW256x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW256x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW32x50_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW32x50_x4.lef",
+                "name": "SRAM1RW32x50",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW32x50_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x128_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x128_x4.lef",
+                "name": "SRAM1RW512x128",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x128_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x32_x4.lef",
+                "name": "SRAM1RW512x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x8_x4.lef",
+                "name": "SRAM1RW512x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW512x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x128_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x128_x4.lef",
+                "name": "SRAM1RW64x128",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x128_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x32_x4.lef",
+                "name": "SRAM1RW64x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x34_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x34_x4.lef",
+                "name": "SRAM1RW64x34",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x34_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x8_x4.lef",
+                "name": "SRAM1RW64x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM1RW64x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x16_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x16_x4.lef",
+                "name": "SRAM2RW128x16",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x16_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x32_x4.lef",
+                "name": "SRAM2RW128x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x4_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x4_x4.lef",
+                "name": "SRAM2RW128x4",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x4_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x8_x4.lef",
+                "name": "SRAM2RW128x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW128x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x16_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x16_x4.lef",
+                "name": "SRAM2RW16x16",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x16_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x32_x4.lef",
+                "name": "SRAM2RW16x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x4_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x4_x4.lef",
+                "name": "SRAM2RW16x4",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x4_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x8_x4.lef",
+                "name": "SRAM2RW16x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW16x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x16_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x16_x4.lef",
+                "name": "SRAM2RW32x16",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x16_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x22_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x22_x4.lef",
+                "name": "SRAM2RW32x22",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x22_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x32_x4.lef",
+                "name": "SRAM2RW32x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x39_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x39_x4.lef",
+                "name": "SRAM2RW32x39",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x39_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x4_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x4_x4.lef",
+                "name": "SRAM2RW32x4",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x4_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x8_x4.lef",
+                "name": "SRAM2RW32x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW32x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x16_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x16_x4.lef",
+                "name": "SRAM2RW64x16",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x16_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x32_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x32_x4.lef",
+                "name": "SRAM2RW64x32",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x32_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x4_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x4_x4.lef",
+                "name": "SRAM2RW64x4",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x4_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        },
+        {
+            "library": {
+                "corner": {
+                    "nmos": "fast",
+                    "pmos": "fast",
+                    "temperature": "0.0 C"
+                },
+                "gds file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x8_x4.gds",
+                "lef file": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x8_x4.lef",
+                "name": "SRAM2RW64x8",
+                "nldm liberty file": "/home/cc/eecs151/fa20/class/eecs151-acb/project_skeleton/build/tech-asap7-cache/SRAM2RW64x8_PVT_0P77V_0C.lib",
+                "provides": [
+                    {
+                        "lib_type": "sram",
+                        "vt": "SRAM"
+                    }
+                ],
+                "supplies": {
+                    "GND": "0 V",
+                    "VDD": "0.77 V"
+                },
+                "verilog sim": "/home/ff/eecs151/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/behavioral/sram_behav_models.v"
+            }
+        }
+    ],
+    "vlsi.technology.extra_macro_sizes": [],
+    "vlsi.technology.extracted_tarballs_dir": null,
+    "vlsi.technology.placement_site": "coreSite",
+    "vlsi.technology.tap_cell_interval": "50",
+    "vlsi.technology.tap_cell_offset": "10.564"
+}
