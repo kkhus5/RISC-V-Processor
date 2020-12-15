@@ -15,6 +15,7 @@ module WBSel (
 wire [6:0] opcode;
 assign opcode = stage3_inst[6:0];
 
+initial WBSelect = 2'b11;
 always @(*) begin
 	case (opcode)
 		`OPC_LOAD: WBSelect = 2'b00;
@@ -24,7 +25,7 @@ always @(*) begin
 		`OPC_LUI: WBSelect = 2'b01;
 		`OPC_JALR: WBSelect = 2'b10;
 		`OPC_JAL: WBSelect = 2'b10;
-		default: WBSelect = 2'b00;
+		default: WBSelect = 2'b11;
 	endcase
 end
 

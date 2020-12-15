@@ -9,6 +9,7 @@ module WBSelMux (
 	output reg [31:0] wb_data
 );
 
+initial wb_data = 32'd0;
 always @(*) begin
 	case (WBSel)
 		2'b00: wb_data = wb_dmem;

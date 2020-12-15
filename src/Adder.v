@@ -9,6 +9,8 @@ module Adder (
 	output reg [31:0] stage1_pc4
 );
 
+initial stage1_pc4 = stage1_pc + 32'd4;
+
 always @(*) begin
 	case (PCAddSelect)
 		2'b01: stage1_pc4 = stage1_pc + stage1_imm;

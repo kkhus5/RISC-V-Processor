@@ -16,6 +16,8 @@ assign funct3 = inst[14:12];
 wire uses_imm;
 assign uses_imm = (opcode == `OPC_ARI_ITYPE || opcode == `OPC_LUI || opcode == `OPC_AUIPC || opcode == `OPC_JAL || opcode == `OPC_JALR || opcode == `OPC_BRANCH || opcode == `OPC_STORE || opcode == `OPC_LOAD || opcode == `OPC_CSR)? 1'b1: 1'b0;
 
+initial BSelSignal = 1'b0;
+
 always @(*) begin
 	case (uses_imm)
 		1'b1: BSelSignal = 1'b1;

@@ -24,9 +24,10 @@ always @(*) begin
 						`FNC_SB: StoreSelect = 2'b00;
 						`FNC_SH: StoreSelect = 2'b01;
 						`FNC_SW: StoreSelect = 2'b10;
+						default: StoreSelect = 2'b11;
 					endcase
 				   end
-		default: StoreSelect = 2'bxx;
+		default: StoreSelect = 2'b11;
 	endcase
 end
 

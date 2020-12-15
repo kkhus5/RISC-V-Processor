@@ -39,6 +39,7 @@ always @(*) begin
 										endcase
 									 end
 							`FNC_SW: MemRWSelect = 4'b1111;
+							default: MemRWSelect = 4'b0000;
 						endcase
 					end
 		default: MemRWSelect = 4'b0000;
