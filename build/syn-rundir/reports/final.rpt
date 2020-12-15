@@ -5,23 +5,23 @@ QoS Summary for riscv_top
 ================================================================================
 Metric                          final          
 ================================================================================
-Slack (ps):                         3
-  R2R (ps):                         3
-  I2R (ps):                  no_value
+Slack (ps):                        18
+  R2R (ps):                        18
+  I2R (ps):                       310
   R2O (ps):                  no_value
   I2O (ps):                  no_value
-  CG  (ps):                       434
+  CG  (ps):                       268
 TNS (ps):                           0
   R2R (ps):                         0
-  I2R (ps):                  no_value
+  I2R (ps):                         0
   R2O (ps):                  no_value
   I2O (ps):                  no_value
   CG  (ps):                         0
 Failing Paths:                      0
-Cell Area:                     57,785
-Total Cell Area:               57,785
-Leaf Instances:                 9,432
-Total Instances:                9,432
+Cell Area:                     55,040
+Total Cell Area:               55,040
+Leaf Instances:                 8,448
+Total Instances:                8,448
 Utilization (%):                 0.00
 Tot. Net Length (um):        no_value
 Avg. Net Length (um):        no_value
@@ -32,17 +32,17 @@ Norm Cong Hotspot Area:
   Max Cong:                  no_value
   Tot Cong:                  no_value
 ================================================================================
-CPU  Runtime (h:m:s):        00:05:11
-Real Runtime (h:m:s):        00:03:45
-CPU  Elapsed (h:m:s):        00:05:19
-Real Elapsed (h:m:s):        00:03:47
-Memory (MB):                  1087.20
+CPU  Runtime (h:m:s):        00:05:30
+Real Runtime (h:m:s):        00:04:10
+CPU  Elapsed (h:m:s):        00:05:37
+Real Elapsed (h:m:s):        00:04:11
+Memory (MB):                  1077.79
 ================================================================================
 ================================================================================
 Flow Settings:
 ================================================================================
-Total Runtime (h:m:s): 00:03:49
-Total Memory (MB):     1087.20
+Total Runtime (h:m:s): 00:04:14
+Total Memory (MB):     1077.79
 Executable Version:    19.11-s087_1
 ================================================================================
 Total Cell Area =  Cell Area + Physical Cell Area

@@ -2,7 +2,7 @@
 #
 # Genus(TM) Synthesis Solution setup file
 # Created by Genus(TM) Synthesis Solution 19.11-s087_1
-#   on 12/13/2020 19:46:44
+#   on 12/14/2020 16:35:03
 #
 # This file can only be run in Genus Common UI mode.
 #
@@ -49,13 +49,13 @@ set _slk_ [::legacy::get_attribute slack design:riscv_top]
 if {[regexp {^-?[0-9.]+$} $_slk_]} {
   set _slk_ [format %.1f $_slk_]
 }
-if {$_slk_ != "3.1"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack: 3.1,  current slack: $_slk_"
+if {$_slk_ != "18.1"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack: 18.1,  current slack: $_slk_"
 }
 unset _slk_
 # multi-mode slack
-if {"[string_representation [::legacy::get_attribute slack_by_mode design:riscv_top]]" != "{{mode:riscv_top/PVT_0P63V_100C.setup_view 3.1}}"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack_by_mode: {{mode:riscv_top/PVT_0P63V_100C.setup_view 3.1}}  current slack_by_mode: [string_representation [::legacy::get_attribute slack_by_mode design:riscv_top]]"
+if {"[string_representation [::legacy::get_attribute slack_by_mode design:riscv_top]]" != "{{mode:riscv_top/PVT_0P63V_100C.setup_view 18.1}}"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack_by_mode: {{mode:riscv_top/PVT_0P63V_100C.setup_view 18.1}}  current slack_by_mode: [string_representation [::legacy::get_attribute slack_by_mode design:riscv_top]]"
 }
 # tns
 set _tns_ [::legacy::get_attribute tns design:riscv_top]
@@ -71,8 +71,8 @@ set _cell_area_ [::legacy::get_attribute cell_area design:riscv_top]
 if {[regexp {^-?[0-9.]+$} $_cell_area_]} {
   set _cell_area_ [format %.0f $_cell_area_]
 }
-if {$_cell_area_ != "57785"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden cell area: 57785,  current cell area: $_cell_area_"
+if {$_cell_area_ != "55040"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden cell area: 55040,  current cell area: $_cell_area_"
 }
 unset _cell_area_
 # net area
@@ -80,8 +80,8 @@ set _net_area_ [::legacy::get_attribute net_area design:riscv_top]
 if {[regexp {^-?[0-9.]+$} $_net_area_]} {
   set _net_area_ [format %.0f $_net_area_]
 }
-if {$_net_area_ != "7502"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden net area: 7502,  current net area: $_net_area_"
+if {$_net_area_ != "6831"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden net area: 6831,  current net area: $_net_area_"
 }
 unset _net_area_
 # library domain count

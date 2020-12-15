@@ -1,66 +1,6 @@
 [
   {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[10]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[30]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[28]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[24]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[16]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[0]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[15]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[23]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[14]",
-    "pin": "QN"
-  },
-  {
     "path": "cpu/s1_to_s2_imm/\\register_reg[13]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[27]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[22]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[12]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[11]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[21]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[31]",
     "pin": "QN"
   },
   {
@@ -68,47 +8,15 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[29]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[2]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[26]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[30]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[20]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[8]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[7]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[19]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[6]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[5]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[25]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[18]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[4]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[31]",
     "pin": "QN"
   },
   {
@@ -116,11 +24,23 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[17]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[4]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_imm/\\register_reg[2]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[5]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[6]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[7]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[8]",
     "pin": "QN"
   },
   {
@@ -128,60 +48,92 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[31]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[10]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[29]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[11]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[27]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[12]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[23]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[0]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[22]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[29]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[26]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[15]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[21]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[16]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[20]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[17]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[28]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[18]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[25]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[19]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[18]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[20]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[24]",
+    "path": "cpu/s1_to_s2_imm/\\register_reg[21]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[22]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[23]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[24]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[25]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[26]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[27]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[28]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_imm/\\register_reg[14]",
     "pin": "QN"
   },
   {
     "path": "cpu/s1_to_s2_inst/\\register_reg[0]",
-    "pin": "Q"
+    "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[1]",
-    "pin": "Q"
+    "path": "cpu/s1_to_s2_inst/\\register_reg[9]",
+    "pin": "QN"
   },
   {
     "path": "cpu/s1_to_s2_inst/\\register_reg[10]",
@@ -216,7 +168,11 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[19]",
+    "path": "cpu/s1_to_s2_inst/\\register_reg[3]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[22]",
     "pin": "QN"
   },
   {
@@ -224,12 +180,16 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[2]",
-    "pin": "Q"
+    "path": "cpu/s1_to_s2_inst/\\register_reg[1]",
+    "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[3]",
-    "pin": "Q"
+    "path": "cpu/s1_to_s2_inst/\\register_reg[2]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[19]",
+    "pin": "QN"
   },
   {
     "path": "cpu/s1_to_s2_inst/\\register_reg[4]",
@@ -241,7 +201,7 @@
   },
   {
     "path": "cpu/s1_to_s2_inst/\\register_reg[6]",
-    "pin": "QN"
+    "pin": "Q"
   },
   {
     "path": "cpu/s1_to_s2_inst/\\register_reg[7]",
@@ -252,7 +212,47 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_inst/\\register_reg[9]",
+    "path": "cpu/s1_to_s2_inst/\\register_reg[24]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[23]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[18]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[25]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[26]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[27]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[28]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[29]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[31]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[20]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_inst/\\register_reg[21]",
     "pin": "QN"
   },
   {
@@ -512,91 +512,7 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[13]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[29]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[27]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[23]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[15]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[14]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[22]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[30]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[12]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[26]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[21]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[11]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[10]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[20]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[9]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[5]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[28]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[25]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[19]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[7]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[6]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[18]",
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[2]",
     "pin": "QN"
   },
   {
@@ -604,15 +520,7 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[4]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[24]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[17]",
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[1]",
     "pin": "QN"
   },
   {
@@ -620,11 +528,19 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[1]",
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[4]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[16]",
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[5]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[6]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[7]",
     "pin": "QN"
   },
   {
@@ -632,11 +548,95 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s1_to_s2_rs2/\\register_reg[2]",
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[9]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[10]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[11]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[12]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[13]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[14]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[15]",
     "pin": "QN"
   },
   {
     "path": "cpu/s1_to_s2_rs2/\\register_reg[31]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[17]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[18]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[19]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[20]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[21]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[22]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[23]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[24]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[25]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[26]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[27]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[28]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[29]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[30]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s1_to_s2_rs2/\\register_reg[16]",
     "pin": "QN"
   },
   {
@@ -701,7 +701,7 @@
   },
   {
     "path": "cpu/s2_to_s3_alu/\\register_reg[0]",
-    "pin": "QN"
+    "pin": "Q"
   },
   {
     "path": "cpu/s2_to_s3_alu/\\register_reg[29]",
@@ -768,15 +768,43 @@
     "pin": "QN"
   },
   {
+    "path": "cpu/s2_to_s3_inst/\\register_reg[1]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s2_to_s3_inst/\\register_reg[7]",
+    "pin": "Q"
+  },
+  {
+    "path": "cpu/s2_to_s3_inst/\\register_reg[9]",
+    "pin": "Q"
+  },
+  {
+    "path": "cpu/s2_to_s3_inst/\\register_reg[10]",
+    "pin": "Q"
+  },
+  {
+    "path": "cpu/s2_to_s3_inst/\\register_reg[11]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s2_to_s3_inst/\\register_reg[12]",
+    "pin": "QN"
+  },
+  {
     "path": "cpu/s2_to_s3_inst/\\register_reg[8]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[13]",
+    "path": "cpu/s2_to_s3_inst/\\register_reg[6]",
     "pin": "QN"
   },
   {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[14]",
+    "path": "cpu/s2_to_s3_inst/\\register_reg[0]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/s2_to_s3_inst/\\register_reg[13]",
     "pin": "QN"
   },
   {
@@ -788,19 +816,7 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[10]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[0]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[6]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[5]",
+    "path": "cpu/s2_to_s3_inst/\\register_reg[14]",
     "pin": "QN"
   },
   {
@@ -808,23 +824,7 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[1]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[7]",
-    "pin": "Q"
-  },
-  {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[9]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[11]",
-    "pin": "Q"
-  },
-  {
-    "path": "cpu/s2_to_s3_inst/\\register_reg[12]",
+    "path": "cpu/s2_to_s3_inst/\\register_reg[5]",
     "pin": "QN"
   },
   {
@@ -1144,6 +1144,10 @@
     "pin": "QN"
   },
   {
+    "path": "cpu/stage1/regfile/\\mem_reg[1][15]",
+    "pin": "QN"
+  },
+  {
     "path": "cpu/stage1/regfile/\\mem_reg[1][16]",
     "pin": "QN"
   },
@@ -1184,6 +1188,26 @@
     "pin": "QN"
   },
   {
+    "path": "cpu/stage1/regfile/\\mem_reg[1][26]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[1][27]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[1][28]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[1][29]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[1][30]",
+    "pin": "QN"
+  },
+  {
     "path": "cpu/stage1/regfile/\\mem_reg[1][31]",
     "pin": "QN"
   },
@@ -1205,6 +1229,10 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[2][5]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[2][8]",
     "pin": "QN"
   },
   {
@@ -1292,10 +1320,6 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[2][31]",
-    "pin": "QN"
-  },
-  {
     "path": "cpu/stage1/regfile/\\mem_reg[3][0]",
     "pin": "QN"
   },
@@ -1365,6 +1389,10 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[3][17]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[3][18]",
     "pin": "QN"
   },
   {
@@ -1544,6 +1572,10 @@
     "pin": "QN"
   },
   {
+    "path": "cpu/stage1/regfile/\\mem_reg[4][31]",
+    "pin": "QN"
+  },
+  {
     "path": "cpu/stage1/regfile/\\mem_reg[5][0]",
     "pin": "QN"
   },
@@ -1597,10 +1629,6 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[5][13]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[5][14]",
     "pin": "QN"
   },
   {
@@ -1672,11 +1700,19 @@
     "pin": "QN"
   },
   {
+    "path": "cpu/stage1/regfile/\\mem_reg[6][0]",
+    "pin": "QN"
+  },
+  {
     "path": "cpu/stage1/regfile/\\mem_reg[6][1]",
     "pin": "QN"
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[6][2]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[6][5]",
     "pin": "QN"
   },
   {
@@ -1696,6 +1732,10 @@
     "pin": "QN"
   },
   {
+    "path": "cpu/stage1/regfile/\\mem_reg[6][13]",
+    "pin": "QN"
+  },
+  {
     "path": "cpu/stage1/regfile/\\mem_reg[6][14]",
     "pin": "QN"
   },
@@ -1709,14 +1749,6 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[6][19]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][24]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][25]",
     "pin": "QN"
   },
   {
@@ -1804,10 +1836,6 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[7][15]",
-    "pin": "QN"
-  },
-  {
     "path": "cpu/stage1/regfile/\\mem_reg[7][16]",
     "pin": "QN"
   },
@@ -1876,6 +1904,10 @@
     "pin": "QN"
   },
   {
+    "path": "cpu/stage1/regfile/\\mem_reg[8][1]",
+    "pin": "QN"
+  },
+  {
     "path": "cpu/stage1/regfile/\\mem_reg[8][2]",
     "pin": "QN"
   },
@@ -1897,10 +1929,6 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[8][7]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[8][8]",
     "pin": "QN"
   },
   {
@@ -1944,10 +1972,6 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[8][19]",
-    "pin": "QN"
-  },
-  {
     "path": "cpu/stage1/regfile/\\mem_reg[8][20]",
     "pin": "QN"
   },
@@ -1977,10 +2001,6 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[8][27]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[8][28]",
     "pin": "QN"
   },
   {
@@ -2612,10 +2632,6 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[13][26]",
-    "pin": "QN"
-  },
-  {
     "path": "cpu/stage1/regfile/\\mem_reg[13][27]",
     "pin": "QN"
   },
@@ -2733,6 +2749,10 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[14][24]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[14][25]",
     "pin": "QN"
   },
   {
@@ -3144,10 +3164,6 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[18][0]",
-    "pin": "QN"
-  },
-  {
     "path": "cpu/stage1/regfile/\\mem_reg[18][1]",
     "pin": "QN"
   },
@@ -3216,7 +3232,7 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[18][18]",
+    "path": "cpu/stage1/regfile/\\mem_reg[18][19]",
     "pin": "QN"
   },
   {
@@ -3392,11 +3408,11 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[20][0]",
+    "path": "cpu/stage1/regfile/\\mem_reg[19][31]",
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[20][1]",
+    "path": "cpu/stage1/regfile/\\mem_reg[20][0]",
     "pin": "QN"
   },
   {
@@ -3505,10 +3521,6 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[20][28]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[20][29]",
     "pin": "QN"
   },
   {
@@ -3668,10 +3680,6 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[22][5]",
-    "pin": "QN"
-  },
-  {
     "path": "cpu/stage1/regfile/\\mem_reg[22][6]",
     "pin": "QN"
   },
@@ -3697,10 +3705,6 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[22][12]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[22][13]",
     "pin": "QN"
   },
   {
@@ -3829,6 +3833,10 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[23][13]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[23][14]",
     "pin": "QN"
   },
   {
@@ -4005,10 +4013,6 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[24][26]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[24][27]",
     "pin": "QN"
   },
   {
@@ -4660,10 +4664,6 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[29][30]",
-    "pin": "QN"
-  },
-  {
     "path": "cpu/stage1/regfile/\\mem_reg[29][31]",
     "pin": "QN"
   },
@@ -4761,6 +4761,10 @@
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[30][23]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[30][24]",
     "pin": "QN"
   },
   {
@@ -4920,11 +4924,87 @@
     "pin": "QN"
   },
   {
+    "path": "cpu/stage1/regfile/\\mem_reg[6][10]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[2][6]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[18][18]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[20][1]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[20][29]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[22][5]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[22][13]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[24][27]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[29][30]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[2][7]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[2][9]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[2][31]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[5][14]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[6][3]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[6][4]",
+    "pin": "QN"
+  },
+  {
     "path": "cpu/stage1/regfile/\\mem_reg[2][2]",
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[1][26]",
+    "path": "cpu/stage1/regfile/\\mem_reg[18][0]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[6][12]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[6][16]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[6][17]",
+    "pin": "QN"
+  },
+  {
+    "path": "cpu/stage1/regfile/\\mem_reg[6][20]",
     "pin": "QN"
   },
   {
@@ -4940,115 +5020,35 @@
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[8][1]",
+    "path": "cpu/stage1/regfile/\\mem_reg[6][24]",
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[14][25]",
+    "path": "cpu/stage1/regfile/\\mem_reg[6][25]",
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[18][19]",
+    "path": "cpu/stage1/regfile/\\mem_reg[7][15]",
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[19][31]",
+    "path": "cpu/stage1/regfile/\\mem_reg[8][8]",
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[23][14]",
+    "path": "cpu/stage1/regfile/\\mem_reg[8][19]",
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[30][24]",
+    "path": "cpu/stage1/regfile/\\mem_reg[8][28]",
     "pin": "QN"
   },
   {
-    "path": "cpu/stage1/regfile/\\mem_reg[1][27]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[1][28]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[1][29]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[1][30]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[1][15]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[2][6]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[2][7]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[2][8]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[2][9]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[3][18]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[4][31]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][0]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][3]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][4]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][5]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][10]",
+    "path": "cpu/stage1/regfile/\\mem_reg[13][26]",
     "pin": "QN"
   },
   {
     "path": "cpu/stage1/regfile/\\mem_reg[6][11]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][12]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][13]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][16]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][17]",
-    "pin": "QN"
-  },
-  {
-    "path": "cpu/stage1/regfile/\\mem_reg[6][20]",
     "pin": "QN"
   },
   {
@@ -5180,143 +5180,15 @@
     "pin": "QN"
   },
   {
+    "path": "mem/dcache/\\STATE_reg[0]",
+    "pin": "QN"
+  },
+  {
     "path": "mem/dcache/\\STATE_reg[1]",
     "pin": "QN"
   },
   {
     "path": "mem/dcache/\\STATE_reg[2]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\STATE_reg[0]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[0]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[1]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[2]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[3]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[4]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[5]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[6]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[7]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[8]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[9]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[10]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[11]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[12]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[13]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[14]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[15]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[16]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[17]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[18]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[19]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[20]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[21]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[22]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[23]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[24]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[25]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[26]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[27]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[28]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[29]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[30]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/dcache/\\clk_counter_reg[31]",
     "pin": "QN"
   },
   {
@@ -5329,134 +5201,6 @@
   },
   {
     "path": "mem/icache/\\STATE_reg[2]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[0]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[1]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[2]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[3]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[4]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[5]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[6]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[7]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[8]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[9]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[10]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[11]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[12]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[13]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[14]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[15]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[16]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[17]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[18]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[19]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[20]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[21]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[22]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[23]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[24]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[25]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[26]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[27]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[28]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[29]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[30]",
-    "pin": "QN"
-  },
-  {
-    "path": "mem/icache/\\clk_counter_reg[31]",
     "pin": "QN"
   }
 ]

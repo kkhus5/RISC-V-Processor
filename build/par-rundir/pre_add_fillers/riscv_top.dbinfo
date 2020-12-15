@@ -9,7 +9,7 @@
     </tool>
     <design>
         <name>riscv_top</name>
-        <timestamp>Sun Dec 13 19:53:30 2020</timestamp>
+        <timestamp>Mon Dec 14 16:45:28 2020</timestamp>
     </design>
     <os>
         <name>Linux</name>

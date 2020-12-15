@@ -1,6 +1,6 @@
 # ####################################################################
 
-#  Created by Genus(TM) Synthesis Solution 19.11-s087_1 on Sun Dec 13 19:46:25 PST 2020
+#  Created by Genus(TM) Synthesis Solution 19.11-s087_1 on Mon Dec 14 16:34:46 PST 2020
 
 # ####################################################################
 
@@ -267,6 +267,8 @@ group_path -weight 1.000000 -name cg_enable_group_clk -through [list \
   [get_pins cpu/stage1/regfile/CLKGATE_RC_CG_HIER_INST38/enable]  \
   [get_pins cpu/stage1/regfile/CLKGATE_RC_CG_HIER_INST39/enable]  \
   [get_pins cpu/stage3/csr/CLKGATE_RC_CG_HIER_INST40/enable]  \
+  [get_pins mem/dcache/CLKGATE_RC_CG_HIER_INST41/enable]  \
+  [get_pins mem/icache/CLKGATE_RC_CG_HIER_INST42/enable]  \
   [get_pins cpu/s1_to_s2_imm/CLKGATE_RC_CG_HIER_INST0/enable]  \
   [get_pins cpu/s1_to_s2_inst/CLKGATE_RC_CG_HIER_INST1/enable]  \
   [get_pins cpu/s1_to_s2_pc/CLKGATE_RC_CG_HIER_INST2/enable]  \
@@ -307,7 +309,9 @@ group_path -weight 1.000000 -name cg_enable_group_clk -through [list \
   [get_pins cpu/stage1/regfile/CLKGATE_RC_CG_HIER_INST37/enable]  \
   [get_pins cpu/stage1/regfile/CLKGATE_RC_CG_HIER_INST38/enable]  \
   [get_pins cpu/stage1/regfile/CLKGATE_RC_CG_HIER_INST39/enable]  \
-  [get_pins cpu/stage3/csr/CLKGATE_RC_CG_HIER_INST40/enable] ]
+  [get_pins cpu/stage3/csr/CLKGATE_RC_CG_HIER_INST40/enable]  \
+  [get_pins mem/dcache/CLKGATE_RC_CG_HIER_INST41/enable]  \
+  [get_pins mem/icache/CLKGATE_RC_CG_HIER_INST42/enable] ]
 set_clock_gating_check -setup 0.0 
 set_input_delay -clock [get_clocks clk] -add_delay 180.0 [get_ports mem_req_ready]
 set_input_delay -clock [get_clocks clk] -add_delay 180.0 [get_ports mem_req_data_ready]
