@@ -242,7 +242,7 @@ always @(*) begin
           cpu_resp_valid = 1'b1;
           data_addr = index * 4 + offset[3:2];
           NEXT_STATE = IDLE;
-        end else begin
+        end else if (mem_req_ready) begin
           write_en_tag_valid = 1'b0;
           tag_valid_addr = index;
           mem_req_valid = 1'b1;
@@ -255,7 +255,6 @@ always @(*) begin
       begin
 
         if (mem_resp_valid) begin
-
           data_addr = index * 4;
           data_in = mem_resp_data;
           write_en_data = 1'b0;

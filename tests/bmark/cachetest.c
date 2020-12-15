@@ -7,7 +7,7 @@
     asm volatile ("csrw 0x51e,%[v]" :: [v]"r"(csr_val)); \
 }
 
-//#define SHORT
+// #define SHORT
 #ifdef SHORT
 #define PRBS  10
 #define CONST 1011556
