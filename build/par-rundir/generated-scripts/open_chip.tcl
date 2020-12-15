@@ -1,1 +1,0 @@
-read_db latest
