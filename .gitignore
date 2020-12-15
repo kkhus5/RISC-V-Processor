@@ -11,4 +11,9 @@ build
 asm_output
 bmark_output
 *testvectors.input
-
+DVEfiles
+lab4_alu
+tests
+Makefile
+README.txt
+asap7.yml
