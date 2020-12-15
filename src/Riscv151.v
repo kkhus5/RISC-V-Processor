@@ -48,6 +48,8 @@ wire [4:0] wb_addr;
 
 wire [31:0] dmem_write_data;
 
+wire [31:0] flush_out;
+
 // controls
 wire BrLT;
 wire BrEq;
@@ -81,6 +83,7 @@ Stage1Module stage1 (
     .icache_dout(icache_dout),
     .icache_addr(icache_addr),
     .icache_re(icache_re)
+
 );
 
 FlipFlop s1_to_s2_inst (
@@ -96,6 +99,21 @@ FlipFlop s1_to_s2_inst (
     // outputs
     .data_out(stage2_inst)
 );
+
+// only need this because instruction fetch takes 2 cycles
+// FlipFlop s1_to_s2_inst_flush (
+
+//     .clk(clk),
+//     .reset(reset),
+//     .isPC(1'b0),
+
+//     .stall(stall),
+
+//     .data({{31{1'b0}}, flush}),
+
+//     .data_out(flush_out)
+
+// );
 
 FlipFlop s1_to_s2_pc (
     // inputs

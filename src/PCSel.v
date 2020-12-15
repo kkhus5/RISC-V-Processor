@@ -8,7 +8,8 @@ module PCSel (
     input stall,
     input BrEq,
     input BrLT,
-    output reg [1:0] PCSignal
+    output reg [1:0] PCSignal,
+    output reg flush
 );
 
 // if R-Type and I-Type, then PC + 4
@@ -106,10 +107,13 @@ end
 always @(*) begin
     if (take_branch) begin
         PCSignal = 2'b01;
-    end else if (!take_branch && prev_opcode == `OPC_BRANCH || (curr_opcode == `OPC_JALR && prev_rd == curr_rs1 && prev_opcode != `OPC_NOOP && prev_opcode != `OPC_BRANCH && prev_opcode != `OPC_STORE)) begin
+        flush = 1'b1;
+    end else if ((curr_opcode == `OPC_JALR && prev_rd == curr_rs1 && prev_opcode != `OPC_NOOP && prev_opcode != `OPC_BRANCH && prev_opcode != `OPC_STORE)) begin
         PCSignal = 2'b00;
+        flush = 1'b0;
     end else begin
         PCSignal = 2'b10;
+        flush = 1'b0;
     end
 end
 endmodule

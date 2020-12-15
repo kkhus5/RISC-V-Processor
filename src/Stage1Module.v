@@ -45,6 +45,8 @@ wire Data2SelSignal;
 wire [1:0] PCAddSelect;
 wire [1:0] PCSelect;
 
+wire flush;
+
 // for testing
 wire [4:0] writeback_address = wb_addr;
 wire [31:0] writeback_data = wb_data;
@@ -103,7 +105,7 @@ NOPSel nopsel (
 	// inputs
 	.icache_dout(icache_dout),
 	.prev_inst(stage2_inst),
-	.stall(stall),
+	.flush(flush),
 
 	// outputs
 	.NOPSignal(NOPSignal)
@@ -198,7 +200,8 @@ PCSel pcsel (
 	.BrLT(BrLT),
 
 	// outputs
-	.PCSignal(PCSelect)
+	.PCSignal(PCSelect),
+	.flush(flush)
 );
 
 PCSelMux pcselmux (
